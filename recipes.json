@@ -1,0 +1,178 @@
+[
+  {
+    "id": "krämig-svamppasta",
+    "title": "Krämig svamppasta",
+    "description": "Fyllig pasta med stekt skogssvamp och parmesan som blir klar på en kvart.",
+    "image": "",
+    "tags": ["vegetariskt", "snabbt"],
+    "cuisine": "italienskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 400, "unit": "g", "name": "tagliatelle", "category": "torrvaror" },
+      { "amount": 300, "unit": "g", "name": "blandad svamp", "category": "grönsaker" },
+      { "amount": 2, "unit": "dl", "name": "vispgrädde", "category": "mejeri" },
+      { "amount": 50, "unit": "g", "name": "riven parmesan", "category": "mejeri" },
+      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
+      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
+      { "amount": 1, "unit": "msk", "name": "smör", "category": "mejeri" },
+      { "amount": 1, "unit": "krm", "name": "salt", "category": "kryddor" },
+      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+    ],
+    "steps": [
+      "Koka pastan enligt anvisning på paketet i rikligt med saltat vatten.",
+      "Hacka lök och vitlök fint och skiva svampen.",
+      "Stek svampen i smör tills den fått fin färg, tillsätt lök och vitlök.",
+      "Häll i grädden och låt sjuda någon minut, rör ner parmesanen.",
+      "Smaka av med salt och peppar och blanda i den avrunna pastan."
+    ]
+  },
+  {
+    "id": "rotfruktsgryta-med-kikärtor",
+    "title": "Rotfruktsgryta med kikärtor",
+    "description": "Mustig vegetarisk gryta med rotfrukter och kikärtor som värmer en kall dag.",
+    "image": "",
+    "tags": ["vegetariskt", "matlådevänligt"],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 45,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 2, "unit": "st", "name": "morötter", "category": "grönsaker" },
+      { "amount": 1, "unit": "st", "name": "palsternacka", "category": "grönsaker" },
+      { "amount": 0.5, "unit": "st", "name": "rotselleri", "category": "grönsaker" },
+      { "amount": 1, "unit": "burk", "name": "kikärtor", "category": "torrvaror" },
+      { "amount": 1, "unit": "burk", "name": "krossade tomater", "category": "torrvaror" },
+      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
+      { "amount": 5, "unit": "dl", "name": "grönsaksbuljong", "category": "övrigt" },
+      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
+      { "amount": 2, "unit": "tsk", "name": "spiskummin", "category": "kryddor" },
+      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+    ],
+    "steps": [
+      "Skala och tärna alla rotfrukter och lök.",
+      "Fräs löken mjuk i olivolja i en stor gryta.",
+      "Tillsätt rotfrukterna och spiskummin och stek några minuter.",
+      "Häll i krossade tomater, buljong och kikärtor.",
+      "Låt grytan sjuda under lock i cirka 25 minuter tills rotfrukterna är mjuka.",
+      "Smaka av med salt och servera gärna med bröd."
+    ]
+  },
+  {
+    "id": "ugnsbakad-lax-med-dill",
+    "title": "Ugnsbakad lax med dill",
+    "description": "Saftig laxfilé bakad i ugn med citron och färsk dill.",
+    "image": "",
+    "tags": ["fisk", "nyttigt"],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 600, "unit": "g", "name": "laxfilé", "category": "kött & fisk" },
+      { "amount": 1, "unit": "st", "name": "citron", "category": "grönsaker" },
+      { "amount": 1, "unit": "knippe", "name": "färsk dill", "category": "grönsaker" },
+      { "amount": 2, "unit": "msk", "name": "smör", "category": "mejeri" },
+      { "amount": 1, "unit": "tsk", "name": "flingsalt", "category": "kryddor" },
+      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+    ],
+    "steps": [
+      "Sätt ugnen på 200 grader.",
+      "Lägg laxen i en smord ugnsform med skinnsidan nedåt.",
+      "Klicka smör över laxen och pressa över saften från en halv citron.",
+      "Strö över salt, peppar och hackad dill.",
+      "Baka i ugnen i cirka 15–18 minuter tills laxen är genomgången.",
+      "Servera med citronklyftor och kokt potatis."
+    ]
+  },
+  {
+    "id": "kycklinggryta-med-curry",
+    "title": "Kycklinggryta med curry",
+    "description": "Krämig kycklinggryta med kokosmjölk och mild curry, perfekt över ris.",
+    "image": "",
+    "tags": ["kyckling", "matlådevänligt"],
+    "cuisine": "indiskt",
+    "difficulty": "medel",
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 500, "unit": "g", "name": "kycklingfilé", "category": "kött & fisk" },
+      { "amount": 1, "unit": "burk", "name": "kokosmjölk", "category": "torrvaror" },
+      { "amount": 1, "unit": "st", "name": "röd paprika", "category": "grönsaker" },
+      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
+      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
+      { "amount": 2, "unit": "msk", "name": "currypasta", "category": "kryddor" },
+      { "amount": 1, "unit": "msk", "name": "rapsolja", "category": "övrigt" },
+      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+    ],
+    "steps": [
+      "Skär kycklingen i bitar och tärna lök och paprika.",
+      "Bryn kycklingen i olja tills den fått färg, lägg åt sidan.",
+      "Fräs lök, vitlök och currypasta i samma gryta.",
+      "Häll i kokosmjölk och låt sjuda, lägg tillbaka kycklingen.",
+      "Tillsätt paprika och låt grytan puttra i 15 minuter.",
+      "Smaka av med salt och servera med kokt ris."
+    ]
+  },
+  {
+    "id": "spaghetti-bolognese",
+    "title": "Spaghetti bolognese",
+    "description": "Klassisk köttfärssås som får sjuda länge och serveras med spaghetti.",
+    "image": "",
+    "tags": ["pasta", "klassiker"],
+    "cuisine": "italienskt",
+    "difficulty": "medel",
+    "time_minutes": 50,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 400, "unit": "g", "name": "spaghetti", "category": "torrvaror" },
+      { "amount": 500, "unit": "g", "name": "nötfärs", "category": "kött & fisk" },
+      { "amount": 1, "unit": "burk", "name": "krossade tomater", "category": "torrvaror" },
+      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
+      { "amount": 1, "unit": "st", "name": "morot", "category": "grönsaker" },
+      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
+      { "amount": 2, "unit": "msk", "name": "tomatpuré", "category": "torrvaror" },
+      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
+      { "amount": 1, "unit": "tsk", "name": "torkad oregano", "category": "kryddor" },
+      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+    ],
+    "steps": [
+      "Hacka lök, vitlök och morot fint.",
+      "Fräs grönsakerna mjuka i olivolja i en stor kastrull.",
+      "Tillsätt nötfärsen och bryn tills den är genomstekt.",
+      "Rör i tomatpuré och oregano och stek ytterligare en minut.",
+      "Häll i krossade tomater och låt såsen sjuda i minst 30 minuter.",
+      "Koka spaghettin under tiden och smaka av såsen med salt innan servering."
+    ]
+  },
+  {
+    "id": "morotssoppa-med-ingefära",
+    "title": "Morotssoppa med ingefära",
+    "description": "Len och värmande morotssoppa med en pigg touch av ingefära.",
+    "image": "",
+    "tags": ["vegetariskt", "soppa", "snabbt"],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      { "amount": 600, "unit": "g", "name": "morötter", "category": "grönsaker" },
+      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
+      { "amount": 2, "unit": "cm", "name": "färsk ingefära", "category": "grönsaker" },
+      { "amount": 2, "unit": "dl", "name": "kokosmjölk", "category": "torrvaror" },
+      { "amount": 7, "unit": "dl", "name": "grönsaksbuljong", "category": "övrigt" },
+      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
+      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" },
+      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+    ],
+    "steps": [
+      "Skala och skiva morötter, lök och ingefära.",
+      "Fräs lök och ingefära mjuka i olivolja i en kastrull.",
+      "Tillsätt morötterna och häll på buljongen.",
+      "Låt koka under lock tills morötterna är mjuka, cirka 15 minuter.",
+      "Mixa soppan slät och rör ner kokosmjölken.",
+      "Smaka av med salt och peppar och värm upp igen innan servering."
+    ]
+  }
+]

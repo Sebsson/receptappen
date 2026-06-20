@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Receptappen</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#7c6f5b" />
+  <link rel="icon" href="icon.svg" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taupe: "#7c6f5b",
+            "taupe-dark": "#665b49",
+            canvas: "#f5f5f3",
+          },
+          fontFamily: {
+            sans: ["system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes modalIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+    .anim-backdrop { animation: fadeIn .2s ease-out; }
+    .anim-panel { animation: sheetUp .28s cubic-bezier(.16,1,.3,1); }
+    @media (min-width: 768px) { .anim-panel { animation: modalIn .2s ease-out; } }
+
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+    @keyframes sheetDown { from { transform: translateY(0); } to { transform: translateY(100%); } }
+    @keyframes modalOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(.96); } }
+    .anim-backdrop-out { animation: fadeOut .22s ease-in forwards; }
+    .anim-panel-out { animation: sheetDown .24s ease-in forwards; }
+    @media (min-width: 768px) { .anim-panel-out { animation: modalOut .2s ease-in forwards; } }
+
+    @keyframes viewFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-fade { animation: viewFade .22s ease-out; }
+
+    #sidebar [data-nav][aria-current="true"] { background: #efeee9; color: #665b49; }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-panel, .anim-panel-out, .anim-backdrop, .anim-backdrop-out, .anim-fade { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-canvas text-gray-900 min-h-screen md:pl-56">
+  <!-- Desktop sidebar navigation -->
+  <aside id="sidebar" class="hidden md:flex fixed inset-y-0 left-0 z-20 w-56 flex-col border-r border-gray-200 bg-white/80 px-3 py-5 backdrop-blur">
+    <div class="flex items-center gap-2 px-2 pb-5">
+      <img src="icon.svg" alt="" class="h-8 w-8 rounded-lg" />
+      <span class="text-lg font-semibold tracking-tight text-taupe-dark">Recept</span>
+    </div>
+    <nav class="flex flex-col gap-1">
+      <button data-nav="recept" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-500 transition hover:bg-canvas">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v9h5v-5h4v5h5v-9"/></svg>
+        <span>Recept</span>
+      </button>
+      <button data-nav="veckoplan" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-500 transition hover:bg-canvas">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 3v3M16 3v3"/></svg>
+        <span class="flex-1 text-left">Veckoplan</span>
+        <span id="navPlanBadgeSide" class="hidden min-w-[18px] rounded-full bg-taupe px-1 text-center text-[10px] font-semibold leading-[18px] text-white">0</span>
+      </button>
+      <button data-nav="inkop" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-500 transition hover:bg-canvas">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 18L5 7zM9 7V5a3 3 0 016 0v2"/></svg>
+        <span>Inköpslista</span>
+      </button>
+    </nav>
+  </aside>
+
+  <header class="sticky top-0 z-10 bg-canvas/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 py-4">
+      <div class="flex items-center justify-between gap-3">
+        <h1 class="text-xl font-semibold tracking-tight text-taupe-dark">Receptappen</h1>
+        <div class="flex items-center gap-3 text-sm text-gray-500">
+          <span id="favCount" class="flex items-center gap-1">★ 0</span>
+          <span id="planCount" class="flex items-center gap-1">＋ 0</span>
+        </div>
+      </div>
+
+      <div id="filterBar" class="mt-3 flex flex-col gap-3">
+        <div class="flex items-center gap-2">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Sök titel, tagg eller ingrediens…"
+            class="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm shadow-sm outline-none focus:border-taupe focus:ring-1 focus:ring-taupe"
+          />
+          <button
+            id="shuffleBtn"
+            title="Slumpa ett recept"
+            aria-label="Slumpa ett recept"
+            class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-xl border border-gray-200 bg-white text-lg shadow-sm transition hover:border-taupe active:scale-95"
+          >🎲</button>
+        </div>
+        <div id="chipFilters" class="flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="max-w-5xl mx-auto px-4 py-6 pb-24">
+    <div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"></div>
+    <div id="emptyState" class="hidden"></div>
+    <section id="planView" class="hidden"></section>
+    <section id="shopView" class="hidden"></section>
+  </main>
+
+  <!-- Bottom navigation (mobile only) -->
+  <nav class="fixed inset-x-0 bottom-0 z-20 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden">
+    <div id="bottomNav" class="mx-auto grid max-w-5xl grid-cols-3">
+      <button data-nav="recept" class="flex flex-col items-center gap-0.5 py-2.5 text-xs text-gray-400">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v9h5v-5h4v5h5v-9"/></svg>
+        <span>Recept</span>
+      </button>
+      <button data-nav="veckoplan" class="relative flex flex-col items-center gap-0.5 py-2.5 text-xs text-gray-400">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 3v3M16 3v3"/></svg>
+        <span>Veckoplan</span>
+        <span id="navPlanBadge" class="absolute right-[22%] top-1.5 hidden min-w-[16px] rounded-full bg-taupe px-1 text-[10px] font-semibold leading-4 text-white">0</span>
+      </button>
+      <button data-nav="inkop" class="flex flex-col items-center gap-0.5 py-2.5 text-xs text-gray-400">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 18L5 7zM9 7V5a3 3 0 016 0v2"/></svg>
+        <span>Inköpslista</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Detaljvy (modal/bottom sheet) renderas här -->
+  <div id="detailRoot"></div>
+
+  <!-- Bekräftelse-toast -->
+  <div
+    id="toast"
+    class="pointer-events-none fixed bottom-24 left-1/2 z-40 -translate-x-1/2 translate-y-2 rounded-full bg-taupe-dark px-4 py-2 text-sm text-white opacity-0 shadow-lg transition-all duration-300"
+  ></div>
+
+  <script>
+    // ---------- State ----------
+    const appState = {
+      recipes: [],
+      favorites: [],
+      weekPlan: [],                      // [{ id, servings }]
+      filter: { search: "", chips: [] },
+      shopping: { checked: [], cleared: [] }, // ingredient keys
+      view: "recept",                    // recept | veckoplan | inkop
+    };
+
+    // Fixed filter chips. Each declares a predicate; active chips combine with AND.
+    const FILTER_CHIPS = [
+      { id: "favoriter", label: "★ Favoriter", test: (r, ctx) => ctx.favorites.includes(r.id) },
+      { id: "vegetariskt", label: "Vegetariskt", test: (r) => r.tags.includes("vegetariskt") },
+      { id: "under30", label: "Under 30 min", test: (r) => r.time_minutes <= 30 },
+      { id: "lätt", label: "Lätt", test: (r) => r.difficulty === "lätt" },
+      { id: "medel", label: "Medel", test: (r) => r.difficulty === "medel" },
+      { id: "avancerat", label: "Avancerat", test: (r) => r.difficulty === "avancerat" },
+    ];
+
+    // Pure: returns the subset of `recipes` matching `filter` (search + active chips, AND logic).
+    // `favorites` is passed in so the function stays dependent only on its arguments.
+    function filterRecipes(recipes, filter, favorites = []) {
+      const q = filter.search.trim().toLowerCase();
+      const active = FILTER_CHIPS.filter((c) => filter.chips.includes(c.id));
+      const ctx = { favorites };
+      return recipes.filter((r) => {
+        if (!active.every((c) => c.test(r, ctx))) return false;
+        if (q) {
+          const haystack = [r.title, ...r.tags, ...r.ingredients.map((i) => i.name)]
+            .join(" ")
+            .toLowerCase();
+          if (!haystack.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    const STORAGE_KEYS = {
+      favorites: "receptappen:favorites",
+      weekPlan: "receptappen:weekPlan",
+      shopping: "receptappen:shopping",
+    };
+
+    function loadState() {
+      try {
+        appState.favorites = JSON.parse(localStorage.getItem(STORAGE_KEYS.favorites)) || [];
+        const wp = JSON.parse(localStorage.getItem(STORAGE_KEYS.weekPlan)) || [];
+        // Migrate older format (array of id strings) -> [{ id, servings }].
+        appState.weekPlan = wp.map((e) => (typeof e === "string" ? { id: e, servings: null } : e));
+        const shop = JSON.parse(localStorage.getItem(STORAGE_KEYS.shopping)) || {};
+        appState.shopping = { checked: shop.checked || [], cleared: shop.cleared || [] };
+      } catch {
+        appState.favorites = [];
+        appState.weekPlan = [];
+        appState.shopping = { checked: [], cleared: [] };
+      }
+    }
+
+    function persist() {
+      localStorage.setItem(STORAGE_KEYS.favorites, JSON.stringify(appState.favorites));
+      localStorage.setItem(STORAGE_KEYS.weekPlan, JSON.stringify(appState.weekPlan));
+      localStorage.setItem(STORAGE_KEYS.shopping, JSON.stringify(appState.shopping));
+    }
+
+    const recipeById = (id) => appState.recipes.find((r) => r.id === id);
+    const inPlan = (id) => appState.weekPlan.some((e) => e.id === id);
+
+    // ---------- Helpers ----------
+    const DIFFICULTY_STYLES = {
+      "lätt": "bg-green-100 text-green-800",
+      "medel": "bg-yellow-100 text-yellow-800",
+      "avancerat": "bg-red-100 text-red-800",
+    };
+
+    // Deterministic placeholder color block per recipe.
+    function placeholderColor(id) {
+      let hash = 0;
+      for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) % 360;
+      return `hsl(${hash}, 22%, 78%)`;
+    }
+
+    function toggle(list, id) {
+      const i = list.indexOf(id);
+      if (i === -1) list.push(id);
+      else list.splice(i, 1);
+    }
+
+    function toggleFavorite(id) {
+      toggle(appState.favorites, id);
+      persist();
+      render();
+    }
+
+    function togglePlan(id) {
+      const i = appState.weekPlan.findIndex((e) => e.id === id);
+      if (i === -1) {
+        const r = recipeById(id);
+        appState.weekPlan.push({ id, servings: r ? r.servings : 4 });
+        showToast("Tillagd i veckoplan");
+      } else {
+        appState.weekPlan.splice(i, 1);
+        showToast("Borttagen");
+      }
+      persist();
+      render();
+    }
+
+    function changePlanServings(id, delta) {
+      const entry = appState.weekPlan.find((e) => e.id === id);
+      if (!entry) return;
+      entry.servings = Math.max(1, (entry.servings || 1) + delta);
+      persist();
+      render();
+    }
+
+    function removeFromPlan(id) {
+      const i = appState.weekPlan.findIndex((e) => e.id === id);
+      if (i !== -1) appState.weekPlan.splice(i, 1);
+      persist();
+      render();
+      showToast("Borttagen");
+    }
+
+    function clearPlan() {
+      appState.weekPlan = [];
+      appState.shopping = { checked: [], cleared: [] };
+      persist();
+      render();
+    }
+
+    function toggleChip(id) {
+      toggle(appState.filter.chips, id);
+      render();
+    }
+
+    // ---------- Shuffle ----------
+    function shuffleRecipe() {
+      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites);
+      if (!list.length) return;
+      const pick = list[Math.floor(Math.random() * list.length)];
+      const el = document.querySelector(`article[data-id="${pick.id}"]`);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      const ring = ["ring-2", "ring-taupe", "ring-offset-2", "ring-offset-canvas"];
+      el.classList.add(...ring);
+      setTimeout(() => el.classList.remove(...ring), 1800);
+    }
+
+    // ---------- Icons ----------
+    function starIcon(filled) {
+      return `<svg viewBox="0 0 24 24" class="w-5 h-5" fill="${filled ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17.9 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5z"/></svg>`;
+    }
+
+    function plusIcon(added) {
+      if (added) {
+        return `<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12.5l4.5 4.5L19 7"/></svg>`;
+      }
+      return `<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M12 6v12M6 12h12"/></svg>`;
+    }
+
+    // ---------- Render ----------
+    function recipeCard(r) {
+      const isFav = appState.favorites.includes(r.id);
+      const added = inPlan(r.id);
+      const diffClass = DIFFICULTY_STYLES[r.difficulty] || "bg-gray-100 text-gray-700";
+
+      const tagChips = r.tags
+        .map((t) => `<span class="rounded-full bg-canvas px-2 py-0.5 text-[11px] text-gray-600">${t}</span>`)
+        .join("");
+
+      return `
+        <article data-id="${r.id}" class="flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+          <div class="relative aspect-[4/3]" style="background:${placeholderColor(r.id)}">
+            <button
+              data-action="fav" data-id="${r.id}"
+              aria-label="Spara som favorit"
+              class="absolute top-2 left-2 grid h-8 w-8 place-items-center rounded-full bg-white/85 backdrop-blur ${isFav ? "text-taupe" : "text-gray-500"} hover:text-taupe">
+              ${starIcon(isFav)}
+            </button>
+            <button
+              data-action="plan" data-id="${r.id}"
+              aria-label="Lägg till i veckoplan"
+              class="absolute top-2 right-2 grid h-8 w-8 place-items-center rounded-full bg-white/85 backdrop-blur ${added ? "text-taupe" : "text-gray-500"} hover:text-taupe">
+              ${plusIcon(added)}
+            </button>
+          </div>
+
+          <div class="flex flex-1 flex-col gap-2 p-3">
+            <div class="flex items-start justify-between gap-2">
+              <h2 class="text-sm font-semibold leading-snug text-gray-900">${r.title}</h2>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500">
+              <span>${r.time_minutes} min</span>
+              <span class="rounded-full px-2 py-0.5 text-[11px] font-medium ${diffClass}">${r.difficulty}</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-1 pt-1">${tagChips}</div>
+          </div>
+        </article>`;
+    }
+
+    function renderChips() {
+      const container = document.getElementById("chipFilters");
+      container.innerHTML = FILTER_CHIPS.map((c) => {
+        const active = appState.filter.chips.includes(c.id);
+        return `<button
+          data-action="chip" data-chip="${c.id}"
+          aria-pressed="${active}"
+          class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+            active
+              ? "border-taupe bg-taupe text-white"
+              : "border-gray-200 bg-white text-gray-600 hover:border-taupe"
+          }">${c.label}</button>`;
+      }).join("");
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("grid");
+      const empty = document.getElementById("emptyState");
+      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites);
+      grid.innerHTML = list.map(recipeCard).join("");
+
+      if (list.length) {
+        empty.classList.add("hidden");
+      } else {
+        empty.innerHTML = appState.filter.chips.includes("favoriter")
+          ? emptyBlock(ICONS.star, "Inga favoriter än", "Tryck på stjärnan på ett recept för att spara det.")
+          : emptyBlock(ICONS.search, "Inga recept hittades", "Prova en annan sökning eller rensa filtren.");
+        empty.classList.remove("hidden");
+      }
+      renderChips();
+    }
+
+    function updateCounts() {
+      document.getElementById("favCount").textContent = `★ ${appState.favorites.length}`;
+      document.getElementById("planCount").textContent = `＋ ${appState.weekPlan.length}`;
+    }
+
+    function renderNav() {
+      document.querySelectorAll("[data-nav]").forEach((b) => {
+        const active = b.dataset.nav === appState.view;
+        b.setAttribute("aria-current", active ? "true" : "false");
+        if (b.closest("#bottomNav")) {
+          b.classList.toggle("text-taupe", active);
+          b.classList.toggle("text-gray-400", !active);
+        }
+      });
+      const n = appState.weekPlan.length;
+      ["navPlanBadge", "navPlanBadgeSide"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = n;
+        el.classList.toggle("hidden", n === 0);
+      });
+    }
+
+    // View dispatcher — toggles section visibility and renders the active tab.
+    function render() {
+      const v = appState.view;
+      document.getElementById("filterBar").classList.toggle("hidden", v !== "recept");
+      document.getElementById("grid").classList.toggle("hidden", v !== "recept");
+      document.getElementById("planView").classList.toggle("hidden", v !== "veckoplan");
+      document.getElementById("shopView").classList.toggle("hidden", v !== "inkop");
+      if (v !== "recept") document.getElementById("emptyState").classList.add("hidden");
+
+      if (v === "recept") renderGrid();
+      else if (v === "veckoplan") renderPlan();
+      else if (v === "inkop") renderShopping();
+
+      updateCounts();
+      renderNav();
+    }
+
+    function setView(view) {
+      appState.view = view;
+      window.scrollTo({ top: 0 });
+      render();
+      // Fade the freshly shown tab content (only on tab switch, not every render).
+      const id = view === "recept" ? "grid" : view === "veckoplan" ? "planView" : "shopView";
+      const el = document.getElementById(id);
+      el.classList.remove("anim-fade");
+      void el.offsetWidth; // force reflow so the animation re-triggers
+      el.classList.add("anim-fade");
+    }
+
+    // ---------- Empty states ----------
+    const ICONS = {
+      search: `<svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>`,
+      star: `<svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17.9 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5z"/></svg>`,
+      plan: `<svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 3v3M16 3v3"/></svg>`,
+      cart: `<svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 18L5 7zM9 7V5a3 3 0 016 0v2"/></svg>`,
+      check: `<svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>`,
+    };
+
+    function emptyBlock(icon, title, sub) {
+      return `<div class="py-20 text-center">
+        <div class="mx-auto mb-3 h-12 w-12 text-gray-300">${icon}</div>
+        <p class="text-sm text-gray-500">${title}</p>
+        ${sub ? `<p class="mt-1 text-xs text-gray-400">${sub}</p>` : ""}
+      </div>`;
+    }
+
+    function planCard(r, entry) {
+      return `
+        <article class="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100">
+          <div class="h-14 w-14 shrink-0 rounded-xl" style="background:${placeholderColor(r.id)}"></div>
+          <div class="min-w-0 flex-1">
+            <h3 class="truncate text-sm font-semibold text-gray-900">${r.title}</h3>
+            <p class="text-xs text-gray-500">${r.time_minutes} min · ${r.difficulty}</p>
+            <div class="mt-1.5 flex items-center gap-2">
+              <button data-plan-action="dec" data-id="${r.id}" aria-label="Färre portioner"
+                class="grid h-6 w-6 place-items-center rounded-full border border-gray-300 text-sm leading-none text-gray-700 hover:border-taupe">−</button>
+              <span class="text-xs font-medium text-gray-700">${entry.servings} port</span>
+              <button data-plan-action="inc" data-id="${r.id}" aria-label="Fler portioner"
+                class="grid h-6 w-6 place-items-center rounded-full border border-gray-300 text-sm leading-none text-gray-700 hover:border-taupe">+</button>
+            </div>
+          </div>
+          <button data-plan-action="remove" data-id="${r.id}" aria-label="Ta bort"
+            class="grid h-8 w-8 shrink-0 place-items-center rounded-full text-gray-400 hover:bg-canvas hover:text-red-500">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </article>`;
+    }
+
+    function renderPlan() {
+      const root = document.getElementById("planView");
+      if (!appState.weekPlan.length) {
+        root.innerHTML = emptyBlock(ICONS.plan, "Din veckoplan är tom", "Lägg till recept från Recept-fliken.");
+        return;
+      }
+      const cards = appState.weekPlan
+        .map((entry) => {
+          const r = recipeById(entry.id);
+          return r ? planCard(r, entry) : "";
+        })
+        .join("");
+      root.innerHTML = `
+        <div class="mb-3 flex items-center justify-between">
+          <h2 class="text-base font-semibold text-gray-900">Veckoplan</h2>
+          <button data-plan-action="clear" class="text-sm text-gray-500 hover:text-red-500">Rensa veckoplan</button>
+        </div>
+        <div class="space-y-3">${cards}</div>`;
+    }
+
+    // ---------- Inköpslista ----------
+    // Aggregate weekPlan ingredients, scaled by each recipe's chosen servings.
+    // Merge by (category + name + unit), summing amounts; differing units stay separate.
+    function buildShoppingList() {
+      const map = new Map();
+      appState.weekPlan.forEach((entry) => {
+        const r = recipeById(entry.id);
+        if (!r) return;
+        const factor = entry.servings / r.servings;
+        r.ingredients.forEach((ing) => {
+          const unit = ing.unit || "";
+          const key = `${ing.category}__${ing.name.toLowerCase()}__${unit.toLowerCase()}`;
+          const amount = ing.amount == null ? null : ing.amount * factor;
+          if (map.has(key)) {
+            const it = map.get(key);
+            if (amount != null) it.amount = (it.amount || 0) + amount;
+          } else {
+            map.set(key, { key, category: ing.category, name: ing.name, unit, amount });
+          }
+        });
+      });
+      return [...map.values()].filter((it) => !appState.shopping.cleared.includes(it.key));
+    }
+
+    function shopRow(it) {
+      const checked = appState.shopping.checked.includes(it.key);
+      const amt = it.amount == null ? "" : fmtAmount(it.amount);
+      const lead = amt ? `<span class="font-medium">${amt} ${it.unit}</span> ` : "";
+      return `
+        <li>
+          <label class="flex cursor-pointer items-center gap-3 py-1.5">
+            <input type="checkbox" data-shop-action="check" data-key="${encodeURIComponent(it.key)}" ${checked ? "checked" : ""}
+              class="h-4 w-4 rounded border-gray-300 text-taupe focus:ring-taupe" />
+            <span class="flex-1 text-sm ${checked ? "text-gray-400 line-through" : "text-gray-700"}">${lead}${it.name}</span>
+          </label>
+        </li>`;
+    }
+
+    function renderShopping() {
+      const root = document.getElementById("shopView");
+      if (!appState.weekPlan.length) {
+        root.innerHTML = emptyBlock(ICONS.cart, "Inköpslistan är tom", "Lägg till recept i veckoplanen först.");
+        return;
+      }
+      const items = buildShoppingList();
+      const hiddenCount = appState.shopping.cleared.length;
+
+      const sections = CATEGORY_ORDER.filter((c) => items.some((i) => i.category === c))
+        .map((cat) => {
+          const rows = items.filter((i) => i.category === cat).map(shopRow).join("");
+          return `
+            <div class="mt-4">
+              <h3 class="mb-1 text-xs font-semibold uppercase tracking-wide text-taupe">${capitalize(cat)}</h3>
+              <ul class="divide-y divide-gray-100">${rows}</ul>
+            </div>`;
+        })
+        .join("");
+
+      const body = items.length
+        ? sections
+        : emptyBlock(ICONS.check, "Allt är avbockat!", hiddenCount ? "Tryck Återställ för att visa dolda varor." : "");
+
+      root.innerHTML = `
+        <div class="mb-3 flex items-center justify-between">
+          <h2 class="text-base font-semibold text-gray-900">Inköpslista</h2>
+          ${hiddenCount ? `<button data-shop-action="restore" class="text-sm text-gray-500 hover:text-taupe">Återställ (${hiddenCount})</button>` : ""}
+        </div>
+        <div class="flex gap-2">
+          <button data-shop-action="copy"
+            class="flex-1 rounded-xl bg-taupe py-2.5 text-sm font-semibold text-white hover:bg-taupe-dark active:scale-[.99]">Kopiera lista</button>
+          <button data-shop-action="clearChecked"
+            class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-600 hover:border-taupe">Rensa markerade</button>
+        </div>
+        ${body}`;
+    }
+
+    function toggleShopCheck(key) {
+      toggle(appState.shopping.checked, key);
+      persist();
+      render();
+    }
+
+    function clearChecked() {
+      const checked = appState.shopping.checked;
+      if (!checked.length) {
+        showToast("Inget är markerat");
+        return;
+      }
+      checked.forEach((k) => {
+        if (!appState.shopping.cleared.includes(k)) appState.shopping.cleared.push(k);
+      });
+      appState.shopping.checked = [];
+      persist();
+      render();
+      showToast("Markerade dolda");
+    }
+
+    function restoreCleared() {
+      appState.shopping.cleared = [];
+      persist();
+      render();
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise((resolve, reject) => {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          resolve();
+        } catch (e) {
+          reject(e);
+        } finally {
+          document.body.removeChild(ta);
+        }
+      });
+    }
+
+    async function copyShoppingList() {
+      const items = buildShoppingList();
+      if (!items.length) {
+        showToast("Listan är tom");
+        return;
+      }
+      let text = "Inköpslista\n";
+      CATEGORY_ORDER.filter((c) => items.some((i) => i.category === c)).forEach((cat) => {
+        text += `\n${capitalize(cat)}\n`;
+        items
+          .filter((i) => i.category === cat)
+          .forEach((it) => {
+            const amt = it.amount == null ? "" : `${fmtAmount(it.amount)} ${it.unit} `;
+            text += `- ${amt}${it.name}\n`;
+          });
+      });
+      try {
+        await copyText(text.trim());
+        showToast("Lista kopierad");
+      } catch {
+        showToast("Kunde inte kopiera");
+      }
+    }
+
+    function handlePlanAction(e) {
+      const el = e.target.closest("[data-plan-action]");
+      if (!el) return;
+      const a = el.dataset.planAction;
+      const id = el.dataset.id;
+      if (a === "remove") removeFromPlan(id);
+      else if (a === "clear") clearPlan();
+      else if (a === "inc") changePlanServings(id, 1);
+      else if (a === "dec") changePlanServings(id, -1);
+    }
+
+    function handleShopAction(e) {
+      const el = e.target.closest("[data-shop-action]");
+      if (!el) return;
+      const a = el.dataset.shopAction;
+      if (a === "check") toggleShopCheck(decodeURIComponent(el.dataset.key));
+      else if (a === "copy") copyShoppingList();
+      else if (a === "clearChecked") clearChecked();
+      else if (a === "restore") restoreCleared();
+    }
+
+    // ---------- Events ----------
+    function wireEvents() {
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        appState.filter.search = e.target.value;
+        render();
+      });
+
+      document.getElementById("shuffleBtn").addEventListener("click", shuffleRecipe);
+
+      document.getElementById("app").addEventListener("click", handleAction);
+      document.getElementById("chipFilters").addEventListener("click", handleAction);
+
+      document.getElementById("planView").addEventListener("click", handlePlanAction);
+      document.getElementById("shopView").addEventListener("click", handleShopAction);
+      const onNav = (e) => {
+        const b = e.target.closest("[data-nav]");
+        if (b) setView(b.dataset.nav);
+      };
+      document.getElementById("bottomNav").addEventListener("click", onNav);
+      document.getElementById("sidebar").addEventListener("click", onNav);
+    }
+
+    function handleAction(e) {
+      const btn = e.target.closest("button[data-action]");
+      if (btn) {
+        const { action, id, chip } = btn.dataset;
+        if (action === "fav") toggleFavorite(id);
+        else if (action === "plan") togglePlan(id);
+        else if (action === "chip") toggleChip(chip);
+        return;
+      }
+      // Click anywhere else on a card opens its detail view.
+      const card = e.target.closest("article[data-id]");
+      if (card) openRecipe(card.dataset.id);
+    }
+
+    // ---------- Detail view ----------
+    const CATEGORY_ORDER = ["grönsaker", "mejeri", "kött & fisk", "torrvaror", "kryddor", "övrigt"];
+
+    let currentDetail = null;   // recipe currently shown
+    let detailServings = 0;     // servings selected in the adjuster
+
+    function fmtAmount(v) {
+      if (v == null || v === "" || isNaN(v)) return "";
+      const r = Math.round(v * 10) / 10;
+      return Number.isInteger(r) ? String(r) : r.toFixed(1);
+    }
+
+    function capitalize(s) {
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    function groupedIngredients(ings) {
+      const groups = {};
+      ings.forEach((i) => (groups[i.category] ||= []).push(i));
+      return CATEGORY_ORDER.filter((c) => groups[c]).map((c) => [c, groups[c]]);
+    }
+
+    function ingredientRow(ing, factor) {
+      const base = ing.amount;
+      const scaled = base == null ? "" : fmtAmount(base * factor);
+      return `<li class="flex items-baseline justify-between gap-3 py-1">
+        <span class="text-sm text-gray-700">${ing.name}</span>
+        <span class="shrink-0 text-sm text-gray-500">
+          <span data-base="${base == null ? "" : base}">${scaled}</span> ${ing.unit}
+        </span>
+      </li>`;
+    }
+
+    function detailMarkup(r) {
+      const isFav = appState.favorites.includes(r.id);
+      const diffClass = DIFFICULTY_STYLES[r.difficulty] || "bg-gray-100 text-gray-700";
+      const factor = detailServings / r.servings;
+
+      const tags = r.tags
+        .map((t) => `<span class="rounded-full bg-canvas px-2.5 py-0.5 text-xs text-gray-600">${t}</span>`)
+        .join("");
+
+      const ingredients = groupedIngredients(r.ingredients)
+        .map(
+          ([cat, items]) => `
+          <div>
+            <h4 class="mb-1 text-xs font-semibold uppercase tracking-wide text-taupe">${capitalize(cat)}</h4>
+            <ul class="divide-y divide-gray-100">${items.map((i) => ingredientRow(i, factor)).join("")}</ul>
+          </div>`
+        )
+        .join("");
+
+      const steps = r.steps
+        .map(
+          (s, i) => `
+          <li class="flex gap-3">
+            <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-taupe text-xs font-semibold text-white">${i + 1}</span>
+            <p class="text-sm leading-relaxed text-gray-700">${s}</p>
+          </li>`
+        )
+        .join("");
+
+      return `
+        <div class="fixed inset-0 z-30 flex md:items-center md:justify-center">
+          <div data-action="close" class="anim-backdrop absolute inset-0 bg-black/40"></div>
+
+          <div class="anim-panel relative flex h-full w-full flex-col overflow-hidden bg-white shadow-xl
+                      md:h-auto md:max-h-[88vh] md:w-full md:max-w-lg md:rounded-2xl rounded-t-2xl">
+            <!-- Header -->
+            <div class="flex items-start justify-between gap-3 border-b border-gray-100 p-4">
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">${r.title}</h2>
+                <p class="mt-1 text-sm text-gray-500">${r.description}</p>
+              </div>
+              <button data-action="close" aria-label="Stäng"
+                class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-gray-400 hover:bg-canvas hover:text-gray-700">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M6 6l12 12M18 6L6 18"/></svg>
+              </button>
+            </div>
+
+            <!-- Scrollable body -->
+            <div class="flex-1 overflow-y-auto p-4">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full px-2.5 py-0.5 text-xs font-medium ${diffClass}">${r.difficulty}</span>
+                <span class="text-sm text-gray-500">${r.time_minutes} min</span>
+                ${tags}
+              </div>
+
+              <!-- Servings adjuster -->
+              <div class="mt-4 flex items-center justify-between rounded-xl bg-canvas px-4 py-3">
+                <span class="text-sm font-medium text-gray-700">Portioner</span>
+                <div class="flex items-center gap-3">
+                  <button data-action="dec" aria-label="Färre portioner"
+                    class="grid h-8 w-8 place-items-center rounded-full border border-gray-300 bg-white text-lg leading-none text-gray-700 hover:border-taupe active:scale-95">−</button>
+                  <span id="servingsCount" class="w-6 text-center text-sm font-semibold">${detailServings}</span>
+                  <button data-action="inc" aria-label="Fler portioner"
+                    class="grid h-8 w-8 place-items-center rounded-full border border-gray-300 bg-white text-lg leading-none text-gray-700 hover:border-taupe active:scale-95">+</button>
+                </div>
+              </div>
+
+              <!-- Ingredients -->
+              <h3 class="mb-2 mt-5 text-sm font-semibold text-gray-900">Ingredienser</h3>
+              <div class="space-y-4">${ingredients}</div>
+
+              <!-- Steps -->
+              <h3 class="mb-3 mt-6 text-sm font-semibold text-gray-900">Gör så här</h3>
+              <ol class="space-y-3">${steps}</ol>
+            </div>
+
+            <!-- Footer actions -->
+            <div class="flex items-center gap-2 border-t border-gray-100 p-4">
+              <button data-action="detail-fav" data-id="${r.id}"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gray-200 ${isFav ? "text-taupe" : "text-gray-400"} hover:border-taupe"
+                aria-label="Spara som favorit">
+                ${starIcon(isFav)}
+              </button>
+              <button data-action="detail-plan" data-id="${r.id}"
+                class="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-taupe text-sm font-semibold text-white hover:bg-taupe-dark active:scale-[.99]">
+                Lägg till i veckoplan
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    let closeTimer = null;
+
+    function openDetail(id) {
+      const recipe = appState.recipes.find((r) => r.id === id);
+      if (!recipe) { // unknown id in hash — bail back to the list
+        closeDetail();
+        if (location.hash) location.hash = "";
+        return;
+      }
+      clearTimeout(closeTimer); // cancel any in-flight close animation
+      currentDetail = recipe;
+      detailServings = recipe.servings;
+      document.getElementById("detailRoot").innerHTML = detailMarkup(recipe);
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeDetail() {
+      const root = document.getElementById("detailRoot");
+      const panel = root.querySelector(".anim-panel");
+      const backdrop = root.querySelector(".anim-backdrop");
+      currentDetail = null;
+      if (!panel) { // nothing to animate
+        root.innerHTML = "";
+        document.body.classList.remove("overflow-hidden");
+        return;
+      }
+      panel.classList.add("anim-panel-out");
+      if (backdrop) backdrop.classList.add("anim-backdrop-out");
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        root.innerHTML = "";
+        document.body.classList.remove("overflow-hidden");
+      }, 240);
+    }
+
+    function updateServings(delta) {
+      if (!currentDetail) return;
+      detailServings = Math.max(1, detailServings + delta);
+      const factor = detailServings / currentDetail.servings;
+      document.getElementById("servingsCount").textContent = detailServings;
+      document.querySelectorAll("#detailRoot [data-base]").forEach((el) => {
+        const base = el.getAttribute("data-base");
+        el.textContent = base === "" ? "" : fmtAmount(parseFloat(base) * factor);
+      });
+    }
+
+    function detailToggleFav(id) {
+      toggle(appState.favorites, id);
+      persist();
+      render(); // keep the grid card + header count in sync behind the modal
+      const btn = document.querySelector('#detailRoot [data-action="detail-fav"]');
+      if (btn) {
+        const fav = appState.favorites.includes(id);
+        btn.classList.toggle("text-taupe", fav);
+        btn.classList.toggle("text-gray-400", !fav);
+        btn.innerHTML = starIcon(fav);
+      }
+    }
+
+    function detailAddPlan(id) {
+      if (!inPlan(id)) {
+        appState.weekPlan.push({ id, servings: detailServings || recipeById(id).servings });
+        persist();
+        render();
+        showToast("Tillagd i veckoplan");
+      } else {
+        showToast("Finns redan i veckoplanen");
+      }
+    }
+
+    // ---------- Toast ----------
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.remove("opacity-0", "translate-y-2");
+      t.classList.add("opacity-100", "translate-y-0");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        t.classList.add("opacity-0", "translate-y-2");
+        t.classList.remove("opacity-100", "translate-y-0");
+      }, 2500);
+    }
+
+    // ---------- Routing (#recept/<id>) ----------
+    function openRecipe(id) {
+      location.hash = "recept/" + encodeURIComponent(id);
+    }
+
+    function closeFromUI() {
+      if (location.hash) history.back(); // returns to the list entry -> hashchange closes
+      else closeDetail();
+    }
+
+    function handleRoute() {
+      const m = location.hash.match(/^#recept\/(.+)$/);
+      if (m) openDetail(decodeURIComponent(m[1]));
+      else closeDetail();
+    }
+
+    function wireDetailEvents() {
+      document.getElementById("detailRoot").addEventListener("click", (e) => {
+        const el = e.target.closest("[data-action]");
+        if (!el) return;
+        const a = el.dataset.action;
+        if (a === "close") closeFromUI();
+        else if (a === "dec") updateServings(-1);
+        else if (a === "inc") updateServings(1);
+        else if (a === "detail-fav") detailToggleFav(el.dataset.id);
+        else if (a === "detail-plan") detailAddPlan(el.dataset.id);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && currentDetail) closeFromUI();
+      });
+      window.addEventListener("hashchange", handleRoute);
+    }
+
+    // ---------- Init ----------
+    async function init() {
+      loadState();
+      wireEvents();
+      wireDetailEvents();
+      try {
+        const res = await fetch("recipes.json");
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        appState.recipes = await res.json();
+      } catch (err) {
+        const isFile = location.protocol === "file:";
+        document.getElementById("grid").innerHTML = `
+          <div class="col-span-full mx-auto max-w-md rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-gray-100">
+            <div class="mx-auto mb-3 h-10 w-10 text-gray-300">
+              <svg viewBox="0 0 24 24" class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">Kunde inte ladda recepten</p>
+            ${isFile
+              ? `<p class="mt-2 text-xs leading-relaxed text-gray-500">Appen är en PWA och måste köras via en lokal webbserver — webbläsaren tillåter inte att <code class="rounded bg-canvas px-1">recipes.json</code> hämtas direkt från <code class="rounded bg-canvas px-1">file://</code>.</p>
+                 <p class="mt-3 text-xs text-gray-500">Starta en server i projektmappen:</p>
+                 <pre class="mt-1 overflow-x-auto rounded-lg bg-canvas px-3 py-2 text-left text-xs text-gray-700">python -m http.server 4173</pre>
+                 <p class="mt-2 text-xs text-gray-500">och öppna <a href="http://localhost:4173" class="text-taupe underline">http://localhost:4173</a></p>`
+              : `<p class="mt-2 text-xs text-gray-500">Kontrollera att <code class="rounded bg-canvas px-1">recipes.json</code> finns i samma mapp och är giltig JSON.</p>`
+            }
+          </div>`;
+        return;
+      }
+
+      // Resolve any migrated/unknown weekPlan entries now that recipes exist.
+      appState.weekPlan = appState.weekPlan.filter((e) => recipeById(e.id));
+      appState.weekPlan.forEach((e) => {
+        if (e.servings == null) e.servings = recipeById(e.id).servings;
+      });
+      persist();
+
+      render();
+
+      // Deep link: ensure a list history entry sits behind the opened recipe
+      // so the close button / back gesture returns to the grid, not off-site.
+      const deep = location.hash.match(/^#recept\/(.+)$/);
+      if (deep) {
+        history.replaceState(null, "", location.pathname + location.search);
+        history.pushState(null, "", "#recept/" + deep[1]);
+      }
+      handleRoute();
+    }
+
+    // Register the service worker (guarded — skips file:// where SWs aren't allowed).
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").catch(() => {});
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>

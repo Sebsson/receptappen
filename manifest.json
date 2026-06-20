@@ -1,0 +1,20 @@
+{
+  "name": "Recept",
+  "short_name": "Recept",
+  "description": "Recept, veckoplan och inköpslista – helt offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#7c6f5b",
+  "background_color": "#f5f5f3",
+  "lang": "sv",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
