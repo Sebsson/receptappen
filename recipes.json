@@ -1,178 +1,3059 @@
 [
   {
-    "id": "krämig-svamppasta",
-    "title": "Krämig svamppasta",
-    "description": "Fyllig pasta med stekt skogssvamp och parmesan som blir klar på en kvart.",
+    "id": "potatis-och-purjolokssoppa",
+    "title": "Potatis- och purjolökssoppa",
+    "description": "Len och mättande soppa på potatis och purjolök, toppad med bacon och persilja.",
     "image": "",
-    "tags": ["vegetariskt", "snabbt"],
-    "cuisine": "italienskt",
-    "difficulty": "lätt",
-    "time_minutes": 20,
-    "servings": 4,
-    "ingredients": [
-      { "amount": 400, "unit": "g", "name": "tagliatelle", "category": "torrvaror" },
-      { "amount": 300, "unit": "g", "name": "blandad svamp", "category": "grönsaker" },
-      { "amount": 2, "unit": "dl", "name": "vispgrädde", "category": "mejeri" },
-      { "amount": 50, "unit": "g", "name": "riven parmesan", "category": "mejeri" },
-      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
-      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
-      { "amount": 1, "unit": "msk", "name": "smör", "category": "mejeri" },
-      { "amount": 1, "unit": "krm", "name": "salt", "category": "kryddor" },
-      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+    "tags": [
+      "vegetariskt",
+      "soppa",
+      "matlådevänligt"
     ],
-    "steps": [
-      "Koka pastan enligt anvisning på paketet i rikligt med saltat vatten.",
-      "Hacka lök och vitlök fint och skiva svampen.",
-      "Stek svampen i smör tills den fått fin färg, tillsätt lök och vitlök.",
-      "Häll i grädden och låt sjuda någon minut, rör ner parmesanen.",
-      "Smaka av med salt och peppar och blanda i den avrunna pastan."
-    ]
-  },
-  {
-    "id": "rotfruktsgryta-med-kikärtor",
-    "title": "Rotfruktsgryta med kikärtor",
-    "description": "Mustig vegetarisk gryta med rotfrukter och kikärtor som värmer en kall dag.",
-    "image": "",
-    "tags": ["vegetariskt", "matlådevänligt"],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 45,
     "servings": 4,
     "ingredients": [
-      { "amount": 2, "unit": "st", "name": "morötter", "category": "grönsaker" },
-      { "amount": 1, "unit": "st", "name": "palsternacka", "category": "grönsaker" },
-      { "amount": 0.5, "unit": "st", "name": "rotselleri", "category": "grönsaker" },
-      { "amount": 1, "unit": "burk", "name": "kikärtor", "category": "torrvaror" },
-      { "amount": 1, "unit": "burk", "name": "krossade tomater", "category": "torrvaror" },
-      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
-      { "amount": 5, "unit": "dl", "name": "grönsaksbuljong", "category": "övrigt" },
-      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
-      { "amount": 2, "unit": "tsk", "name": "spiskummin", "category": "kryddor" },
-      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "potatis",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "purjolök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "torkad timjan",
+        "category": "kryddor"
+      },
+      {
+        "amount": 10,
+        "unit": "dl",
+        "name": "grönsaksbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 3,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
     ],
     "steps": [
-      "Skala och tärna alla rotfrukter och lök.",
-      "Fräs löken mjuk i olivolja i en stor gryta.",
-      "Tillsätt rotfrukterna och spiskummin och stek några minuter.",
-      "Häll i krossade tomater, buljong och kikärtor.",
-      "Låt grytan sjuda under lock i cirka 25 minuter tills rotfrukterna är mjuka.",
-      "Smaka av med salt och servera gärna med bröd."
+      "Skala och skiva potatisen. Skölj, ansa och strimla purjolöken.",
+      "Fräs purjolöken i oljan i en stor kastrull ca 2 minuter.",
+      "Tillsätt potatis, timjan och buljong. Låt koka ca 15 minuter tills potatisen är mjuk.",
+      "Mixa soppan slät med en stavmixer.",
+      "Häll i grädden och koka upp. Smaka av med salt och peppar.",
+      "Servera gärna med stekt bacon och hackad persilja."
     ]
   },
   {
-    "id": "ugnsbakad-lax-med-dill",
-    "title": "Ugnsbakad lax med dill",
-    "description": "Saftig laxfilé bakad i ugn med citron och färsk dill.",
+    "id": "loksoppa",
+    "title": "Löksoppa",
+    "description": "Klassisk fransk löksoppa med karamelliserad lök, vitt vin och gratinerad ost.",
     "image": "",
-    "tags": ["fisk", "nyttigt"],
+    "tags": [
+      "soppa",
+      "klassiker"
+    ],
+    "cuisine": "franskt",
+    "difficulty": "medel",
+    "time_minutes": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 5,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 10,
+        "unit": "dl",
+        "name": "höns- eller grönsaksbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "torrt vitt vin",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "tamarisoja",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "kvist",
+        "name": "timjan",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "lagerblad",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 4,
+        "unit": "skivor",
+        "name": "vitt bröd",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör (till brödtärningar)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "lagrad ost eller gruyère (skivad)",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Skala och skiva löken tunt. Fräs mjuk i smör utan att ta färg, 10–15 minuter.",
+      "Tillsätt buljong, vin, timjan och lagerblad. Låt koka 10 minuter.",
+      "Smaka av med soja, salt och peppar.",
+      "Skär brödet i grova tärningar och fräs gyllenbrun i smör.",
+      "Fördela soppan i ugnssäkra portionsformar. Lägg i brödtärningar och täck med ostskivor.",
+      "Gratinera högt upp i ugnen på 250° (grillfunktion) tills osten fått fin färg. Servera direkt."
+    ]
+  },
+  {
+    "id": "spenatsoppa",
+    "title": "Spenatsoppa",
+    "description": "Snabb och grön spenatsoppa med grädde och mild smak.",
+    "image": "",
+    "tags": [
+      "vegetariskt",
+      "soppa",
+      "snabbt"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "förväld eller fryst grovhackad spenat",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 10,
+        "unit": "dl",
+        "name": "höns- eller grönsaksbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "vitpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skala och hacka löken.",
+      "Fräs spenat och lök mjuka i smör utan att ta färg.",
+      "Häll på buljongen och grädden och koka upp.",
+      "Låt koka i 2–3 minuter så att soppan fortfarande är grön.",
+      "Smaka av med salt och peppar och servera genast."
+    ]
+  },
+  {
+    "id": "tomatsoppa",
+    "title": "Tomatsoppa",
+    "description": "Fyllig tomatsoppa tillagad från grunden med färska tomater och grädde, toppad med bacon och ädelost.",
+    "image": "",
+    "tags": [
+      "soppa",
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "medel",
+    "time_minutes": 60,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 1000,
+        "unit": "g",
+        "name": "tomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "klyftor",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "purjolök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "stor morot",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 8,
+        "unit": "dl",
+        "name": "grönsaksbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 4,
+        "unit": "msk",
+        "name": "tomatpuré",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "lagerblad",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "kvistar",
+        "name": "torkad timjan",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "torkad chilifrukt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skålla tomaterna i kokande vatten, dra av skalet och skär i bitar.",
+      "Skala och skiva lök, vitlök och morot. Skölj och skiva purjolöken.",
+      "Lägg grönsakerna i en kastrull med buljong, lagerblad, timjan och chili. Koka 30 minuter.",
+      "Tillsätt tomaterna och mixa soppan slät, sila sedan om du vill.",
+      "Vispa ner tomatpuré och grädde och låt soppan koka i några minuter.",
+      "Smaka av med salt och peppar. Servera med knaperstekt bacon och ädelost."
+    ]
+  },
+  {
+    "id": "biff-a-la-lindstrom",
+    "title": "Biff à la Lindström",
+    "description": "Saftiga biffar av nötfärs med rödbetor och kapris, en svensk klassiker.",
+    "image": "",
+    "tags": [
+      "kött",
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "medel",
     "time_minutes": 30,
     "servings": 4,
     "ingredients": [
-      { "amount": 600, "unit": "g", "name": "laxfilé", "category": "kött & fisk" },
-      { "amount": 1, "unit": "st", "name": "citron", "category": "grönsaker" },
-      { "amount": 1, "unit": "knippe", "name": "färsk dill", "category": "grönsaker" },
-      { "amount": 2, "unit": "msk", "name": "smör", "category": "mejeri" },
-      { "amount": 1, "unit": "tsk", "name": "flingsalt", "category": "kryddor" },
-      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "nötfärs",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 0.5,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "köttbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "hackade inlagda rödbetor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "hackad gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "hackad kapris",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör (till stekning)",
+        "category": "mejeri"
+      }
     ],
     "steps": [
-      "Sätt ugnen på 200 grader.",
-      "Lägg laxen i en smord ugnsform med skinnsidan nedåt.",
-      "Klicka smör över laxen och pressa över saften från en halv citron.",
-      "Strö över salt, peppar och hackad dill.",
-      "Baka i ugnen i cirka 15–18 minuter tills laxen är genomgången.",
-      "Servera med citronklyftor och kokt potatis."
+      "Arbeta samman färsen med ägget. Späd med grädde och buljong.",
+      "Blanda ner rödbetor, lök och kapris. Smaksätt med salt och peppar.",
+      "Forma färsen till runda biffar, ca 8 stycken.",
+      "Bryn biffarna på båda sidor i smör i en stekpanna.",
+      "Servera med stekt potatis och sallad."
     ]
   },
   {
-    "id": "kycklinggryta-med-curry",
-    "title": "Kycklinggryta med curry",
-    "description": "Krämig kycklinggryta med kokosmjölk och mild curry, perfekt över ris.",
+    "id": "sjomansbiff",
+    "title": "Sjömansbiff",
+    "description": "Mört nötkött tillagat i gryta med potatis, lök och öl – en mustig gammaldags husmansmåltid.",
     "image": "",
-    "tags": ["kyckling", "matlådevänligt"],
-    "cuisine": "indiskt",
+    "tags": [
+      "kött",
+      "klassiker",
+      "matlådevänligt"
+    ],
+    "cuisine": "svenskt",
     "difficulty": "medel",
-    "time_minutes": 35,
+    "time_minutes": 90,
     "servings": 4,
     "ingredients": [
-      { "amount": 500, "unit": "g", "name": "kycklingfilé", "category": "kött & fisk" },
-      { "amount": 1, "unit": "burk", "name": "kokosmjölk", "category": "torrvaror" },
-      { "amount": 1, "unit": "st", "name": "röd paprika", "category": "grönsaker" },
-      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
-      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
-      { "amount": 2, "unit": "msk", "name": "currypasta", "category": "kryddor" },
-      { "amount": 1, "unit": "msk", "name": "rapsolja", "category": "övrigt" },
-      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "innanlår eller fransyska (6–8 skivor)",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "potatis",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 3,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 330,
+        "unit": "ml",
+        "name": "ljus lageröl",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "köttbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "lagerblad",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "vitpeppar",
+        "category": "kryddor"
+      }
     ],
     "steps": [
-      "Skär kycklingen i bitar och tärna lök och paprika.",
-      "Bryn kycklingen i olja tills den fått färg, lägg åt sidan.",
-      "Fräs lök, vitlök och currypasta i samma gryta.",
-      "Häll i kokosmjölk och låt sjuda, lägg tillbaka kycklingen.",
-      "Tillsätt paprika och låt grytan puttra i 15 minuter.",
-      "Smaka av med salt och servera med kokt ris."
+      "Skala potatisen och skär i tjocka skivor. Skala och skiva löken tunt.",
+      "Bryn löken i smör tills mjuk, ta upp. Bryn köttskivorna på båda sidor, krydda med salt och peppar.",
+      "Häll öl och buljong i stekpannan, koka upp och vispa ur pannan, sila skyn.",
+      "Varva kött, potatis och lök i en stekgryta – potatis underst och överst.",
+      "Häll på vätskan och lägg i lagerbladen. Låt koka under lock på svag värme 40–60 minuter tills köttet är mört.",
+      "Servera med saltgurka och garnera med hackad persilja."
     ]
   },
   {
-    "id": "spaghetti-bolognese",
-    "title": "Spaghetti bolognese",
-    "description": "Klassisk köttfärssås som får sjuda länge och serveras med spaghetti.",
+    "id": "kottfarslimpa-med-ugnsstekta-tomater",
+    "title": "Köttfärslimpa med ugnsstekta tomater",
+    "description": "Saftig köttfärslimpa inlindad i bacon, serverad med ugnsstekta tomater och potatis.",
     "image": "",
-    "tags": ["pasta", "klassiker"],
-    "cuisine": "italienskt",
+    "tags": [
+      "kött",
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "medel",
+    "time_minutes": 75,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "nötfärs",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 0.5,
+        "unit": "dl",
+        "name": "ströbröd",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "mjölk eller grädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "liten gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 140,
+        "unit": "g",
+        "name": "bacon (1 paket)",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "stora tomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "rödlök",
+        "category": "grönsaker"
+      }
+    ],
+    "steps": [
+      "Värm ugnen till 175°. Låt ströbrödet svälla i mjölken 10 minuter.",
+      "Skala och finhacka löken. Stek mjuk i smör utan att ta färg, låt svalna.",
+      "Blanda färs, ströbrödsblandning, ägg, lök, salt och peppar. Arbeta väl.",
+      "Forma till en avlång limpa. Täck med baconskivor och lägg i smord ugnsform.",
+      "Halvera tomaterna, strimla rödlöken och lägg runt limpan. Salta och peppra.",
+      "Stek i ugnen 45–60 minuter. Servera med kokt potatis eller potatismos."
+    ]
+  },
+  {
+    "id": "kottbullar-med-potatismos",
+    "title": "Köttbullar med potatismos",
+    "description": "Svenska köttbullar med krämigt potatismos – en oslagbar klassiker.",
+    "image": "",
+    "tags": [
+      "kött",
+      "klassiker",
+      "matlådevänligt"
+    ],
+    "cuisine": "svenskt",
     "difficulty": "medel",
     "time_minutes": 50,
     "servings": 4,
     "ingredients": [
-      { "amount": 400, "unit": "g", "name": "spaghetti", "category": "torrvaror" },
-      { "amount": 500, "unit": "g", "name": "nötfärs", "category": "kött & fisk" },
-      { "amount": 1, "unit": "burk", "name": "krossade tomater", "category": "torrvaror" },
-      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
-      { "amount": 1, "unit": "st", "name": "morot", "category": "grönsaker" },
-      { "amount": 2, "unit": "klyftor", "name": "vitlök", "category": "grönsaker" },
-      { "amount": 2, "unit": "msk", "name": "tomatpuré", "category": "torrvaror" },
-      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
-      { "amount": 1, "unit": "tsk", "name": "torkad oregano", "category": "kryddor" },
-      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" }
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "nötfärs",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 0.5,
+        "unit": "dl",
+        "name": "ströbröd",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "liten gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "vitpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "potatis (8–10 st)",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "smör (till mos)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "vispgrädde (till mos)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "riven muskot",
+        "category": "kryddor"
+      }
     ],
     "steps": [
-      "Hacka lök, vitlök och morot fint.",
-      "Fräs grönsakerna mjuka i olivolja i en stor kastrull.",
-      "Tillsätt nötfärsen och bryn tills den är genomstekt.",
-      "Rör i tomatpuré och oregano och stek ytterligare en minut.",
-      "Häll i krossade tomater och låt såsen sjuda i minst 30 minuter.",
-      "Koka spaghettin under tiden och smaka av såsen med salt innan servering."
+      "Låt ströbrödet svälla i grädden. Finhacka löken och fräs mjuk i smör, låt svalna.",
+      "Blanda färsen med lök, ströbrödsblandning och ägg. Smaksätt med salt och peppar.",
+      "Forma till små bullar och bryn dem på hög värme i smör. Sänk värmen och efterstek 3–5 minuter.",
+      "Koka potatisen mjuk, häll av vattnet och stöt till mos.",
+      "Rör ner smör, mjölk och grädde i moset. Smaka av med muskot, salt och peppar.",
+      "Servera köttbullarna med potatismoset, gräddsås och rårörda lingon."
     ]
   },
   {
-    "id": "morotssoppa-med-ingefära",
-    "title": "Morotssoppa med ingefära",
-    "description": "Len och värmande morotssoppa med en pigg touch av ingefära.",
+    "id": "spaghetti-med-kottfarssas",
+    "title": "Spaghetti med köttfärssås",
+    "description": "Rik köttfärssås med champinjoner och rökt fläsk som får sjuda länge.",
     "image": "",
-    "tags": ["vegetariskt", "soppa", "snabbt"],
+    "tags": [
+      "pasta",
+      "klassiker",
+      "matlådevänligt"
+    ],
+    "cuisine": "italienskt",
+    "difficulty": "medel",
+    "time_minutes": 60,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "spaghetti",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "nötfärs",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "rökt sidfläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "champinjoner",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 4,
+        "unit": "klyftor",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "morot",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "tomatpuré",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 450,
+        "unit": "g",
+        "name": "passerade tomater",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "riven parmesanost",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Finhacka sidfläsket och champinjonerna. Skala och finhacka vitlök och tärna moroten.",
+      "Bryn köttfärsen i smör och lägg i stekgryta. Bryn sidfläsk, champinjoner, vitlök och morot i olivolja.",
+      "Tillsätt tomatpurén, rör om och lägg alltsamman i grytan.",
+      "Häll i de passerade tomaterna och smaka av med salt och peppar.",
+      "Låt grytan puttra på svag värme i 30–40 minuter under lock.",
+      "Koka spaghettin al dente och blanda med såsen. Servera med riven parmesan."
+    ]
+  },
+  {
+    "id": "stekt-flask-med-loksas",
+    "title": "Stekt fläsk med löksås",
+    "description": "Knaperstekt sidfläsk med len löksås och kokt potatis – husmanskost på topp.",
+    "image": "",
+    "tags": [
+      "kött",
+      "klassiker"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 30,
     "servings": 4,
     "ingredients": [
-      { "amount": 600, "unit": "g", "name": "morötter", "category": "grönsaker" },
-      { "amount": 1, "unit": "st", "name": "gul lök", "category": "grönsaker" },
-      { "amount": 2, "unit": "cm", "name": "färsk ingefära", "category": "grönsaker" },
-      { "amount": 2, "unit": "dl", "name": "kokosmjölk", "category": "torrvaror" },
-      { "amount": 7, "unit": "dl", "name": "grönsaksbuljong", "category": "övrigt" },
-      { "amount": 1, "unit": "msk", "name": "olivolja", "category": "övrigt" },
-      { "amount": 1, "unit": "tsk", "name": "salt", "category": "kryddor" },
-      { "amount": 1, "unit": "krm", "name": "svartpeppar", "category": "kryddor" }
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "skivat rimmat sidfläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
     ],
     "steps": [
-      "Skala och skiva morötter, lök och ingefära.",
-      "Fräs lök och ingefära mjuka i olivolja i en kastrull.",
-      "Tillsätt morötterna och häll på buljongen.",
-      "Låt koka under lock tills morötterna är mjuka, cirka 15 minuter.",
-      "Mixa soppan slät och rör ner kokosmjölken.",
-      "Smaka av med salt och peppar och värm upp igen innan servering."
+      "Skala och finhacka löken. Fräs mjuk i smör utan att ta färg.",
+      "Pudra över mjöl och rör om. Späd med mjölk och grädde under omrörning.",
+      "Låt koka upp och sjuda ca 10 minuter under omrörning. Smaka av med salt och peppar.",
+      "Knaperstek fläsket i en separat stekpanna.",
+      "Servera fläsket med löksåsen och kokt potatis. Garnera med hackad persilja."
+    ]
+  },
+  {
+    "id": "makaronipudding",
+    "title": "Makaronipudding",
+    "description": "En gammal svensk husmanskostklassiker – ugnsgräddade makaroner med sidfläsk och ost.",
+    "image": "",
+    "tags": [
+      "klassiker",
+      "matlådevänligt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 60,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 4,
+        "unit": "dl",
+        "name": "Idealmakaroner (råa)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 250,
+        "unit": "g",
+        "name": "rimmat sidfläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "grovriven lagrad ost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "vispgrädde och mjölk (blandat)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Värm ugnen till 200°. Koka makaronerna och låt rinna av.",
+      "Strimla fläsket och finhacka löken. Bryn dem tillsammans på hög värme.",
+      "Vispa ihop ägg, grädde, mjölk, salt och peppar till äggstanning.",
+      "Varva makaroner, fläsk och lök och det mesta av osten i en smord ugnsform.",
+      "Häll på äggstanningen och strö resten av osten över. Täck med aluminiumfolie.",
+      "Grädda 30–40 minuter. Ta av folien de sista 10 minuterna. Servera med ketchup eller lingonsylt."
+    ]
+  },
+  {
+    "id": "pyttipanna",
+    "title": "Pyttipanna",
+    "description": "En god resträtt på kokt potatis och blandade charkvaror, serverad med stekt ägg och rödbetor.",
+    "image": "",
+    "tags": [
+      "klassiker",
+      "snabbt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "kokt skalad potatis",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "rökt fläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "kokt eller rökt skinka",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "korv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 4,
+        "unit": "msk",
+        "name": "smör (till stekning)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "ägg (till servering)",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Tärna potatis, kött och korv i lika stora bitar. Skala och tärna löken.",
+      "Stek potatisen gyllenbrun i smör i en stor stekpanna.",
+      "Tillsätt kött, korv och lök. Stek ihop och rör om. Smaka av med salt, peppar och mejram.",
+      "Stek äggen separat och lägg på toppen.",
+      "Servera med inlagda rödbetor."
+    ]
+  },
+  {
+    "id": "falukorv-i-ugn-med-tomat-och-ost",
+    "title": "Falukorv i ugn med tomat och ost",
+    "description": "Gratinerad falukorv med senap, tomat och smält ost – snabb vardagsmat.",
+    "image": "",
+    "tags": [
+      "snabbt",
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "falukorv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "fransk senap",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "ketchup",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "tomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "lagrad ost (typ grevé)",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Värm ugnen till 225°. Skär korven i skivor utan att skära rakt igenom.",
+      "Bred senap och ketchup på skivorna.",
+      "Skala och skär löken tunt. Skiva tomater och ost.",
+      "Varva lök, tomat och ost mellan korvskivorna.",
+      "Stek mitt i ugnen 20–25 minuter tills osten smält. Servera med potatismos och grönsaker."
+    ]
+  },
+  {
+    "id": "korv-stroganoff",
+    "title": "Korv stroganoff",
+    "description": "Snabb och smakrik gryta med falukorv i tomat- och gräddsås.",
+    "image": "",
+    "tags": [
+      "snabbt",
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "falukorv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "tomatpuré",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "paprikapulver",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "kumminfrön",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "lagerblad",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "köttbuljong",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "vispgrädde eller kaffegrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skär korven i centimetertjocka stavar. Skala och hacka löken.",
+      "Fräs korv och lök i smör i en stor stekpanna.",
+      "Rör ner tomatpuré, paprikapulver, kummin och lagerblad. Sjud några minuter.",
+      "Späd med buljong och grädde. Låt sjuda tills såsen är simmig.",
+      "Smaka av med salt och peppar. Servera med kokt ris och en klick crème fraiche."
+    ]
+  },
+  {
+    "id": "raggmunk-med-flask",
+    "title": "Raggmunk med fläsk",
+    "description": "Grovrivna potatispannkakor stekta i smör och fläskflott, serverade med rårörda lingon.",
+    "image": "",
+    "tags": [
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "medel",
+    "time_minutes": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "skivat rimmat sidfläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "fast potatis",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 4,
+        "unit": "dl",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör (till stekning)",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Stek fläsket i en torr stekpanna och håll varmt. Spara flottet.",
+      "Vispa ihop mjöl, salt och lite av mjölken till en jämn smet. Vispa ner resten av mjölken och ägget.",
+      "Skala potatisen och riv grovt direkt ner i äggsmeten, rör om.",
+      "Stek raggmunkar i smör och fläskflott, ca ½ dl smet per raggmunk, på medelvärme tills gyllenbruna.",
+      "Servera med fläsket och rårörda lingon."
+    ]
+  },
+  {
+    "id": "flaskpannkaka-med-lingonsylt",
+    "title": "Fläskpannkaka med lingonsylt",
+    "description": "Ugnsgräddad pannkaka med tärnat fläsk – enkel och mättande klassiker.",
+    "image": "",
+    "tags": [
+      "klassiker"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 300,
+        "unit": "g",
+        "name": "rimmat fläsk",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "dl",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Värm ugnen till 225°.",
+      "Vispa ägg, mjöl och hälften av mjölken till en slät smet. Tillsätt resten av mjölken, grädden, salt och peppar.",
+      "Låt smeten vila 10 minuter.",
+      "Tärna fläsket och lägg ut i en långpanna. Stek mitt i ugnen ca 10 minuter.",
+      "Häll pannkakssmeten över fläsket och grädda ytterligare 20–25 minuter.",
+      "Servera med lingonsylt."
+    ]
+  },
+  {
+    "id": "stekt-agg-med-bacon-och-gronsaker",
+    "title": "Stekt ägg med bacon och grönsaker",
+    "description": "Snabb och proteinrik frukost eller lunch med bacon, ägg, tomat och gurka.",
+    "image": "",
+    "tags": [
+      "snabbt",
+      "lågkolhydrat"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 10,
+    "servings": 1,
+    "ingredients": [
+      {
+        "amount": 2,
+        "unit": "skivor",
+        "name": "bacon",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "cocktailtomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "bit",
+        "name": "gurka",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Stek baconet i en torr stekpanna tills knaperstekt.",
+      "Smält smöret i pannan och knäck ner äggen.",
+      "Stek på önskad nivå. Strö på salt och peppar.",
+      "Servera med bacon, cocktailtomater och gurka."
+    ]
+  },
+  {
+    "id": "broccolisoppa-med-halloumi",
+    "title": "Broccolisoppa med halloumi",
+    "description": "Len och grön broccolisoppa toppad med knaperstekt halloumi och broccoli.",
+    "image": "",
+    "tags": [
+      "vegetariskt",
+      "soppa",
+      "snabbt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 2,
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "broccoli",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "klyfta",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 6,
+        "unit": "dl",
+        "name": "vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "grönsaksbuljong-tärning",
+        "category": "övrigt"
+      },
+      {
+        "amount": 75,
+        "unit": "g",
+        "name": "halloumi",
+        "category": "mejeri"
+      },
+      {
+        "amount": 0.25,
+        "unit": "st",
+        "name": "citron (saften)",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skala och strimla lök och vitlök. Skär broccolin i bitar (spara några buketter till topping).",
+      "Hetta upp olja i en kastrull och bryn lök, vitlök och broccoli några minuter.",
+      "Tillsätt vatten och buljong och låt koka 10 minuter.",
+      "Blanda broccolibuketterna med citronsaft, olja, salt och peppar. Skär halloumin i kuber och stek gyllenbrun.",
+      "Mixa soppan slät med stavmixer. Smaka av med salt och peppar.",
+      "Häll upp i skålar och toppa med broccoli och halloumi."
+    ]
+  },
+  {
+    "id": "kycklinggryta-med-korv-och-tomat",
+    "title": "Kycklinggryta med korv och tomat",
+    "description": "Smakrik gryta med kycklinglår, stark korv och grönsaker i tomatbas.",
+    "image": "",
+    "tags": [
+      "kyckling",
+      "matlådevänligt"
+    ],
+    "cuisine": "medelhavet",
+    "difficulty": "medel",
+    "time_minutes": 75,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "kycklinglår med ben",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "stark korv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "klyftor",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "röd paprika",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "tomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "krossade tomater",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "morot",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "squash",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "frysta gröna ärtor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "provençalska örter",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "msk",
+        "name": "stark chilisås",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "flytande honung",
+        "category": "övrigt"
+      },
+      {
+        "amount": 0.5,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      }
+    ],
+    "steps": [
+      "Skala och hacka lök och vitlök. Skär korven i bitar.",
+      "Bryn kyckling, lök, vitlök och korv i olja några minuter. Krydda med salt, peppar och provençalska örter.",
+      "Tillsätt paprika, färska tomater och krossade tomater. Häll i chilisås och honung.",
+      "Låt koka under lock i 1 timme.",
+      "Skala och skiva moroten. Tillsätt morot, squash och ärtor och koka ytterligare 5 minuter.",
+      "Toppa med hackad bladpersilja och servera."
+    ]
+  },
+  {
+    "id": "kyckling-cordon-bleu",
+    "title": "Kyckling cordon bleu",
+    "description": "Kycklingfilé fylld med skinka och ost, panerad och stekt gyllenbrun, serverad med fräsch sallad.",
+    "image": "",
+    "tags": [
+      "kyckling",
+      "festmat"
+    ],
+    "cuisine": "franskt",
+    "difficulty": "medel",
+    "time_minutes": 35,
+    "servings": 2,
+    "ingredients": [
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "tunna kycklingfiléer (4 st)",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 40,
+        "unit": "g",
+        "name": "skivad rökt skinka",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "skivor",
+        "name": "stark ost (t.ex. cheddar)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "pankoströbröd",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "tsk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "rödlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "avokado",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 10,
+        "unit": "st",
+        "name": "cocktailtomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "rucola",
+        "category": "grönsaker"
+      }
+    ],
+    "steps": [
+      "Sätt ugnen på 200°. Strö salt och peppar på kycklingskivorna.",
+      "Lägg skinka och ost på två skivor och täck med de andra två. Tryck ihop.",
+      "Doppa kycklingen i uppvispat ägg och sedan i pankoströbröd.",
+      "Bryn kycklingen ca 2 minuter per sida i smör. Lägg sedan i ugnen 20 minuter.",
+      "Strimla rödlök, skiva avokado och dela cocktailtomaterna.",
+      "Servera kycklingen med rucola, avokado, tomater och rödlök."
+    ]
+  },
+  {
+    "id": "stekt-lax-med-rodbetssallad",
+    "title": "Stekt lax med rödbetssallad",
+    "description": "Panstekt lax med en frisk rödbets- och dillsallad och rostade valnötter.",
+    "image": "",
+    "tags": [
+      "fisk",
+      "nyttigt",
+      "lågkolhydrat"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "amount": 300,
+        "unit": "g",
+        "name": "laxfilé",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "kokta rödbetor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.3,
+        "unit": "st",
+        "name": "rödlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "finhackad dill",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "balsamico",
+        "category": "övrigt"
+      },
+      {
+        "amount": 10,
+        "unit": "st",
+        "name": "valnötter",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "honung",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "näve",
+        "name": "salladsblad",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Dela laxen i två bitar. Strö på salt och peppar.",
+      "Hetta upp olja i en stekpanna och stek laxen 3–4 minuter per sida.",
+      "Skär rödbetorna i tärningar. Finhacka löken. Blanda med dill, olja, balsamico, salt och peppar.",
+      "Rosta valnötterna i torr stekpanna och ringla över honungen.",
+      "Lägg salladsblad på tallrik, toppa med lax och rödbetssallad samt valnötter och dillkvist."
+    ]
+  },
+  {
+    "id": "lax-med-haricots-verts-och-basilikakrame",
+    "title": "Lax med haricots verts och basilikakräme",
+    "description": "Panstekt lax med knapriga haricots verts och en frisk basilikakräme av crème fraiche.",
+    "image": "",
+    "tags": [
+      "fisk",
+      "nyttigt",
+      "lågkolhydrat"
+    ],
+    "cuisine": "medelhavet",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "amount": 300,
+        "unit": "g",
+        "name": "laxfilé",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 10,
+        "unit": "st",
+        "name": "haricots verts",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.5,
+        "unit": "dl",
+        "name": "crème fraiche",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "finhackad färsk basilika",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "citronzest",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "riven parmesanost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Dela laxen i två bitar, salta och peppra.",
+      "Hetta upp olja i en stekpanna och stek laxen 3–4 minuter per sida.",
+      "Koka haricots verts i lättsaltat vatten 1 minut. Häll av.",
+      "Blanda crème fraiche, basilika och citronzest till basilikakräme. Smaka av med salt och peppar.",
+      "Lägg upp lax och haricots verts på tallrik. Toppa med parmesan och en klick basilikakräme."
+    ]
+  },
+  {
+    "id": "ost-och-skinkpaj",
+    "title": "Ost och skinkpaj",
+    "description": "Klassisk pajdeg med smörig fyllning av skinka, ost och äggstanning.",
+    "image": "",
+    "tags": [
+      "klassiker",
+      "matlådevänligt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "medel",
+    "time_minutes": 75,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 3,
+        "unit": "dl",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "smör eller margarin",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "kallt vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 120,
+        "unit": "g",
+        "name": "rökt eller kokt skinka",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "riven ost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "dl",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "paprikapulver",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Finfördela smöret i mjölet till en grynig massa. Tillsätt vattnet och arbeta snabbt ihop till deg.",
+      "Tryck ut degen i en pajform (25 cm). Nagga botten och ställ i kylskåp 30 minuter.",
+      "Värm ugnen till 225°. Förgrädda pajskalet 10 minuter. Sänk till 200°.",
+      "Skär skinkan i strimlor. Vispa ihop ägg, mjölk, salt, peppar och paprikapulver.",
+      "Lägg skinka och ost i pajformen. Häll över äggstanningen.",
+      "Grädda 25 minuter tills äggstanningen stannat. Servera med tomatsallad."
+    ]
+  },
+  {
+    "id": "kramig-pastasallad",
+    "title": "Krämig pastasallad",
+    "description": "Kall pastasallad med pestodressing, grillad paprika, körsbärstomater och parmesan.",
+    "image": "",
+    "tags": [
+      "vegetariskt",
+      "snabbt",
+      "sallad"
+    ],
+    "cuisine": "italienskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 4,
+        "unit": "portioner",
+        "name": "penne-pasta",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 0.5,
+        "unit": "dl",
+        "name": "basilikapesto",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "gräddfil",
+        "category": "mejeri"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "grillad paprika i strimlor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 250,
+        "unit": "g",
+        "name": "körsbärstomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 65,
+        "unit": "g",
+        "name": "babyspenat",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "riven parmesan",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Koka pastan enligt anvisning. Häll av och spola kall.",
+      "Blanda pesto och gräddfil. Smaka av med salt och peppar.",
+      "Låt paprikan rinna av. Dela körsbärstomaterna i halvor.",
+      "Blanda pasta, tomater, paprika och spenat med pestodressingen.",
+      "Strö över parmesanosten. Servera med charkuterier."
+    ]
+  },
+  {
+    "id": "indisk-linsgryta-med-kikarter",
+    "title": "Indisk linsgryta med kikärter",
+    "description": "Enkel och mättande indisk gryta med linser, kikärter, kokosmjölk och garam masala.",
+    "image": "",
+    "tags": [
+      "vegetariskt",
+      "veganskt",
+      "matlådevänligt",
+      "snabbt"
+    ],
+    "cuisine": "indiskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 5,
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "gul lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "olja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "garam masala",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "finriven ingefära",
+        "category": "kryddor"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "krossade tomater med chili",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 400,
+        "unit": "ml",
+        "name": "kokosmjölk",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "gröna linser (förkokt)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "kikärter (förkokt)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Finhacka löken och fräs mjuk i olja.",
+      "Tillsätt garam masala och ingefära och låt fräsa 1 minut.",
+      "Häll i tomater och kokosmjölk. Koka kraftigt utan lock 5 minuter.",
+      "Skölj linser och kikärter. Tillsätt och koka ytterligare 5 minuter.",
+      "Smaka av med salt och servera med basmatiris."
+    ]
+  },
+  {
+    "id": "ugnsstekt-lax-med-citronsas",
+    "title": "Ugnsstekt lax med citronsås",
+    "description": "Lax bakad i ugn med en len citronsås av crème fraiche och fiskbuljong.",
+    "image": "",
+    "tags": [
+      "fisk",
+      "nyttigt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "skinn- och benfri laxfilé",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "vitpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "citron",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "crème fraiche",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1.5,
+        "unit": "dl",
+        "name": "vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "fiskbuljongtärning",
+        "category": "övrigt"
+      },
+      {
+        "amount": 450,
+        "unit": "g",
+        "name": "bladspenat",
+        "category": "grönsaker"
+      }
+    ],
+    "steps": [
+      "Sätt ugnen på 225°. Skär laxen i portionsbitar, salta och peppra.",
+      "Lägg på bakplåtspapper på en plåt och stek mitt i ugnen ca 10 minuter.",
+      "Gör tunna strimlor av citronskalet med zestjärn. Pressa saften.",
+      "Koka ihop crème fraiche, vatten och buljongtärning ca 5 minuter. Smaka av med citronsaft och citronzest.",
+      "Fräs bladspenaten. Servera laxen med citronsåsen, spenaten och kokt potatis."
+    ]
+  },
+  {
+    "id": "pasta-carbonara-med-kycklingbacon",
+    "title": "Pasta carbonara med kycklingbacon",
+    "description": "Krämig äggbaserad carbonara med kycklingbacon och parmesanost – utan grädde.",
+    "image": "",
+    "tags": [
+      "pasta",
+      "snabbt"
+    ],
+    "cuisine": "italienskt",
+    "difficulty": "medel",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 500,
+        "unit": "g",
+        "name": "spaghetti",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "kycklingbacon",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 5,
+        "unit": "msk",
+        "name": "riven parmesanost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 5,
+        "unit": "msk",
+        "name": "riven pecorinoost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "klyfta",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Koka spaghettin i rikligt med saltat vatten (1 minut kortare än anvisning).",
+      "Vispa ihop ägg med salt i en skål.",
+      "Strimla kycklingbaconet och fräs gyllenbrunt i olja och smör. Lägg i vitlöksklyftan hel i 5 min, ta bort den.",
+      "Häll den färdigkokta pastan direkt i stekpannan och blanda 30 sekunder.",
+      "Dra från värmen. Häll i äggsmeten med hälften av ostarna och svartpeppar. Rör tills äggsmeten är krämig men inte klumpig.",
+      "Rör ner resten av osten. Toppa med en äggula och hackad persilja."
+    ]
+  },
+  {
+    "id": "kycklinggryta-med-curry-och-apelsin",
+    "title": "Kycklinggryta med curry och apelsin",
+    "description": "Krämig kycklinggryta med curry, paprika och en touch av apelsin – redo på 30 minuter.",
+    "image": "",
+    "tags": [
+      "kyckling",
+      "snabbt",
+      "matlådevänligt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 700,
+        "unit": "g",
+        "name": "kycklingfilé",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "röda paprikor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "gula lökar",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "curry",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "paprikapulver",
+        "category": "kryddor"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "crème fraiche",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "koncentrerad apelsinjuice",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "kinesisk soja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skär kycklingen i bitar. Kärna ur och skär paprikan i bitar. Skala och skär löken i klyftor.",
+      "Bryn kycklingen i smör i en stor gryta.",
+      "Tillsätt paprika, lök, curry och paprikapulver. Fräs ca 3 minuter.",
+      "Häll i vispgrädde, crème fraiche, apelsinjuice, soja och peppar.",
+      "Låt bli varmt och kontrollera att kycklingen är genomstekt.",
+      "Servera med kokt ris."
+    ]
+  },
+  {
+    "id": "pulled-chicken",
+    "title": "Pulled chicken",
+    "description": "Långkokt kycklinglår i rökt tomatsås som dras isär med gaffel – serveras i bröd med jalapeño.",
+    "image": "",
+    "tags": [
+      "kyckling",
+      "matlådevänligt"
+    ],
+    "cuisine": "amerikanskt",
+    "difficulty": "lätt",
+    "time_minutes": 420,
+    "servings": 5,
+    "ingredients": [
+      {
+        "amount": 800,
+        "unit": "g",
+        "name": "benfria kycklinglår utan skinn",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 250,
+        "unit": "g",
+        "name": "passerade tomater",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "cidervinäger",
+        "category": "övrigt"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "honung",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "chipotle-pasta",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "tomatpuré",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "Worcestershire-sås",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "stor lök (tunt skivad)",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "klyftor",
+        "name": "vitlök (finhackade)",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "tsk",
+        "name": "rökt paprikapulver",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Blanda alla ingredienser utom kycklingen i grytan till en slät sås.",
+      "Lägg i kycklinglåren och täck med såsen.",
+      "Lägg på lock och tillaga på låg värme 6–7 timmar eller hög värme 4–5 timmar.",
+      "Dra isär kycklingen med två gafflar direkt i grytan.",
+      "Red såsen om den är för tunn.",
+      "Servera i bröd med jalapeño och sour cream, eller med ris eller potatismos."
+    ]
+  },
+  {
+    "id": "pasta-med-korv",
+    "title": "Pasta med korv",
+    "description": "Snabb pastasås med korv, morot, paprika och crème fraiche toppad med parmesan.",
+    "image": "",
+    "tags": [
+      "pasta",
+      "snabbt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 450,
+        "unit": "g",
+        "name": "pasta",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 240,
+        "unit": "g",
+        "name": "korv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "morot",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "röd paprika",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "klyftor",
+        "name": "vitlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "pastavatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "crème fraiche",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "tomatpuré",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 0.5,
+        "unit": "msk",
+        "name": "grönsaksfond",
+        "category": "övrigt"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "torkad oregano",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "torkad basilika",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "paprikapulver",
+        "category": "kryddor"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "riven parmesan",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      "Stek korven hel och lägg åt sidan. Koka pastan i saltat vatten, spara 2 dl pastavatten.",
+      "Skala och riv moroten. Skölj och skiva paprikan. Skala vitlöken.",
+      "Stek morot och paprika på hög värme ca 4 minuter. Pressa i vitlök, stek 1 minut till.",
+      "Häll i pastavatten, crème fraiche, tomatpuré, fond och kryddor. Koka upp.",
+      "Skiva korven i slantar, tillsätt och låt puttra 5 minuter.",
+      "Blanda i pastan och servera med riven parmesan och färsk basilika."
+    ]
+  },
+  {
+    "id": "saffranssnittar",
+    "title": "Saffranssnittar",
+    "description": "Gyllenklara saffranskex med pärlsocker – enkla att baka och snabba att äta.",
+    "image": "",
+    "tags": [
+      "bakning",
+      "jul"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 30,
+    "servings": 30,
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "påse",
+        "name": "saffran (0.5 g)",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "smör (rumsvarmt)",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "strösocker",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "ljus sirap",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2.5,
+        "unit": "dl",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "bakpulver",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "pärlsocker",
+        "category": "torrvaror"
+      }
+    ],
+    "steps": [
+      "Sätt ugnen på 180°. Mosa ihop smör, vatten och saffran.",
+      "Blanda ner socker, sirap, mjöl och bakpulver. Knåda snabbt ihop till en deg.",
+      "Dela degen i 3 delar och forma varje del till en ca 30 cm lång rulle.",
+      "Lägg på plåt med bakplåtspapper och platta till med en gaffel.",
+      "Strö på pärlsocker. Grädda mitt i ugnen 10–12 minuter.",
+      "Ta ut och skär snabbt i sneda bitar medan de är varma."
+    ]
+  },
+  {
+    "id": "omelett",
+    "title": "Omelett",
+    "description": "Snabb och enkel omelett med mozzarella och kycklingskinka.",
+    "image": "",
+    "tags": [
+      "snabbt",
+      "lågkolhydrat"
+    ],
+    "cuisine": "franskt",
+    "difficulty": "lätt",
+    "time_minutes": 10,
+    "servings": 1,
+    "ingredients": [
+      {
+        "amount": 2,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "riven mozzarella",
+        "category": "mejeri"
+      },
+      {
+        "amount": 2,
+        "unit": "skivor",
+        "name": "kycklingskinka",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "torkad oregano",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Rör om ägg och salt tills äggen blir luftiga.",
+      "Sätt en teflonpanna på medelhög värme (ca 4 av 6).",
+      "Häll i ägg och rör om tills äggen börjar stelna. Jämna ut och stäng av plattan.",
+      "Lägg på ost och skinka. Låt stå ca 4 minuter tills osten smält.",
+      "Strö på oregano. Rulla sakta äggen till en omelett och rulla ned på tallriken."
+    ]
+  },
+  {
+    "id": "agg-och-tonfisksallad",
+    "title": "Ägg- och tonfisksallad",
+    "description": "Klassisk Nicoise-inspirerad sallad med tonfisk, ägg, haricots verts och vinägerdressing.",
+    "image": "",
+    "tags": [
+      "sallad",
+      "nyttigt"
+    ],
+    "cuisine": "franskt",
+    "difficulty": "lätt",
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "ägg",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "huvudsallad",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "haricots verts",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 8,
+        "unit": "st",
+        "name": "rädisor",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 3,
+        "unit": "st",
+        "name": "tomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "liten röd lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "tonfisk i vatten (2 burkar)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "rödvinsvinäger",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "dijonsenap",
+        "category": "kryddor"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Koka äggen: 3 min för löskokta (till dressing) + 7 min för de övriga. Kyl.",
+      "Koka haricots verts knappt mjuka, spola i kallt vatten.",
+      "Skölj och torka salladen. Skiva rädisor och lök.",
+      "Dressing: Gröp ur det löskokta ägget, vispa med vinäger, senap, olivolja och salt.",
+      "Fördela sallad, grönsaker och tonfisk på tallrikar. Halvera äggen och lägg på.",
+      "Ringla dressingen över. Servera med bröd."
+    ]
+  },
+  {
+    "id": "tunnbrodsrulle-med-rostbiff",
+    "title": "Tunnbrödsrulle med rostbiff",
+    "description": "Mjukt tunnbröd fyllt med rostbiff, kokt potatis och en fräsch kesoröra med äpple.",
+    "image": "",
+    "tags": [
+      "snabbt"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "mjuka tunnbröd",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 400,
+        "unit": "g",
+        "name": "potatis (4 st)",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "rostbiff i tunna skivor",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "salladsblad",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 250,
+        "unit": "g",
+        "name": "keso",
+        "category": "mejeri"
+      },
+      {
+        "amount": 4,
+        "unit": "msk",
+        "name": "lättmajonnäs",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "tsk",
+        "name": "dijonsenap",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "finstrimlad purjolök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "äpple",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "kapris",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "krm",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Skala och koka potatisen i saltat vatten.",
+      "Blanda keso, majonnäs, senap och purjolök. Tärna äpplet och rör ner med kapris, salt och peppar.",
+      "Lägg salladsblad och rostbiff på tunnbröden.",
+      "Lägg varm potatis på och mosa lätt med en gaffel.",
+      "Fördela kesoröran över. Rulla ihop tunnbröden och servera."
+    ]
+  },
+  {
+    "id": "fetaostlax-med-varm-quinoasallad",
+    "title": "Fetaostlax med varm quinoasallad",
+    "description": "Ugnsbakad lax täckt med fetaost och yoghurt, serverad med varm quinoasallad och rucola.",
+    "image": "",
+    "tags": [
+      "fisk",
+      "nyttigt"
+    ],
+    "cuisine": "medelhavet",
+    "difficulty": "medel",
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "amount": 600,
+        "unit": "g",
+        "name": "lax (4 bitar)",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "fetaost",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "turkisk yoghurt",
+        "category": "mejeri"
+      },
+      {
+        "amount": 0.5,
+        "unit": "tsk",
+        "name": "torkad timjan",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "vitpeppar",
+        "category": "kryddor"
+      },
+      {
+        "amount": 2,
+        "unit": "dl",
+        "name": "quinoa",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 4,
+        "unit": "dl",
+        "name": "vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "stor röd lök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "olivolja",
+        "category": "övrigt"
+      },
+      {
+        "amount": 250,
+        "unit": "g",
+        "name": "cocktailtomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 50,
+        "unit": "g",
+        "name": "rucola",
+        "category": "grönsaker"
+      }
+    ],
+    "steps": [
+      "Sätt ugnen på 225°. Skölj quinoan och koka i saltat vatten ca 15 minuter tills vätskan kokat in.",
+      "Salta och peppra laxen. Lägg på bakplåtspapper.",
+      "Rör ihop fetaost, yoghurt och timjan med en gaffel. Fördela över laxen.",
+      "Stek laxen mitt i ugnen 12–15 minuter tills osten börjar få färg.",
+      "Finhacka och fräs löken i olja. Blanda ner quinoa, tomater och rucola. Smaka av.",
+      "Servera laxen varm med quinoasalladen."
+    ]
+  },
+  {
+    "id": "coleslaw-med-chorizo",
+    "title": "Coleslaw med chorizo",
+    "description": "Krispig hemgjord coleslaw med majonnäsdressing serverad med stekt chorizo.",
+    "image": "",
+    "tags": [
+      "snabbt",
+      "lågkolhydrat"
+    ],
+    "cuisine": "amerikanskt",
+    "difficulty": "lätt",
+    "time_minutes": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "amount": 350,
+        "unit": "g",
+        "name": "chorizokorv",
+        "category": "kött & fisk"
+      },
+      {
+        "amount": 6,
+        "unit": "dl",
+        "name": "strimlad vitkål",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 0.5,
+        "unit": "st",
+        "name": "rödlök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "morot",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "sötstark senap",
+        "category": "kryddor"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "majonnäs",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "gräddfil",
+        "category": "mejeri"
+      },
+      {
+        "amount": 6,
+        "unit": "st",
+        "name": "cocktailtomater",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 2,
+        "unit": "msk",
+        "name": "hackad gräslök",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "krm",
+        "name": "svartpeppar",
+        "category": "kryddor"
+      }
+    ],
+    "steps": [
+      "Strimla vitkålen. Skala och strimla rödlöken. Skala och riv moroten.",
+      "Blanda vitkål, lök och morot med senap, majonnäs och gräddfil. Smaka av med salt och peppar.",
+      "Stek chorizokorven i lite olja runt om 7–8 minuter.",
+      "Lägg coleslaw på salladsblad och toppa med cocktailtomater och gräslök.",
+      "Lägg korvarna bredvid och servera."
+    ]
+  },
+  {
+    "id": "mormors-brod",
+    "title": "Mormors bröd",
+    "description": "Klassiska portionsbröd med rågsikt och solrosfrön – enkla att jäsa och grädda.",
+    "image": "",
+    "tags": [
+      "bakning"
+    ],
+    "cuisine": "svenskt",
+    "difficulty": "lätt",
+    "time_minutes": 80,
+    "servings": 16,
+    "ingredients": [
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "fingervarm vätska (mjölk/vatten 50/50)",
+        "category": "övrigt"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "jästkaka (50 g)",
+        "category": "övrigt"
+      },
+      {
+        "amount": 2,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "solrosfrön",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 1,
+        "unit": "dl",
+        "name": "grahamsmjöl",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "rågsikt",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 5,
+        "unit": "dl",
+        "name": "vetemjöl",
+        "category": "torrvaror"
+      }
+    ],
+    "steps": [
+      "Smula ner jästen i fingervarma vätskan och rör tills löst.",
+      "Tillsätt salt och solrosfrön.",
+      "Blanda i mjölet – lämna ca 1 dl till utbakning. Rör ihop till en kletig deg.",
+      "Strö lite mjöl över, täck och låt jäsa 30–40 minuter.",
+      "Stjälp ut på mjölat bord, skär i bitar och forma till portionsbröd.",
+      "Lägg på plåt, jäs 30 min. Grädda i 225–250° högt upp i ugnen 10–12 minuter tills gyllenbruna."
     ]
   }
 ]
