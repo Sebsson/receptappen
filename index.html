@@ -95,14 +95,22 @@
             class="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm shadow-sm outline-none focus:border-taupe focus:ring-1 focus:ring-taupe"
           />
           <button
+            id="filterBtn"
+            title="Filter"
+            aria-label="Filter"
+            class="relative grid h-[42px] w-[42px] shrink-0 place-items-center rounded-xl border border-gray-200 bg-white text-gray-600 shadow-sm transition hover:border-taupe active:scale-95"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
+            <span id="filterCount" class="hidden absolute -right-1.5 -top-1.5 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-taupe px-1 text-[10px] font-semibold leading-none text-white">0</span>
+          </button>
+          <button
             id="shuffleBtn"
             title="Slumpa ett recept"
             aria-label="Slumpa ett recept"
             class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-xl border border-gray-200 bg-white text-lg shadow-sm transition hover:border-taupe active:scale-95"
           >🎲</button>
         </div>
-        <div id="chipFilters" class="flex flex-wrap gap-2"></div>
-        <div id="categoryFilters" class="flex flex-wrap gap-2"></div>
+        <div id="activeFilters" class="hidden flex-wrap gap-2"></div>
       </div>
     </div>
   </header>
@@ -135,6 +143,9 @@
 
   <!-- Detaljvy (modal/bottom sheet) renderas här -->
   <div id="detailRoot"></div>
+
+  <!-- Filter-popup (modal/bottom sheet) renderas här -->
+  <div id="filterRoot"></div>
 
   <!-- Bekräftelse-toast -->
   <div
@@ -376,34 +387,168 @@
         </article>`;
     }
 
-    function renderChips() {
-      const container = document.getElementById("chipFilters");
-      container.innerHTML = FILTER_CHIPS.map((c) => {
-        const active = appState.filter.chips.includes(c.id);
-        return `<button
-          data-action="chip" data-chip="${c.id}"
-          aria-pressed="${active}"
-          class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
-            active
-              ? "border-taupe bg-taupe text-white"
-              : "border-gray-200 bg-white text-gray-600 hover:border-taupe"
-          }">${c.label}</button>`;
-      }).join("");
+    // Total number of active filters (quick chips + categories), used for the
+    // count badge on the Filter button and the "Visa X recept" footer label.
+    function activeFilterCount() {
+      return appState.filter.chips.length + appState.filter.categories.length;
     }
 
-    function renderCategories() {
-      const container = document.getElementById("categoryFilters");
-      container.innerHTML = RECIPE_CATEGORIES.map((cat) => {
-        const active = appState.filter.categories.includes(cat);
-        return `<button
-          data-action="cat" data-cat="${cat}"
-          aria-pressed="${active}"
-          class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
-            active
-              ? "border-taupe bg-taupe text-white"
-              : "border-gray-200 bg-white text-gray-500 hover:border-taupe"
-          }">${capitalize(cat)}</button>`;
-      }).join("");
+    // A toggle pill used inside the filter popup. `action` is "chip" | "cat".
+    function filterPill(action, value, label, active) {
+      return `<button
+        data-action="${action}" data-${action}="${value}"
+        aria-pressed="${active}"
+        class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+          active
+            ? "border-taupe bg-taupe text-white"
+            : "border-gray-200 bg-white text-gray-600 hover:border-taupe"
+        }">${label}</button>`;
+    }
+
+    // A removable pill shown in the header for each active filter.
+    function activePill(action, value, label) {
+      return `<button
+        data-action="${action}" data-${action}="${value}"
+        title="Ta bort filter"
+        class="inline-flex items-center gap-1 rounded-full bg-taupe px-3 py-1 text-xs font-medium text-white transition hover:bg-taupe-dark">
+        ${label}
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>`;
+    }
+
+    // Updates the Filter button's count badge / active styling.
+    function renderFilterButton() {
+      const n = activeFilterCount();
+      const badge = document.getElementById("filterCount");
+      badge.textContent = n;
+      badge.classList.toggle("hidden", n === 0);
+      const btn = document.getElementById("filterBtn");
+      btn.classList.toggle("border-taupe", n > 0);
+      btn.classList.toggle("text-taupe", n > 0);
+    }
+
+    // Renders the row of removable active-filter pills below the search field.
+    // Hidden entirely when no filters are active, so it costs zero space.
+    function renderActiveFilters() {
+      const container = document.getElementById("activeFilters");
+      const pills = [
+        ...appState.filter.chips.map((id) => {
+          const c = FILTER_CHIPS.find((x) => x.id === id);
+          return activePill("chip", id, c ? c.label : id);
+        }),
+        ...appState.filter.categories.map((cat) => activePill("cat", cat, capitalize(cat))),
+      ];
+      if (!pills.length) {
+        container.classList.add("hidden");
+        container.innerHTML = "";
+        return;
+      }
+      container.classList.remove("hidden");
+      container.innerHTML =
+        pills.join("") +
+        `<button data-action="clear-filter" class="rounded-full px-2 py-1 text-xs font-medium text-gray-500 underline-offset-2 hover:underline">Rensa alla</button>`;
+    }
+
+    // Inner content of the filter popup: quick-filter chips + category chips.
+    function filterSheetBodyMarkup() {
+      const chips = FILTER_CHIPS
+        .map((c) => filterPill("chip", c.id, c.label, appState.filter.chips.includes(c.id)))
+        .join("");
+      const cats = RECIPE_CATEGORIES
+        .map((cat) => filterPill("cat", cat, capitalize(cat), appState.filter.categories.includes(cat)))
+        .join("");
+      return `
+        <div>
+          <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Snabbfilter</h3>
+          <div class="flex flex-wrap gap-2">${chips}</div>
+        </div>
+        <div>
+          <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Kategorier</h3>
+          <div class="flex flex-wrap gap-2">${cats}</div>
+        </div>`;
+    }
+
+    function filterSheetMarkup() {
+      const count = filterRecipes(appState.recipes, appState.filter, appState.favorites).length;
+      return `
+        <div class="fixed inset-0 z-30 flex md:items-center md:justify-center">
+          <div data-action="close-filter" class="anim-backdrop absolute inset-0 bg-black/40"></div>
+
+          <div class="anim-panel relative flex max-h-[85vh] w-full flex-col overflow-hidden bg-white shadow-xl
+                      md:h-auto md:w-full md:max-w-lg md:rounded-2xl rounded-t-2xl">
+            <div class="flex items-center justify-between gap-3 border-b border-gray-100 p-4">
+              <h2 class="text-lg font-semibold text-gray-900">Filter</h2>
+              <button data-action="close-filter" aria-label="Stäng"
+                class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-gray-400 hover:bg-canvas hover:text-gray-700">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M6 6l12 12M18 6L6 18"/></svg>
+              </button>
+            </div>
+
+            <div id="filterSheetBody" class="flex-1 space-y-5 overflow-y-auto p-4">
+              ${filterSheetBodyMarkup()}
+            </div>
+
+            <div class="flex items-center gap-2 border-t border-gray-100 p-4">
+              <button data-action="clear-filter"
+                class="flex h-11 items-center justify-center rounded-xl border border-gray-200 px-4 text-sm font-medium text-gray-600 hover:border-taupe">
+                Rensa
+              </button>
+              <button data-action="close-filter" id="filterApplyBtn"
+                class="flex h-11 flex-1 items-center justify-center rounded-xl bg-taupe text-sm font-semibold text-white hover:bg-taupe-dark active:scale-[.99]">
+                Visa ${count} recept
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    let filterSheetOpen = false;
+    let filterCloseTimer = null;
+
+    function openFilterSheet() {
+      clearTimeout(filterCloseTimer);
+      filterSheetOpen = true;
+      document.getElementById("filterRoot").innerHTML = filterSheetMarkup();
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeFilterSheet() {
+      filterSheetOpen = false;
+      const root = document.getElementById("filterRoot");
+      const panel = root.querySelector(".anim-panel");
+      const backdrop = root.querySelector(".anim-backdrop");
+      const cleanup = () => {
+        root.innerHTML = "";
+        if (!currentDetail) document.body.classList.remove("overflow-hidden");
+      };
+      if (!panel) return cleanup();
+      panel.classList.add("anim-panel-out");
+      if (backdrop) backdrop.classList.add("anim-backdrop-out");
+      clearTimeout(filterCloseTimer);
+      filterCloseTimer = setTimeout(cleanup, 240);
+    }
+
+    function clearAllFilters() {
+      appState.filter.chips = [];
+      appState.filter.categories = [];
+      render();
+    }
+
+    // Keeps the Filter button, active pills and (if open) the popup in sync
+    // with appState.filter. Called on every grid render.
+    function refreshFilterUI() {
+      renderFilterButton();
+      renderActiveFilters();
+      if (filterSheetOpen) {
+        const body = document.getElementById("filterSheetBody");
+        if (body) body.innerHTML = filterSheetBodyMarkup();
+        const applyBtn = document.getElementById("filterApplyBtn");
+        if (applyBtn) {
+          const count = filterRecipes(appState.recipes, appState.filter, appState.favorites).length;
+          applyBtn.textContent = `Visa ${count} recept`;
+        }
+      }
     }
 
     function renderGrid() {
@@ -420,8 +565,7 @@
           : emptyBlock(ICONS.search, "Inga recept hittades", "Prova en annan sökning eller rensa filtren.");
         empty.classList.remove("hidden");
       }
-      renderChips();
-      renderCategories();
+      refreshFilterUI();
     }
 
     function updateCounts() {
@@ -713,10 +857,11 @@
       });
 
       document.getElementById("shuffleBtn").addEventListener("click", shuffleRecipe);
+      document.getElementById("filterBtn").addEventListener("click", openFilterSheet);
 
       document.getElementById("app").addEventListener("click", handleAction);
-      document.getElementById("chipFilters").addEventListener("click", handleAction);
-      document.getElementById("categoryFilters").addEventListener("click", handleAction);
+      document.getElementById("activeFilters").addEventListener("click", handleAction);
+      document.getElementById("filterRoot").addEventListener("click", handleFilterAction);
 
       document.getElementById("planView").addEventListener("click", handlePlanAction);
       document.getElementById("shopView").addEventListener("click", handleShopAction);
@@ -736,11 +881,22 @@
         else if (action === "plan") togglePlan(id);
         else if (action === "chip") toggleChip(chip);
         else if (action === "cat") toggleCategory(cat);
+        else if (action === "clear-filter") clearAllFilters();
         return;
       }
       // Click anywhere else on a card opens its detail view.
       const card = e.target.closest("article[data-id]");
       if (card) openRecipe(card.dataset.id);
+    }
+
+    function handleFilterAction(e) {
+      const el = e.target.closest("[data-action]");
+      if (!el) return;
+      const a = el.dataset.action;
+      if (a === "close-filter") closeFilterSheet();
+      else if (a === "clear-filter") clearAllFilters();
+      else if (a === "chip") toggleChip(el.dataset.chip);
+      else if (a === "cat") toggleCategory(el.dataset.cat);
     }
 
     // ---------- Detail view ----------
@@ -981,7 +1137,9 @@
         else if (a === "detail-plan") detailAddPlan(el.dataset.id);
       });
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && currentDetail) closeFromUI();
+        if (e.key !== "Escape") return;
+        if (filterSheetOpen) closeFilterSheet();
+        else if (currentDetail) closeFromUI();
       });
       window.addEventListener("hashchange", handleRoute);
     }
