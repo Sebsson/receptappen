@@ -253,11 +253,63 @@
       "avancerat": "bg-red-100 text-red-800",
     };
 
-    // Deterministic placeholder color block per recipe.
-    function placeholderColor(id) {
+    // Deterministic hue (0–359) per recipe id — drives the illustration backdrop.
+    function recipeHue(id) {
       let hash = 0;
       for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) % 360;
-      return `hsl(${hash}, 22%, 78%)`;
+      return hash;
+    }
+
+    // Richer two-tone backdrop for the illustration thumbnails.
+    function cardBg(id) {
+      const h = recipeHue(id);
+      return `linear-gradient(135deg, hsl(${h}, 30%, 80%), hsl(${h}, 36%, 66%))`;
+    }
+
+    // ---------- Recipe illustrations ----------
+    // Each recipe gets a simple line-art SVG chosen from its tags, so every card
+    // shows a relevant little picture without shipping any image files (keeps the
+    // app fully offline). Falls back to a generic plate for anything uncategorised.
+    function dishCategory(r) {
+      const t = r.tags || [];
+      const has = (...xs) => xs.some((x) => t.includes(x));
+      if (has("soppa")) return "soppa";
+      if (has("sallad")) return "sallad";
+      if (has("pasta")) return "pasta";
+      if (has("fisk")) return "fisk";
+      if (has("efterrätt", "godis")) return "efterratt";
+      if (has("bakat", "bakning", "fika")) return "bakat";
+      if (has("frukost")) return "frukost";
+      if (has("kött", "kyckling")) return "kott";
+      if (has("sås", "tillbehör")) return "sas";
+      // No specific dish tag — give the big "middag" bucket some variety by cuisine.
+      const c = r.cuisine || "";
+      if (c === "mexikanskt") return "taco";
+      if (c === "italienskt") return "pizza";
+      if (["asiatiskt", "japanskt", "thailändskt", "vietnamesiskt", "koreanskt", "indiskt"].includes(c)) return "asia";
+      return "middag";
+    }
+
+    // Inner paths only — drawn in a 0 0 64 64 viewBox, stroked, no fill.
+    const DISH_ART = {
+      soppa: `<path d="M11 31h42"/><path d="M14 32a18 13 0 0 0 36 0"/><path d="M25 13c-2.5 3 2.5 5 0 8"/><path d="M32 10c-2.5 3 2.5 5 0 8"/><path d="M39 13c-2.5 3 2.5 5 0 8"/>`,
+      sallad: `<path d="M10 30h44"/><path d="M13 31a19 14 0 0 0 38 0"/><circle cx="23" cy="24" r="5"/><circle cx="33" cy="21" r="6"/><circle cx="43" cy="25" r="5"/>`,
+      pasta: `<ellipse cx="32" cy="37" rx="21" ry="10"/><path d="M15 34c3 3 6-3 8.5 0s6 3 8.5 0 6-3 8.5 0 6 3 8.5 0"/><path d="M15 39c3 3 6-3 8.5 0s6 3 8.5 0 6-3 8.5 0 6 3 8.5 0"/>`,
+      fisk: `<path d="M13 32c8-12 28-12 37 0-9 12-29 12-37 0z"/><path d="M50 32l9-7v14z"/><circle cx="24" cy="29" r="1.8" fill="currentColor" stroke="none"/>`,
+      efterratt: `<path d="M20 30h24l-3 18a3 3 0 0 1-3 2H26a3 3 0 0 1-3-2z"/><path d="M20 30c0-7 6-11 12-11s12 4 12 11"/><path d="M32 13v5"/><circle cx="32" cy="12" r="2.4"/>`,
+      bakat: `<path d="M14 44v-3a18 13 0 0 1 36 0v3a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3z"/><path d="M23 31l3 9M31 29l2 10M39 30l2 9"/>`,
+      frukost: `<ellipse cx="32" cy="34" rx="20" ry="13"/><circle cx="32" cy="34" r="7" fill="currentColor" stroke="none"/>`,
+      kott: `<ellipse cx="32" cy="38" rx="20" ry="9"/><path d="M22 33c0-4 4-7 10-7s10 3 10 7-4 7-10 7-10-3-10-7z"/><path d="M27 30l3 9M33 30l3 9"/>`,
+      sas: `<path d="M13 31h33v7a10 10 0 0 1-10 10H23a10 10 0 0 1-10-10z"/><path d="M46 34h9"/><path d="M24 22c0 3 3 3 3 6M36 22c0 3 3 3 3 6"/>`,
+      middag: `<circle cx="33" cy="33" r="14"/><circle cx="33" cy="33" r="8.5"/><path d="M12 18v6a3 3 0 0 0 6 0v-6M15 24v18"/><path d="M51 18c-3 1-3 9-3 12h6c0-3 0-11-3-12zM51 30v12"/>`,
+      taco: `<path d="M12 44a20 20 0 0 1 40 0z"/><path d="M12 44h40"/><path d="M18 43c2-4 6-5 9-3M37 40c2-2 6-1 9 4"/><circle cx="25" cy="38" r="2.2" fill="currentColor" stroke="none"/><circle cx="32" cy="35" r="2.2" fill="currentColor" stroke="none"/><circle cx="39" cy="38" r="2.2" fill="currentColor" stroke="none"/>`,
+      asia: `<path d="M12 32h40"/><path d="M15 33a17 13 0 0 0 34 0"/><path d="M22 30c4-3 16-3 20 0"/><path d="M45 13L27 28M51 17L35 30"/>`,
+      pizza: `<path d="M32 12l16 36a2 2 0 0 1-2 2.5H18a2 2 0 0 1-2-2.5z"/><path d="M21 41h22"/><circle cx="28" cy="30" r="2.4" fill="currentColor" stroke="none"/><circle cx="36" cy="34" r="2.4" fill="currentColor" stroke="none"/><circle cx="31" cy="41" r="2.4" fill="currentColor" stroke="none"/>`,
+    };
+
+    function dishArt(r, cls) {
+      const art = DISH_ART[dishCategory(r)] || DISH_ART.middag;
+      return `<svg viewBox="0 0 64 64" class="${cls}" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${art}</svg>`;
     }
 
     function toggle(list, id) {
@@ -359,7 +411,10 @@
 
       return `
         <article data-id="${r.id}" class="flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition duration-200 hover:-translate-y-1 hover:shadow-md">
-          <div class="relative aspect-[4/3]" style="background:${placeholderColor(r.id)}">
+          <div class="relative aspect-[4/3]" style="background:${cardBg(r.id)}">
+            <div class="absolute inset-0 grid place-items-center text-white/90">
+              ${dishArt(r, "h-[44%] w-[44%] drop-shadow-sm")}
+            </div>
             <button
               data-action="fav" data-id="${r.id}"
               aria-label="Spara som favorit"
@@ -640,7 +695,9 @@
     function planCard(r, entry) {
       return `
         <article class="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100">
-          <div class="h-14 w-14 shrink-0 rounded-xl" style="background:${placeholderColor(r.id)}"></div>
+          <div class="grid h-14 w-14 shrink-0 place-items-center rounded-xl text-white/90" style="background:${cardBg(r.id)}">
+            ${dishArt(r, "h-7 w-7")}
+          </div>
           <div class="min-w-0 flex-1">
             <h3 class="truncate text-sm font-semibold text-gray-900">${r.title}</h3>
             <p class="text-xs text-gray-500">${r.time_minutes} min · ${r.difficulty}</p>
@@ -967,17 +1024,22 @@
 
           <div class="anim-panel relative flex h-full w-full flex-col overflow-hidden bg-white shadow-xl
                       md:h-auto md:max-h-[88vh] md:w-full md:max-w-lg md:rounded-2xl rounded-t-2xl">
-            <!-- Header -->
-            <div class="flex items-start justify-between gap-3 border-b border-gray-100 p-4">
-              <div>
-                <h2 class="text-lg font-semibold text-gray-900">${r.title}</h2>
-                <p class="mt-1 text-sm text-gray-500">${r.description}</p>
+            <!-- Hero illustration -->
+            <div class="relative h-32 shrink-0 text-white/90" style="background:${cardBg(r.id)}">
+              <div class="absolute inset-0 grid place-items-center">
+                ${dishArt(r, "h-20 w-20 drop-shadow-sm")}
               </div>
               <button data-action="close" aria-label="Stäng"
-                class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-gray-400 hover:bg-canvas hover:text-gray-700">
+                class="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/85 text-gray-600 backdrop-blur hover:text-gray-900">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                   <path d="M6 6l12 12M18 6L6 18"/></svg>
               </button>
+            </div>
+
+            <!-- Header -->
+            <div class="border-b border-gray-100 p-4">
+              <h2 class="text-lg font-semibold text-gray-900">${r.title}</h2>
+              <p class="mt-1 text-sm text-gray-500">${r.description}</p>
             </div>
 
             <!-- Scrollable body -->
