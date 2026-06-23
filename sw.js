@@ -1,5 +1,5 @@
 // Service worker — cache-first with runtime caching so the app works fully offline.
-const CACHE = "recept-v2";
+const CACHE = "recept-v3";
 const ASSETS = [
   "./",
   "index.html",
