@@ -1255,6 +1255,18 @@
 
     // Register the service worker (guarded — skips file:// where SWs aren't allowed).
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      // When a new service worker activates it claims this page, firing
+      // "controllerchange". For visitors who already had the app cached that
+      // means a fresh version is live, so reload once to pick it up. A page
+      // with no prior controller is just being claimed for the first time —
+      // nothing to refresh to, so skip that case (and guard against loops).
+      const hadController = !!navigator.serviceWorker.controller;
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!hadController || refreshing) return;
+        refreshing = true;
+        location.reload();
+      });
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("sw.js").catch(() => {});
       });
