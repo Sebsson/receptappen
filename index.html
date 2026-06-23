@@ -102,6 +102,7 @@
           >🎲</button>
         </div>
         <div id="chipFilters" class="flex flex-wrap gap-2"></div>
+        <div id="categoryFilters" class="flex flex-wrap gap-2"></div>
       </div>
     </div>
   </header>
@@ -147,7 +148,7 @@
       recipes: [],
       favorites: [],
       weekPlan: [],                      // [{ id, servings }]
-      filter: { search: "", chips: [] },
+      filter: { search: "", chips: [], categories: [] },
       shopping: { checked: [], cleared: [] }, // ingredient keys
       view: "recept",                    // recept | veckoplan | inkop
     };
@@ -155,21 +156,45 @@
     // Fixed filter chips. Each declares a predicate; active chips combine with AND.
     const FILTER_CHIPS = [
       { id: "favoriter", label: "★ Favoriter", test: (r, ctx) => ctx.favorites.includes(r.id) },
-      { id: "vegetariskt", label: "Vegetariskt", test: (r) => r.tags.includes("vegetariskt") },
       { id: "under30", label: "Under 30 min", test: (r) => r.time_minutes <= 30 },
       { id: "lätt", label: "Lätt", test: (r) => r.difficulty === "lätt" },
       { id: "medel", label: "Medel", test: (r) => r.difficulty === "medel" },
       { id: "avancerat", label: "Avancerat", test: (r) => r.difficulty === "avancerat" },
     ];
 
-    // Pure: returns the subset of `recipes` matching `filter` (search + active chips, AND logic).
+    // Hardcoded canonical list of recipe categories (recipe `tags`). Recipes carry a
+    // subset of these; the list also covers categories recipes may have in the future.
+    // Users can filter the grid by these — selected categories combine with OR.
+    const RECIPE_CATEGORIES = [
+      "klassiker",
+      "snabbt",
+      "matlådevänligt",
+      "vegetariskt",
+      "veganskt",
+      "soppa",
+      "sallad",
+      "pasta",
+      "kött",
+      "kyckling",
+      "fisk",
+      "lågkolhydrat",
+      "nyttigt",
+      "bakning",
+      "festmat",
+      "jul",
+    ];
+
+    // Pure: returns the subset of `recipes` matching `filter`. Quick chips combine
+    // with AND; selected categories combine with OR; free-text search is AND on top.
     // `favorites` is passed in so the function stays dependent only on its arguments.
     function filterRecipes(recipes, filter, favorites = []) {
       const q = filter.search.trim().toLowerCase();
       const active = FILTER_CHIPS.filter((c) => filter.chips.includes(c.id));
+      const cats = filter.categories || [];
       const ctx = { favorites };
       return recipes.filter((r) => {
         if (!active.every((c) => c.test(r, ctx))) return false;
+        if (cats.length && !cats.some((c) => r.tags.includes(c))) return false;
         if (q) {
           const haystack = [r.title, ...r.tags, ...r.ingredients.map((i) => i.name)]
             .join(" ")
@@ -278,6 +303,11 @@
       render();
     }
 
+    function toggleCategory(cat) {
+      toggle(appState.filter.categories, cat);
+      render();
+    }
+
     // ---------- Shuffle ----------
     function shuffleRecipe() {
       const list = filterRecipes(appState.recipes, appState.filter, appState.favorites);
@@ -361,6 +391,21 @@
       }).join("");
     }
 
+    function renderCategories() {
+      const container = document.getElementById("categoryFilters");
+      container.innerHTML = RECIPE_CATEGORIES.map((cat) => {
+        const active = appState.filter.categories.includes(cat);
+        return `<button
+          data-action="cat" data-cat="${cat}"
+          aria-pressed="${active}"
+          class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+            active
+              ? "border-taupe bg-taupe text-white"
+              : "border-gray-200 bg-white text-gray-500 hover:border-taupe"
+          }">${capitalize(cat)}</button>`;
+      }).join("");
+    }
+
     function renderGrid() {
       const grid = document.getElementById("grid");
       const empty = document.getElementById("emptyState");
@@ -376,6 +421,7 @@
         empty.classList.remove("hidden");
       }
       renderChips();
+      renderCategories();
     }
 
     function updateCounts() {
@@ -670,6 +716,7 @@
 
       document.getElementById("app").addEventListener("click", handleAction);
       document.getElementById("chipFilters").addEventListener("click", handleAction);
+      document.getElementById("categoryFilters").addEventListener("click", handleAction);
 
       document.getElementById("planView").addEventListener("click", handlePlanAction);
       document.getElementById("shopView").addEventListener("click", handleShopAction);
@@ -684,10 +731,11 @@
     function handleAction(e) {
       const btn = e.target.closest("button[data-action]");
       if (btn) {
-        const { action, id, chip } = btn.dataset;
+        const { action, id, chip, cat } = btn.dataset;
         if (action === "fav") toggleFavorite(id);
         else if (action === "plan") togglePlan(id);
         else if (action === "chip") toggleChip(chip);
+        else if (action === "cat") toggleCategory(cat);
         return;
       }
       // Click anywhere else on a card opens its detail view.
