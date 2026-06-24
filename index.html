@@ -160,7 +160,6 @@
       favorites: [],
       weekPlan: [],                      // [{ id, servings }]
       filter: { search: "", chips: [], categories: [] },
-      planFilter: { search: "", chips: [], categories: [] }, // filter inside Veckoplan
       shopping: { checked: [], cleared: [] }, // ingredient keys
       view: "recept",                    // recept | veckoplan | inkop
     };
@@ -168,6 +167,7 @@
     // Fixed filter chips. Each declares a predicate; active chips combine with AND.
     const FILTER_CHIPS = [
       { id: "favoriter", label: "★ Favoriter", test: (r, ctx) => ctx.favorites.includes(r.id) },
+      { id: "veckoplan", label: "I veckoplanen", test: (r, ctx) => ctx.planIds.has(r.id) },
       { id: "under30", label: "Under 30 min", test: (r) => r.time_minutes <= 30 },
       { id: "lätt", label: "Lätt", test: (r) => r.difficulty === "lätt" },
       { id: "medel", label: "Medel", test: (r) => r.difficulty === "medel" },
@@ -198,12 +198,13 @@
 
     // Pure: returns the subset of `recipes` matching `filter`. Quick chips combine
     // with AND; selected categories combine with OR; free-text search is AND on top.
-    // `favorites` is passed in so the function stays dependent only on its arguments.
-    function filterRecipes(recipes, filter, favorites = []) {
+    // `favorites` and `weekPlan` are passed in so the function stays dependent only
+    // on its arguments (the chips test favorite / week-plan membership via `ctx`).
+    function filterRecipes(recipes, filter, favorites = [], weekPlan = []) {
       const q = filter.search.trim().toLowerCase();
       const active = FILTER_CHIPS.filter((c) => filter.chips.includes(c.id));
       const cats = filter.categories || [];
-      const ctx = { favorites };
+      const ctx = { favorites, planIds: new Set(weekPlan.map((e) => e.id)) };
       return recipes.filter((r) => {
         if (!active.every((c) => c.test(r, ctx))) return false;
         if (cats.length && !cats.some((c) => r.tags.includes(c))) return false;
@@ -414,7 +415,7 @@
 
     // ---------- Shuffle ----------
     function shuffleRecipe() {
-      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites);
+      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan);
       if (!list.length) return;
       const pick = list[Math.floor(Math.random() * list.length)];
       const el = document.querySelector(`article[data-id="${pick.id}"]`);
@@ -565,7 +566,7 @@
     }
 
     function filterSheetMarkup() {
-      const count = filterRecipes(appState.recipes, appState.filter, appState.favorites).length;
+      const count = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan).length;
       return `
         <div class="fixed inset-0 z-30 flex md:items-center md:justify-center">
           <div data-action="close-filter" class="anim-backdrop absolute inset-0 bg-black/40"></div>
@@ -641,7 +642,7 @@
         if (body) body.innerHTML = filterSheetBodyMarkup();
         const applyBtn = document.getElementById("filterApplyBtn");
         if (applyBtn) {
-          const count = filterRecipes(appState.recipes, appState.filter, appState.favorites).length;
+          const count = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan).length;
           applyBtn.textContent = `Visa ${count} recept`;
         }
       }
@@ -650,15 +651,20 @@
     function renderGrid() {
       const grid = document.getElementById("grid");
       const empty = document.getElementById("emptyState");
-      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites);
+      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan);
       grid.innerHTML = list.map(recipeCard).join("");
 
       if (list.length) {
         empty.classList.add("hidden");
       } else {
-        empty.innerHTML = appState.filter.chips.includes("favoriter")
-          ? emptyBlock(ICONS.star, "Inga favoriter än", "Tryck på stjärnan på ett recept för att spara det.")
-          : emptyBlock(ICONS.search, "Inga recept hittades", "Prova en annan sökning eller rensa filtren.");
+        const onlyChip = appState.filter.chips.length === 1 && !appState.filter.categories.length && !appState.filter.search.trim();
+        if (onlyChip && appState.filter.chips[0] === "favoriter") {
+          empty.innerHTML = emptyBlock(ICONS.star, "Inga favoriter än", "Tryck på stjärnan på ett recept för att spara det.");
+        } else if (onlyChip && appState.filter.chips[0] === "veckoplan") {
+          empty.innerHTML = emptyBlock(ICONS.plan, "Inga recept i veckoplanen än", "Tryck på plus-knappen på ett recept för att lägga till det.");
+        } else {
+          empty.innerHTML = emptyBlock(ICONS.search, "Inga recept hittades", "Prova en annan sökning eller rensa filtren.");
+        }
         empty.classList.remove("hidden");
       }
       refreshFilterUI();
@@ -758,101 +764,24 @@
         </article>`;
     }
 
-    // Escapes a string for safe use inside a double-quoted HTML attribute.
-    function escapeAttr(s) {
-      return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
-    }
-
-    // A toggle pill used inside the Veckoplan filter bar. `kind` is "chip" | "cat".
-    function planFilterPill(kind, value, label, active) {
-      return `<button
-        data-plan-action="filter" data-kind="${kind}" data-value="${value}"
-        aria-pressed="${active}"
-        class="rounded-full border px-3 py-1.5 text-xs font-medium transition ${
-          active
-            ? "border-taupe bg-taupe text-white"
-            : "border-gray-200 bg-white text-gray-600 hover:border-taupe"
-        }">${label}</button>`;
-    }
-
-    // The weekPlan entries that match the active plan filter, in plan order.
-    function filteredPlanEntries() {
-      const recipes = appState.weekPlan.map((e) => recipeById(e.id)).filter(Boolean);
-      const matched = filterRecipes(recipes, appState.planFilter, appState.favorites);
-      const ids = new Set(matched.map((r) => r.id));
-      return appState.weekPlan.filter((e) => ids.has(e.id));
-    }
-
-    // Search field + quick chips + (only the categories present in the plan).
-    function planFilterBarMarkup() {
-      const planRecipes = appState.weekPlan.map((e) => recipeById(e.id)).filter(Boolean);
-      const presentCats = RECIPE_CATEGORIES.filter((cat) => planRecipes.some((r) => r.tags.includes(cat)));
-      const pf = appState.planFilter;
-      const chips = FILTER_CHIPS
-        .map((c) => planFilterPill("chip", c.id, c.label, pf.chips.includes(c.id)))
-        .join("");
-      const cats = presentCats
-        .map((cat) => planFilterPill("cat", cat, capitalize(cat), pf.categories.includes(cat)))
-        .join("");
-      const hasActive = pf.search || pf.chips.length || pf.categories.length;
-      const clearBtn = hasActive
-        ? `<button data-plan-action="clear-filter" class="rounded-full px-2 py-1 text-xs font-medium text-gray-500 underline-offset-2 hover:underline">Rensa filter</button>`
-        : "";
-      return `
-        <div class="mb-3 space-y-3">
-          <input id="planSearch" type="search" value="${escapeAttr(pf.search)}"
-            placeholder="Sök i veckoplanen…"
-            class="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm shadow-sm outline-none focus:border-taupe focus:ring-1 focus:ring-taupe" />
-          <div class="flex flex-wrap gap-2">${chips}${cats}${clearBtn}</div>
-        </div>`;
-    }
-
-    // Populates only the cards container, so live search keeps input focus.
-    function renderPlanCards() {
-      const container = document.getElementById("planCards");
-      if (!container) return;
-      const entries = filteredPlanEntries();
-      if (!entries.length) {
-        container.innerHTML = `<p class="py-10 text-center text-sm text-gray-400">Inga recept matchar filtret.</p>`;
-        return;
-      }
-      container.innerHTML = entries
-        .map((entry) => {
-          const r = recipeById(entry.id);
-          return r ? planCard(r, entry) : "";
-        })
-        .join("");
-    }
-
     function renderPlan() {
       const root = document.getElementById("planView");
       if (!appState.weekPlan.length) {
         root.innerHTML = emptyBlock(ICONS.plan, "Din veckoplan är tom", "Lägg till recept från Recept-fliken.");
         return;
       }
-      // Drop active category filters for categories no longer present in the plan,
-      // so a stale filter can't leave the list permanently empty.
-      const planRecipes = appState.weekPlan.map((e) => recipeById(e.id)).filter(Boolean);
-      appState.planFilter.categories = appState.planFilter.categories
-        .filter((cat) => planRecipes.some((r) => r.tags.includes(cat)));
+      const cards = appState.weekPlan
+        .map((entry) => {
+          const r = recipeById(entry.id);
+          return r ? planCard(r, entry) : "";
+        })
+        .join("");
       root.innerHTML = `
         <div class="mb-3 flex items-center justify-between">
           <h2 class="text-base font-semibold text-gray-900">Veckoplan</h2>
           <button data-plan-action="clear" class="text-sm text-gray-500 hover:text-red-500">Rensa veckoplan</button>
         </div>
-        ${planFilterBarMarkup()}
-        <div id="planCards" class="space-y-3"></div>`;
-      renderPlanCards();
-    }
-
-    function togglePlanFilter(kind, value) {
-      toggle(kind === "chip" ? appState.planFilter.chips : appState.planFilter.categories, value);
-      renderPlan();
-    }
-
-    function clearPlanFilter() {
-      appState.planFilter = { search: "", chips: [], categories: [] };
-      renderPlan();
+        <div class="space-y-3">${cards}</div>`;
     }
 
     // ---------- Inköpslista ----------
@@ -1013,8 +942,6 @@
         else if (a === "clear") clearPlan();
         else if (a === "inc") changePlanServings(id, 1);
         else if (a === "dec") changePlanServings(id, -1);
-        else if (a === "filter") togglePlanFilter(el.dataset.kind, el.dataset.value);
-        else if (a === "clear-filter") clearPlanFilter();
         return;
       }
       // Click anywhere else on a plan card opens its detail view.
@@ -1048,11 +975,6 @@
 
       const planView = document.getElementById("planView");
       planView.addEventListener("click", handlePlanAction);
-      planView.addEventListener("input", (e) => {
-        if (e.target.id !== "planSearch") return;
-        appState.planFilter.search = e.target.value;
-        renderPlanCards();
-      });
       // Keyboard: open a focused plan card with Enter/Space.
       planView.addEventListener("keydown", (e) => {
         if (e.key !== "Enter" && e.key !== " ") return;
