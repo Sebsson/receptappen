@@ -5,9 +5,9 @@ En liten, mobilanpassad receptapp byggd som **PWA** med vanlig HTML, JavaScript 
 ## Funktioner
 
 - **Receptöversikt** – kortrutnät (2 kolumner på mobil, 3 på desktop) med titel, tid, svårighetsgrad och taggar.
-- **Sök & filter** – realtidssökning på titel, taggar och ingredienser. Filtren (snabbfilter som Favoriter/Under 30 min/svårighetsgrad samt kategorier) samlas i en filter-popup som öppnas via filterknappen, med en räknare för aktiva filter och borttagbara filter-pillrar i headern. Dessutom en slumpknapp.
+- **Sök & filter** – realtidssökning på titel, taggar och ingredienser. Filtren (snabbfilter som Favoriter/I veckoplanen/Under 30 min/svårighetsgrad samt kategorier) samlas i en filter-popup som öppnas via filterknappen, med en räknare för aktiva filter och borttagbara filter-pillrar i headern. Dessutom en slumpknapp.
 - **Receptvy** – detaljvy som modal (desktop) eller bottensheet (mobil), med portionsjustering som skalar om ingredienserna, ingredienser grupperade per kategori och numrerade steg. Hash-baserad routing (`#recept/<id>`) med stöd för bakåt/framåt.
-- **Veckoplan** – lägg till recept, justera portioner och ta bort. Filtrera planen med sökfält, snabbfilter och de kategorier som finns i planen, och öppna ett recept direkt genom att trycka på dess kort.
+- **Veckoplan** – lägg till recept, justera portioner och ta bort, och öppna ett recept direkt genom att trycka på dess kort.
 - **Inköpslista** – aggregerar och slår ihop ingredienser från veckoplanen (per kategori, summerar lika enheter), bockbara rader, kopiera till urklipp.
 - **Favoriter, veckoplan och inköpslista sparas** i `localStorage`.
 - **Offline** – service worker cachar appskalet och fungerar utan nätverk efter första laddningen.
