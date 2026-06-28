@@ -110,6 +110,16 @@
             class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-xl border border-gray-200 bg-white text-lg shadow-sm transition hover:border-taupe active:scale-95"
           >🎲</button>
         </div>
+        <div class="flex items-center justify-end gap-2">
+          <label for="sortSelect" class="text-xs font-medium text-gray-500">Sortera</label>
+          <div class="relative">
+            <select
+              id="sortSelect"
+              class="appearance-none rounded-xl border border-gray-200 bg-white py-2 pl-3 pr-8 text-sm text-gray-700 shadow-sm outline-none focus:border-taupe focus:ring-1 focus:ring-taupe"
+            ></select>
+            <svg viewBox="0 0 24 24" class="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
         <div id="activeFilters" class="hidden flex-wrap gap-2"></div>
       </div>
     </div>
@@ -160,9 +170,47 @@
       favorites: [],
       weekPlan: [],                      // [{ id, servings }]
       filter: { search: "", chips: [], meals: [], categories: [] },
+      sort: "standard",                  // see SORT_OPTIONS
       shopping: { checked: [], cleared: [] }, // ingredient keys
       view: "recept",                    // recept | veckoplan | inkop
     };
+
+    // Sort options for the recipe grid. "standard" keeps the curated order from
+    // recipes.json; the rest sort the filtered list before rendering.
+    const SORT_OPTIONS = [
+      { id: "standard", label: "Standard" },
+      { id: "namn", label: "Namn (A–Ö)" },
+      { id: "tid", label: "Tid (kortast först)" },
+      { id: "tid-desc", label: "Tid (längst först)" },
+      { id: "svarighet", label: "Svårighetsgrad" },
+    ];
+
+    // Difficulty ranking used by the "Svårighetsgrad" sort (lätt → avancerat).
+    const DIFFICULTY_ORDER = { "lätt": 0, "medel": 1, "avancerat": 2 };
+
+    // Pure: returns a sorted copy of `recipes` for the given sort id. Ties (and
+    // the time/difficulty sorts generally) fall back to title order so the grid
+    // is always stable and predictable.
+    function sortRecipes(recipes, sort) {
+      const byTitle = (a, b) => a.title.localeCompare(b.title, "sv");
+      const arr = [...recipes];
+      switch (sort) {
+        case "namn":
+          return arr.sort(byTitle);
+        case "tid":
+          return arr.sort((a, b) => a.time_minutes - b.time_minutes || byTitle(a, b));
+        case "tid-desc":
+          return arr.sort((a, b) => b.time_minutes - a.time_minutes || byTitle(a, b));
+        case "svarighet":
+          return arr.sort(
+            (a, b) =>
+              (DIFFICULTY_ORDER[a.difficulty] ?? 9) - (DIFFICULTY_ORDER[b.difficulty] ?? 9) ||
+              byTitle(a, b)
+          );
+        default:
+          return arr; // "standard" — keep recipes.json order
+      }
+    }
 
     // Fixed filter chips. Each declares a predicate; active chips combine with AND.
     const FILTER_CHIPS = [
@@ -233,6 +281,7 @@
       favorites: "receptappen:favorites",
       weekPlan: "receptappen:weekPlan",
       shopping: "receptappen:shopping",
+      sort: "receptappen:sort",
     };
 
     function loadState() {
@@ -243,6 +292,8 @@
         appState.weekPlan = wp.map((e) => (typeof e === "string" ? { id: e, servings: null } : e));
         const shop = JSON.parse(localStorage.getItem(STORAGE_KEYS.shopping)) || {};
         appState.shopping = { checked: shop.checked || [], cleared: shop.cleared || [] };
+        const sort = localStorage.getItem(STORAGE_KEYS.sort);
+        if (sort && SORT_OPTIONS.some((o) => o.id === sort)) appState.sort = sort;
       } catch {
         appState.favorites = [];
         appState.weekPlan = [];
@@ -254,6 +305,7 @@
       localStorage.setItem(STORAGE_KEYS.favorites, JSON.stringify(appState.favorites));
       localStorage.setItem(STORAGE_KEYS.weekPlan, JSON.stringify(appState.weekPlan));
       localStorage.setItem(STORAGE_KEYS.shopping, JSON.stringify(appState.shopping));
+      localStorage.setItem(STORAGE_KEYS.sort, appState.sort);
     }
 
     const recipeById = (id) => appState.recipes.find((r) => r.id === id);
@@ -457,11 +509,25 @@
         <path d="M12 6v12M6 12h12"/></svg>`;
     }
 
+    // Meal-category badges for a card. Deliberately styled differently from the
+    // tag chips below (solid taupe pill, uppercase) so the dish's main category
+    // (Mat / Efterrätt / Snacks) reads as a separate signal and isn't mistaken
+    // for a tag.
+    function categoryBadges(r) {
+      return (r.category || [])
+        .map(
+          (c) =>
+            `<span class="rounded-md bg-taupe px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">${mealLabel(c)}</span>`
+        )
+        .join("");
+    }
+
     // ---------- Render ----------
     function recipeCard(r) {
       const isFav = appState.favorites.includes(r.id);
       const added = inPlan(r.id);
       const diffClass = DIFFICULTY_STYLES[r.difficulty] || "bg-gray-100 text-gray-700";
+      const catBadges = categoryBadges(r);
 
       const tagChips = r.tags
         .map((t) => `<span class="rounded-full bg-canvas px-2 py-0.5 text-[11px] text-gray-600">${t}</span>`)
@@ -488,6 +554,7 @@
           </div>
 
           <div class="flex flex-1 flex-col gap-2 p-3">
+            ${catBadges ? `<div class="flex flex-wrap gap-1">${catBadges}</div>` : ""}
             <div class="flex items-start justify-between gap-2">
               <h2 class="text-sm font-semibold leading-snug text-gray-900">${r.title}</h2>
             </div>
@@ -678,7 +745,10 @@
     function renderGrid() {
       const grid = document.getElementById("grid");
       const empty = document.getElementById("emptyState");
-      const list = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan);
+      const list = sortRecipes(
+        filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan),
+        appState.sort
+      );
       grid.innerHTML = list.map(recipeCard).join("");
 
       if (list.length) {
@@ -996,6 +1066,17 @@
       document.getElementById("shuffleBtn").addEventListener("click", shuffleRecipe);
       document.getElementById("filterBtn").addEventListener("click", openFilterSheet);
 
+      const sortSelect = document.getElementById("sortSelect");
+      sortSelect.innerHTML = SORT_OPTIONS.map(
+        (o) => `<option value="${o.id}">${o.label}</option>`
+      ).join("");
+      sortSelect.value = appState.sort;
+      sortSelect.addEventListener("change", (e) => {
+        appState.sort = e.target.value;
+        persist();
+        render();
+      });
+
       document.getElementById("app").addEventListener("click", handleAction);
       document.getElementById("activeFilters").addEventListener("click", handleAction);
       document.getElementById("filterRoot").addEventListener("click", handleFilterAction);
@@ -1080,6 +1161,80 @@
       </li>`;
     }
 
+    // ---------- Step ↔ ingredient matching ----------
+    // Steps are free text, so we infer which ingredients a step uses by matching
+    // its words against each ingredient's name. The amount shown beside a step is
+    // the same scaled value as in the ingredient list, so it follows the portion
+    // adjuster. Matching is a heuristic (Swedish has rich inflection and
+    // compound words); it aims to catch the common case where a step names an
+    // ingredient by its head word, without guaranteeing every mention is found.
+
+    // Descriptors/units that should not, on their own, tie a step to an
+    // ingredient (otherwise "färsk" would match every "färsk …" ingredient).
+    const ING_STOP = new Set([
+      "och", "med", "eller", "samt", "ca", "till", "valfri", "valfritt", "ev", "gärna",
+      "någon", "ett", "en", "av", "för",
+      "stor", "stora", "stort", "liten", "litet", "små", "mellanstor", "extra",
+      "färsk", "färska", "färskt", "torkad", "torkade", "torkat", "torr", "torrt", "torra",
+      "hackad", "hackade", "hackat", "finhackad", "grovhackad", "riven", "rivet", "rivna",
+      "mald", "malen", "malet", "skivad", "skivade", "strimlad", "strimlade", "kokt", "kokta",
+      "fryst", "frysta", "förväld", "grov", "grovt", "fin", "fint",
+      "röd", "röda", "rött", "gul", "gula", "gult", "grön", "gröna", "grönt",
+      "vit", "vita", "vitt", "brun", "bruna", "mörk", "ljus", "blandad", "blandade",
+      "stjälk", "klyfta", "klyftor", "burk", "påse", "paket", "bit", "bitar",
+    ]);
+
+    // Lowercase the name, drop parenthetical notes, split on separators/conjunctions
+    // and keep the meaningful words (≥3 letters, not a descriptor) as match terms.
+    function ingredientMatchTerms(name) {
+      return (name || "")
+        .toLowerCase()
+        .replace(/\([^)]*\)/g, " ")
+        .split(/[\s,/+&-]+|\beller\b|\boch\b/)
+        .map((w) => w.trim())
+        .filter((w) => w.length >= 3 && !ING_STOP.has(w));
+    }
+
+    // Split a step into lowercase word tokens (incl. Swedish letters), so matching
+    // is word-based — "ägg" must not match inside "lägg".
+    function stepTokens(text) {
+      return (text.toLowerCase().match(/[a-zåäöéèáàü]+/g) || []);
+    }
+
+    // True if two words share a stem: equal, or a common prefix of ≥3 letters
+    // where each word only adds a short (≤3) inflection ending — so "lök"≈"löken",
+    // "potatis"≈"potatisen", but "ris"≉"riven" and "grön"≉"grönsaksbuljong"
+    // (we don't want a step's adjective to match a long compound ingredient).
+    function stemEq(a, b) {
+      if (a === b) return true;
+      const min = Math.min(a.length, b.length);
+      if (min < 3) return false;
+      let i = 0;
+      while (i < min && a[i] === b[i]) i++;
+      return i >= 3 && a.length - i <= 3 && b.length - i <= 3;
+    }
+
+    // Ingredients (in list order) whose name is referenced by this step's text.
+    function stepIngredients(stepText, ingredients) {
+      const tokens = stepTokens(stepText);
+      return ingredients.filter((ing) => {
+        const terms = ingredientMatchTerms(ing.name);
+        return terms.some((t) => tokens.some((w) => stemEq(t, w)));
+      });
+    }
+
+    // Small inline amount tag shown under a step. Reuses the [data-base] hook so
+    // the portion adjuster rescales it together with the ingredient list.
+    function stepIngredientChip(ing, factor) {
+      const base = ing.amount;
+      const scaled = base == null ? "" : fmtAmount(base * factor);
+      const amt =
+        base == null
+          ? ""
+          : `<span class="font-semibold"><span data-base="${base}">${scaled}</span> ${ing.unit}</span> `;
+      return `<span class="inline-flex items-center rounded-md bg-canvas px-2 py-0.5 text-[11px] text-taupe-dark ring-1 ring-taupe/20">${amt}${ing.name}</span>`;
+    }
+
     function detailMarkup(r) {
       const isFav = appState.favorites.includes(r.id);
       const diffClass = DIFFICULTY_STYLES[r.difficulty] || "bg-gray-100 text-gray-700";
@@ -1100,13 +1255,21 @@
         .join("");
 
       const steps = r.steps
-        .map(
-          (s, i) => `
+        .map((s, i) => {
+          const used = stepIngredients(s, r.ingredients);
+          const chips = used.map((ing) => stepIngredientChip(ing, factor)).join("");
+          const chipRow = chips
+            ? `<div class="mt-2 flex flex-wrap gap-1.5">${chips}</div>`
+            : "";
+          return `
           <li class="flex gap-3">
             <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-taupe text-xs font-semibold text-white">${i + 1}</span>
-            <p class="text-sm leading-relaxed text-gray-700">${s}</p>
-          </li>`
-        )
+            <div class="min-w-0 flex-1">
+              <p class="text-sm leading-relaxed text-gray-700">${s}</p>
+              ${chipRow}
+            </div>
+          </li>`;
+        })
         .join("");
 
       return `
