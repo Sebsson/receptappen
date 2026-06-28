@@ -4,9 +4,9 @@ En liten, mobilanpassad receptapp byggd som **PWA** med vanlig HTML, JavaScript 
 
 ## Funktioner
 
-- **Receptöversikt** – kortrutnät (2 kolumner på mobil, 3 på desktop) med titel, tid, svårighetsgrad och taggar.
-- **Sök & filter** – realtidssökning på titel, taggar och ingredienser. Filtren (kategori Mat/Efterrätt/Snacks, snabbfilter som Favoriter/I veckoplanen/Under 30 min/svårighetsgrad samt taggar) samlas i en filter-popup som öppnas via filterknappen, med en räknare för aktiva filter och borttagbara filter-pillrar i headern. Dessutom en slumpknapp.
-- **Receptvy** – detaljvy som modal (desktop) eller bottensheet (mobil), med portionsjustering som skalar om ingredienserna, ingredienser grupperade per kategori och numrerade steg. Hash-baserad routing (`#recept/<id>`) med stöd för bakåt/framåt.
+- **Receptöversikt** – kortrutnät (2 kolumner på mobil, 3 på desktop) med titel, tid, svårighetsgrad, taggar och receptets överkategori(er) (Mat/Efterrätt/Snacks) som en tydligt avvikande badge så att de inte blandas ihop med taggarna.
+- **Sök, filter & sortering** – realtidssökning på titel, taggar och ingredienser. Filtren (kategori Mat/Efterrätt/Snacks, snabbfilter som Favoriter/I veckoplanen/Under 30 min/svårighetsgrad samt taggar) samlas i en filter-popup som öppnas via filterknappen, med en räknare för aktiva filter och borttagbara filter-pillrar i headern. Recepten kan sorteras (standard, namn A–Ö, tid kortast/längst, svårighetsgrad) och valet sparas. Dessutom en slumpknapp.
+- **Receptvy** – detaljvy som modal (desktop) eller bottensheet (mobil), med portionsjustering som skalar om ingredienserna, ingredienser grupperade per kategori och numrerade steg. Under varje steg visas mängd-taggar för de ingredienser steget använder, skalade efter valt portionsantal. Hash-baserad routing (`#recept/<id>`) med stöd för bakåt/framåt.
 - **Veckoplan** – lägg till recept, justera portioner och ta bort, och öppna ett recept direkt genom att trycka på dess kort.
 - **Inköpslista** – aggregerar och slår ihop ingredienser från veckoplanen (per kategori, summerar lika enheter), bockbara rader, kopiera till urklipp.
 - **Favoriter, veckoplan och inköpslista sparas** i `localStorage`.
