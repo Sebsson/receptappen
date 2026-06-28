@@ -9,6 +9,9 @@
       "soppa",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 45,
@@ -80,6 +83,9 @@
     "tags": [
       "soppa",
       "klassiker"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "franskt",
     "difficulty": "medel",
@@ -178,6 +184,9 @@
       "soppa",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -242,6 +251,9 @@
     "tags": [
       "soppa",
       "klassiker"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "medel",
@@ -345,6 +357,9 @@
       "kött",
       "klassiker"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "medel",
     "time_minutes": 30,
@@ -429,6 +444,9 @@
       "klassiker",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "medel",
     "time_minutes": 90,
@@ -506,6 +524,9 @@
     "tags": [
       "kött",
       "klassiker"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "medel",
@@ -597,6 +618,9 @@
       "kött",
       "klassiker",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "medel",
@@ -701,6 +725,9 @@
       "klassiker",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "medel",
     "time_minutes": 60,
@@ -803,6 +830,9 @@
       "kött",
       "klassiker"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -873,6 +903,9 @@
     "tags": [
       "klassiker",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -945,6 +978,9 @@
     "tags": [
       "klassiker",
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -1023,6 +1059,9 @@
       "snabbt",
       "klassiker"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -1081,6 +1120,9 @@
     "tags": [
       "snabbt",
       "klassiker"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -1170,6 +1212,9 @@
     "tags": [
       "klassiker"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "medel",
     "time_minutes": 45,
@@ -1233,6 +1278,9 @@
     "image": "",
     "tags": [
       "klassiker"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -1300,6 +1348,9 @@
       "snabbt",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -1364,6 +1415,9 @@
       "vegetariskt",
       "soppa",
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -1448,6 +1502,9 @@
     "tags": [
       "kyckling",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "medelhavet",
     "difficulty": "medel",
@@ -1557,6 +1614,9 @@
       "kyckling",
       "festmat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "franskt",
     "difficulty": "medel",
     "time_minutes": 35,
@@ -1654,6 +1714,9 @@
       "nyttigt",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -1744,6 +1807,9 @@
       "nyttigt",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "medelhavet",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -1820,6 +1886,9 @@
     "tags": [
       "klassiker",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "medel",
@@ -1906,6 +1975,9 @@
       "snabbt",
       "sallad"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -1985,6 +2057,9 @@
       "matlådevänligt",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "indiskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -2062,6 +2137,9 @@
       "fisk",
       "nyttigt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 25,
@@ -2132,6 +2210,9 @@
     "tags": [
       "pasta",
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -2217,6 +2298,9 @@
       "kyckling",
       "snabbt",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -2308,6 +2392,9 @@
       "kyckling",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 420,
@@ -2398,19 +2485,22 @@
       "pasta",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 25,
     "servings": 4,
     "ingredients": [
       {
-        "amount": 450,
+        "amount": 350,
         "unit": "g",
         "name": "pasta",
         "category": "torrvaror"
       },
       {
-        "amount": 240,
+        "amount": 400,
         "unit": "g",
         "name": "korv",
         "category": "kött & fisk"
@@ -2506,6 +2596,10 @@
       "bakning",
       "jul"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -2578,6 +2672,9 @@
       "snabbt",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "franskt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -2630,6 +2727,9 @@
     "tags": [
       "sallad",
       "nyttigt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "franskt",
     "difficulty": "lätt",
@@ -2719,6 +2819,9 @@
     "image": "",
     "tags": [
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -2814,6 +2917,9 @@
     "tags": [
       "fisk",
       "nyttigt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "medelhavet",
     "difficulty": "medel",
@@ -2911,6 +3017,9 @@
       "snabbt",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -2999,6 +3108,10 @@
     "tags": [
       "bakning"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 80,
@@ -3065,6 +3178,9 @@
       "efterrätt",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt"
     ],
     "cuisine": "internationellt",
     "difficulty": "medel",
@@ -3139,6 +3255,9 @@
       "efterrätt",
       "klassiker"
     ],
+    "category": [
+      "efterrätt"
+    ],
     "cuisine": "franskt",
     "difficulty": "medel",
     "time_minutes": 30,
@@ -3187,6 +3306,10 @@
       "efterrätt",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
@@ -3243,6 +3366,10 @@
       "vegansk",
       "mellanmål",
       "ogräddat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -3313,6 +3440,9 @@
       "snabbt",
       "vardagsmiddag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "indiskt",
     "difficulty": "lätt",
     "time_minutes": 25,
@@ -3373,6 +3503,10 @@
       "proteinrik",
       "fryst"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "asiatiskt",
     "difficulty": "lätt",
     "time_minutes": 70,
@@ -3418,6 +3552,10 @@
     "tags": [
       "snabbt",
       "proteinrik"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "asiatiskt",
     "difficulty": "lätt",
@@ -3486,6 +3624,9 @@
       "proteinrik",
       "mellanmål"
     ],
+    "category": [
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -3541,6 +3682,9 @@
       "matlådevänligt",
       "proteinrik",
       "husmanskost"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -3606,6 +3750,10 @@
       "snabbt",
       "frukost",
       "kalorismart"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -3683,6 +3831,10 @@
     "tags": [
       "snabbt",
       "proteinrik"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -3767,6 +3919,10 @@
       "lågkalori",
       "fräscht",
       "proteinrik"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "vietnamesiskt",
     "difficulty": "medel",
@@ -3877,6 +4033,10 @@
       "kalorismart",
       "fika"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -3935,6 +4095,10 @@
       "proteinrik",
       "middag",
       "fräscht"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "thailändskt",
     "difficulty": "medel",
@@ -4057,6 +4221,10 @@
       "snabbt",
       "efterrätt"
     ],
+    "category": [
+      "mat",
+      "efterrätt"
+    ],
     "cuisine": "asiatiskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -4129,6 +4297,9 @@
     "tags": [
       "middag",
       "proteinrik"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -4242,6 +4413,10 @@
       "godis",
       "lågkalori"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 90,
@@ -4290,6 +4465,10 @@
       "efterrätt",
       "kalorismart",
       "fika"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -4358,6 +4537,10 @@
       "kalorismart",
       "snabbt"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -4417,6 +4600,10 @@
       "efterrätt",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -4534,6 +4721,9 @@
       "snabbt",
       "lunch"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "grekiskt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -4599,6 +4789,9 @@
       "proteinrik",
       "lågkalori"
     ],
+    "category": [
+      "efterrätt"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -4656,6 +4849,9 @@
       "proteinrik",
       "middag",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -4746,6 +4942,9 @@
       "proteinrik",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 40,
@@ -4810,6 +5009,9 @@
       "proteinrik",
       "middag",
       "airfryer"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
@@ -4894,6 +5096,9 @@
       "sås",
       "pasta",
       "vegetariskt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -4984,6 +5189,9 @@
       "proteinrik",
       "middag",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "medel",
@@ -5087,6 +5295,9 @@
       "matlådevänligt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "medel",
     "time_minutes": 45,
@@ -5166,6 +5377,10 @@
       "proteinrik",
       "lågkolhydrat"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -5207,6 +5422,9 @@
       "proteinrik",
       "middag",
       "viktnedgång"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "medel",
@@ -5316,6 +5534,9 @@
       "lunch",
       "lågkalori"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -5393,6 +5614,9 @@
       "snabbt",
       "lunch"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -5449,6 +5673,9 @@
     "tags": [
       "snabbt",
       "fisk"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "japanskt",
     "difficulty": "medel",
@@ -5523,6 +5750,9 @@
       "matlådevänligt",
       "proteinrik",
       "frys"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "lätt",
@@ -5608,6 +5838,9 @@
       "snabbt",
       "proteinrik"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -5679,6 +5912,9 @@
       "proteinrik",
       "middag",
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "japanskt",
     "difficulty": "medel",
@@ -5807,6 +6043,9 @@
       "snabbt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "koreanskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -5904,6 +6143,9 @@
       "proteinrik",
       "matlådevänligt",
       "frys"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "medel",
@@ -6008,6 +6250,9 @@
       "matlådevänligt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "mexikanskt",
     "difficulty": "medel",
     "time_minutes": 45,
@@ -6080,6 +6325,10 @@
       "proteinrik",
       "efterrätt"
     ],
+    "category": [
+      "mat",
+      "efterrätt"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -6144,6 +6393,9 @@
       "proteinrik",
       "matlådevänligt",
       "frys"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -6254,6 +6506,9 @@
       "vegetariskt",
       "lågkalori"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -6306,6 +6561,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -6404,6 +6662,9 @@
       "middag",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -6470,6 +6731,9 @@
       "proteinrik",
       "matlådevänligt",
       "vegetariskt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -6548,6 +6812,10 @@
       "proteinrik",
       "bakat"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -6594,6 +6862,9 @@
     "tags": [
       "middag",
       "proteinrik"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "turkiskt",
     "difficulty": "medel",
@@ -6686,6 +6957,9 @@
       "proteinrik",
       "lågkalori"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -6768,6 +7042,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "lätt",
@@ -6864,6 +7141,10 @@
       "snabbt",
       "proteinrik"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -6914,6 +7195,9 @@
     "tags": [
       "snabbt",
       "vegetariskt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "turkiskt",
     "difficulty": "lätt",
@@ -6969,6 +7253,10 @@
       "proteinrik",
       "snabbt"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -7015,6 +7303,10 @@
       "proteinrik",
       "middag",
       "snabbt"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
@@ -7086,6 +7378,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "thailändskt",
     "difficulty": "lätt",
@@ -7176,6 +7471,9 @@
       "matlådevänligt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -7253,6 +7551,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -7362,6 +7663,9 @@
       "lunch",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -7450,6 +7754,10 @@
       "proteinrik",
       "lågkalori",
       "lågkolhydrat"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "asiatiskt",
     "difficulty": "medel",
@@ -7548,6 +7856,9 @@
       "middag",
       "matig"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -7619,6 +7930,9 @@
       "middag",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 45,
@@ -7677,6 +7991,9 @@
       "proteinrik",
       "middag",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "medel",
@@ -7773,6 +8090,9 @@
       "airfryer",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -7844,6 +8164,9 @@
       "snabbt",
       "vardagsmat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -7902,6 +8225,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -7985,6 +8311,9 @@
       "proteinrik",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "medel",
     "time_minutes": 50,
@@ -8056,6 +8385,9 @@
       "matlådevänligt",
       "proteinrik"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -8126,6 +8458,10 @@
     "tags": [
       "tillbehör",
       "vegetariskt"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "medel",
@@ -8206,6 +8542,9 @@
       "middag",
       "matig"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -8282,6 +8621,9 @@
     "tags": [
       "middag",
       "matig"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "lätt",
@@ -8378,6 +8720,9 @@
       "matig",
       "proteinrik"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 40,
@@ -8444,6 +8789,9 @@
       "sallad",
       "matlådevänligt",
       "vegetariskt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -8540,6 +8888,9 @@
       "sås",
       "lågkalori"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "franskt",
     "difficulty": "medel",
     "time_minutes": 20,
@@ -8617,6 +8968,9 @@
       "bakat",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "medel",
     "time_minutes": 240,
@@ -8688,6 +9042,9 @@
     "tags": [
       "middag",
       "matig"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
@@ -8785,6 +9142,9 @@
       "lågkalori",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "franskt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -8841,6 +9201,9 @@
     "tags": [
       "middag",
       "proteinrik"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "medel",
@@ -8950,6 +9313,9 @@
       "snabbt",
       "fisk"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -9014,6 +9380,9 @@
     "tags": [
       "middag",
       "proteinrik"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "mexikanskt",
     "difficulty": "lätt",
@@ -9111,6 +9480,9 @@
       "snabbt",
       "fisk"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 45,
@@ -9175,6 +9547,10 @@
     "tags": [
       "bakat",
       "tillbehör"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -9244,6 +9620,9 @@
       "vegetariskt",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 40,
@@ -9309,6 +9688,9 @@
       "proteinrik",
       "snabbt"
     ],
+    "category": [
+      "efterrätt"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 5,
@@ -9367,6 +9749,9 @@
       "proteinrik",
       "vegansk"
     ],
+    "category": [
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 25,
@@ -9399,6 +9784,9 @@
     "tags": [
       "mellanmål",
       "lågkalori"
+    ],
+    "category": [
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -9439,6 +9827,9 @@
       "vegetariskt",
       "lunch",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -9504,6 +9895,9 @@
     "tags": [
       "matig",
       "lunch"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "medel",
@@ -9596,6 +9990,9 @@
       "lunch",
       "proteinrik"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 65,
@@ -9657,6 +10054,9 @@
       "snabbt",
       "airfryer"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -9701,6 +10101,9 @@
       "proteinrik",
       "snabbt",
       "lunch"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -9759,6 +10162,10 @@
       "efterrätt",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -9842,6 +10249,10 @@
       "matlådevänligt",
       "bakat"
     ],
+    "category": [
+      "mat",
+      "efterrätt"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 45,
@@ -9902,6 +10313,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
@@ -9992,6 +10406,10 @@
       "proteinrik",
       "snabbt"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -10038,6 +10456,10 @@
       "lågkalori",
       "proteinrik"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -10083,6 +10505,10 @@
       "efterrätt",
       "proteinrik",
       "snabbt"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -10154,6 +10580,10 @@
       "proteinrik",
       "matlådevänligt",
       "frys"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -10239,6 +10669,9 @@
       "proteinrik",
       "bakat"
     ],
+    "category": [
+      "efterrätt"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -10316,6 +10749,9 @@
       "proteinrik",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "italienskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -10380,6 +10816,10 @@
       "proteinrik",
       "matlådevänligt",
       "bakat"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -10465,6 +10905,10 @@
       "airfryer",
       "middag"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 25,
@@ -10547,6 +10991,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "asiatiskt",
     "difficulty": "lätt",
@@ -10631,6 +11078,9 @@
       "sallad",
       "vegetariskt",
       "matig"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "medel",
@@ -10727,6 +11177,9 @@
       "proteinrik",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "medel",
     "time_minutes": 45,
@@ -10817,6 +11270,9 @@
       "middag",
       "lågkolhydrat"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 40,
@@ -10895,6 +11351,10 @@
       "matlådevänligt",
       "snabbt"
     ],
+    "category": [
+      "mat",
+      "efterrätt"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 10,
@@ -10948,6 +11408,10 @@
       "frukost",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -11013,6 +11477,9 @@
       "matlådevänligt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "amerikanskt",
     "difficulty": "lätt",
     "time_minutes": 240,
@@ -11071,6 +11538,9 @@
       "proteinrik",
       "vegetariskt",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -11149,6 +11619,9 @@
       "middag",
       "snabbt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
     "time_minutes": 35,
@@ -11214,6 +11687,10 @@
       "efterrätt",
       "proteinrik",
       "bakat"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
     ],
     "cuisine": "svenskt",
     "difficulty": "lätt",
@@ -11298,6 +11775,10 @@
       "proteinrik",
       "snabbt"
     ],
+    "category": [
+      "mat",
+      "efterrätt"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 15,
@@ -11354,6 +11835,9 @@
     "tags": [
       "tillbehör",
       "matig"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "italienskt",
     "difficulty": "medel",
@@ -11433,6 +11917,9 @@
       "sallad",
       "matlådevänligt"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 25,
@@ -11510,6 +11997,9 @@
       "proteinrik",
       "matlådevänligt",
       "middag"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "amerikanskt",
     "difficulty": "medel",
@@ -11625,6 +12115,9 @@
       "matlådevänligt",
       "middag"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -11708,6 +12201,9 @@
       "matlådevänligt",
       "frys"
     ],
+    "category": [
+      "mat"
+    ],
     "cuisine": "mexikanskt",
     "difficulty": "lätt",
     "time_minutes": 30,
@@ -11774,6 +12270,10 @@
       "proteinrik",
       "bakat"
     ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 40,
@@ -11837,6 +12337,9 @@
       "frukost",
       "proteinrik",
       "matlådevänligt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -11910,6 +12413,10 @@
       "fisk",
       "lågkalori"
     ],
+    "category": [
+      "mat",
+      "snacks"
+    ],
     "cuisine": "japanskt",
     "difficulty": "lätt",
     "time_minutes": 20,
@@ -11963,6 +12470,9 @@
       "proteinrik",
       "lågkalori"
     ],
+    "category": [
+      "efterrätt"
+    ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
     "time_minutes": 5,
@@ -12008,6 +12518,9 @@
       "proteinrik",
       "matlådevänligt",
       "snabbt"
+    ],
+    "category": [
+      "mat"
     ],
     "cuisine": "internationellt",
     "difficulty": "lätt",
@@ -12079,6 +12592,10 @@
       "lågkolhydrat",
       "fisk",
       "snabbt"
+    ],
+    "category": [
+      "mat",
+      "snacks"
     ],
     "cuisine": "japanskt",
     "difficulty": "medel",
