@@ -49,9 +49,10 @@
     /* Förhindra att iOS/Safari zoomar in när man fokuserar ett fält.
        Touch-enheter zoomar automatiskt om textstorleken är under 16px.
        Vi sätter därför minst 16px på pekskärmar – utan att röra viewporten,
-       så att användaren fortfarande kan nypa-zooma manuellt. */
+       så att användaren fortfarande kan nypa-zooma manuellt.
+       !important krävs för att vinna över Tailwinds text-sm-klass (14px). */
     @media (pointer: coarse) {
-      input, select, textarea { font-size: 16px; }
+      input, select, textarea { font-size: 16px !important; }
     }
     #sidebar [data-nav][aria-current="true"] { background: #efeee9; color: #665b49; }
     @media (prefers-reduced-motion: reduce) {
