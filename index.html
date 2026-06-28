@@ -159,7 +159,7 @@
       recipes: [],
       favorites: [],
       weekPlan: [],                      // [{ id, servings }]
-      filter: { search: "", chips: [], categories: [] },
+      filter: { search: "", chips: [], meals: [], categories: [] },
       shopping: { checked: [], cleared: [] }, // ingredient keys
       view: "recept",                    // recept | veckoplan | inkop
     };
@@ -174,9 +174,18 @@
       { id: "avancerat", label: "Avancerat", test: (r) => r.difficulty === "avancerat" },
     ];
 
-    // Hardcoded canonical list of recipe categories (recipe `tags`). Recipes carry a
-    // subset of these; the list also covers categories recipes may have in the future.
-    // Users can filter the grid by these — selected categories combine with OR.
+    // Top-level meal categories. Every recipe carries one or more of these in its
+    // `category` field (a dish that straddles a line, e.g. a sweet breakfast bowl,
+    // gets several). Users filter the grid by these — selected ones combine with OR.
+    const MEAL_CATEGORIES = [
+      { id: "mat", label: "Mat" },
+      { id: "efterrätt", label: "Efterrätt" },
+      { id: "snacks", label: "Snacks" },
+    ];
+
+    // Hardcoded canonical list of recipe tags. Recipes carry a subset of these; the
+    // list also covers tags recipes may have in the future.
+    // Users can filter the grid by these — selected tags combine with OR.
     const RECIPE_CATEGORIES = [
       "klassiker",
       "snabbt",
@@ -203,10 +212,12 @@
     function filterRecipes(recipes, filter, favorites = [], weekPlan = []) {
       const q = filter.search.trim().toLowerCase();
       const active = FILTER_CHIPS.filter((c) => filter.chips.includes(c.id));
+      const meals = filter.meals || [];
       const cats = filter.categories || [];
       const ctx = { favorites, planIds: new Set(weekPlan.map((e) => e.id)) };
       return recipes.filter((r) => {
         if (!active.every((c) => c.test(r, ctx))) return false;
+        if (meals.length && !meals.some((m) => (r.category || []).includes(m))) return false;
         if (cats.length && !cats.some((c) => r.tags.includes(c))) return false;
         if (q) {
           const haystack = [r.title, ...r.tags, ...r.ingredients.map((i) => i.name)]
@@ -413,6 +424,11 @@
       render();
     }
 
+    function toggleMeal(meal) {
+      toggle(appState.filter.meals, meal);
+      render();
+    }
+
     // ---------- Shuffle ----------
     function shuffleRecipe() {
       const list = filterRecipes(appState.recipes, appState.filter, appState.favorites, appState.weekPlan);
@@ -487,8 +503,10 @@
     // Total number of active filters (quick chips + categories), used for the
     // count badge on the Filter button and the "Visa X recept" footer label.
     function activeFilterCount() {
-      return appState.filter.chips.length + appState.filter.categories.length;
+      return appState.filter.chips.length + appState.filter.meals.length + appState.filter.categories.length;
     }
+
+    const mealLabel = (id) => (MEAL_CATEGORIES.find((m) => m.id === id) || {}).label || capitalize(id);
 
     // A toggle pill used inside the filter popup. `action` is "chip" | "cat".
     function filterPill(action, value, label, active) {
@@ -533,6 +551,7 @@
           const c = FILTER_CHIPS.find((x) => x.id === id);
           return activePill("chip", id, c ? c.label : id);
         }),
+        ...appState.filter.meals.map((meal) => activePill("meal", meal, mealLabel(meal))),
         ...appState.filter.categories.map((cat) => activePill("cat", cat, capitalize(cat))),
       ];
       if (!pills.length) {
@@ -551,16 +570,23 @@
       const chips = FILTER_CHIPS
         .map((c) => filterPill("chip", c.id, c.label, appState.filter.chips.includes(c.id)))
         .join("");
+      const meals = MEAL_CATEGORIES
+        .map((m) => filterPill("meal", m.id, m.label, appState.filter.meals.includes(m.id)))
+        .join("");
       const cats = RECIPE_CATEGORIES
         .map((cat) => filterPill("cat", cat, capitalize(cat), appState.filter.categories.includes(cat)))
         .join("");
       return `
         <div>
+          <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Kategori</h3>
+          <div class="flex flex-wrap gap-2">${meals}</div>
+        </div>
+        <div>
           <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Snabbfilter</h3>
           <div class="flex flex-wrap gap-2">${chips}</div>
         </div>
         <div>
-          <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Kategorier</h3>
+          <h3 class="mb-2 text-xs font-semibold uppercase tracking-wide text-taupe">Taggar</h3>
           <div class="flex flex-wrap gap-2">${cats}</div>
         </div>`;
     }
@@ -628,6 +654,7 @@
 
     function clearAllFilters() {
       appState.filter.chips = [];
+      appState.filter.meals = [];
       appState.filter.categories = [];
       render();
     }
@@ -657,7 +684,7 @@
       if (list.length) {
         empty.classList.add("hidden");
       } else {
-        const onlyChip = appState.filter.chips.length === 1 && !appState.filter.categories.length && !appState.filter.search.trim();
+        const onlyChip = appState.filter.chips.length === 1 && !appState.filter.meals.length && !appState.filter.categories.length && !appState.filter.search.trim();
         if (onlyChip && appState.filter.chips[0] === "favoriter") {
           empty.innerHTML = emptyBlock(ICONS.star, "Inga favoriter än", "Tryck på stjärnan på ett recept för att spara det.");
         } else if (onlyChip && appState.filter.chips[0] === "veckoplan") {
@@ -995,10 +1022,11 @@
     function handleAction(e) {
       const btn = e.target.closest("button[data-action]");
       if (btn) {
-        const { action, id, chip, cat } = btn.dataset;
+        const { action, id, chip, cat, meal } = btn.dataset;
         if (action === "fav") toggleFavorite(id);
         else if (action === "plan") togglePlan(id);
         else if (action === "chip") toggleChip(chip);
+        else if (action === "meal") toggleMeal(meal);
         else if (action === "cat") toggleCategory(cat);
         else if (action === "clear-filter") clearAllFilters();
         return;
@@ -1015,6 +1043,7 @@
       if (a === "close-filter") closeFilterSheet();
       else if (a === "clear-filter") clearAllFilters();
       else if (a === "chip") toggleChip(el.dataset.chip);
+      else if (a === "meal") toggleMeal(el.dataset.meal);
       else if (a === "cat") toggleCategory(el.dataset.cat);
     }
 
