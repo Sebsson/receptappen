@@ -1228,10 +1228,13 @@
     function stepIngredientChip(ing, factor) {
       const base = ing.amount;
       const scaled = base == null ? "" : fmtAmount(base * factor);
+      // The chip is an inline-flex container, which trims the whitespace between
+      // the amount span and the name text node — so the gap is set with a margin
+      // on the amount rather than a literal space (which would render as none).
       const amt =
         base == null
           ? ""
-          : `<span class="font-semibold"><span data-base="${base}">${scaled}</span> ${ing.unit}</span> `;
+          : `<span class="mr-1 font-semibold"><span data-base="${base}">${scaled}</span> ${ing.unit}</span>`;
       return `<span class="inline-flex items-center rounded-md bg-canvas px-2 py-0.5 text-[11px] text-taupe-dark ring-1 ring-taupe/20">${amt}${ing.name}</span>`;
     }
 
