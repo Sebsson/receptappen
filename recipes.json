@@ -342,7 +342,12 @@
     "steps": [
       "Skålla tomaterna i kokande vatten, dra av skalet och skär i bitar.",
       "Skala och skiva lök, vitlök och morot. Skölj och skiva purjolöken.",
-      "Lägg grönsakerna i en kastrull med buljong, lagerblad, timjan och chili. Koka 30 minuter.",
+      {
+        "text": "Lägg grönsakerna i en kastrull med buljong, lagerblad, timjan och chili. Koka 30 minuter.",
+        "amounts": {
+          "torkad chilifrukt": 0.5
+        }
+      },
       "Tillsätt tomaterna och mixa soppan slät, sila sedan om du vill.",
       "Vispa ner tomatpuré och grädde och låt soppan koka i några minuter.",
       "Smaka av med salt och peppar. Servera med knaperstekt bacon och ädelost."
@@ -509,8 +514,18 @@
     ],
     "steps": [
       "Skala potatisen och skär i tjocka skivor. Skala och skiva löken tunt.",
-      "Bryn löken i smör tills mjuk, ta upp. Bryn köttskivorna på båda sidor, krydda med salt och peppar.",
-      "Häll öl och buljong i stekpannan, koka upp och vispa ur pannan, sila skyn.",
+      {
+        "text": "Bryn löken i smör tills mjuk, ta upp. Bryn köttskivorna på båda sidor, krydda med salt och peppar.",
+        "amounts": {
+          "innanlår eller fransyska (6–8 skivor)": 500
+        }
+      },
+      {
+        "text": "Häll öl och buljong i stekpannan, koka upp och vispa ur pannan, sila skyn.",
+        "amounts": {
+          "ljus lageröl": 330
+        }
+      },
       "Varva kött, potatis och lök i en stekgryta – potatis underst och överst.",
       "Häll på vätskan och lägg i lagerbladen. Låt koka under lock på svag värme 40–60 minuter tills köttet är mört.",
       "Servera med saltgurka och garnera med hackad persilja."
@@ -604,7 +619,12 @@
       "Värm ugnen till 175°. Låt ströbrödet svälla i mjölken 10 minuter.",
       "Skala och finhacka löken. Stek mjuk i smör utan att ta färg, låt svalna.",
       "Blanda färs, ströbrödsblandning, ägg, lök, salt och peppar. Arbeta väl.",
-      "Forma till en avlång limpa. Täck med baconskivor och lägg i smord ugnsform.",
+      {
+        "text": "Forma till en avlång limpa. Täck med baconskivor och lägg i smord ugnsform.",
+        "amounts": {
+          "bacon (1 paket)": 140
+        }
+      },
       "Halvera tomaterna, strimla rödlöken och lägg runt limpan. Salta och peppra.",
       "Stek i ugnen 45–60 minuter. Servera med kokt potatis eller potatismos."
     ]
@@ -814,7 +834,12 @@
     ],
     "steps": [
       "Finhacka sidfläsket och champinjonerna. Skala och finhacka vitlök och tärna moroten.",
-      "Bryn köttfärsen i smör och lägg i stekgryta. Bryn sidfläsk, champinjoner, vitlök och morot i olivolja.",
+      {
+        "text": "Bryn köttfärsen i smör och lägg i stekgryta. Bryn sidfläsk, champinjoner, vitlök och morot i olivolja.",
+        "amounts": {
+          "nötfärs": 500
+        }
+      },
       "Tillsätt tomatpurén, rör om och lägg alltsamman i grytan.",
       "Häll i de passerade tomaterna och smaka av med salt och peppar.",
       "Låt grytan puttra på svag värme i 30–40 minuter under lock.",
@@ -962,11 +987,26 @@
       }
     ],
     "steps": [
-      "Värm ugnen till 200°. Koka makaronerna och låt rinna av.",
+      {
+        "text": "Värm ugnen till 200°. Koka makaronerna och låt rinna av.",
+        "amounts": {
+          "Idealmakaroner (råa)": 4
+        }
+      },
       "Strimla fläsket och finhacka löken. Bryn dem tillsammans på hög värme.",
       "Vispa ihop ägg, grädde, mjölk, salt och peppar till äggstanning.",
-      "Varva makaroner, fläsk och lök och det mesta av osten i en smord ugnsform.",
-      "Häll på äggstanningen och strö resten av osten över. Täck med aluminiumfolie.",
+      {
+        "text": "Varva makaroner, fläsk och lök och det mesta av osten i en smord ugnsform.",
+        "amounts": {
+          "grovriven lagrad ost": 1.5
+        }
+      },
+      {
+        "text": "Häll på äggstanningen och strö resten av osten över. Täck med aluminiumfolie.",
+        "amounts": {
+          "grovriven lagrad ost": 0.5
+        }
+      },
       "Grädda 30–40 minuter. Ta av folien de sista 10 minuterna. Servera med ketchup eller lingonsylt."
     ]
   },
@@ -1045,7 +1085,13 @@
     "steps": [
       "Tärna potatis, kött och korv i lika stora bitar. Skala och tärna löken.",
       "Stek potatisen gyllenbrun i smör i en stor stekpanna.",
-      "Tillsätt kött, korv och lök. Stek ihop och rör om. Smaka av med salt, peppar och mejram.",
+      {
+        "text": "Tillsätt kött, korv och lök. Stek ihop och rör om. Smaka av med salt, peppar och mejram.",
+        "amounts": {
+          "rökt fläsk": 150,
+          "kokt eller rökt skinka": 150
+        }
+      },
       "Stek äggen separat och lägg på toppen.",
       "Servera med inlagda rödbetor."
     ]
@@ -1199,7 +1245,12 @@
     "steps": [
       "Skär korven i centimetertjocka stavar. Skala och hacka löken.",
       "Fräs korv och lök i smör i en stor stekpanna.",
-      "Rör ner tomatpuré, paprikapulver, kummin och lagerblad. Sjud några minuter.",
+      {
+        "text": "Rör ner tomatpuré, paprikapulver, kummin och lagerblad. Sjud några minuter.",
+        "amounts": {
+          "kumminfrön": 1
+        }
+      },
       "Späd med buljong och grädde. Låt sjuda tills såsen är simmig.",
       "Smaka av med salt och peppar. Servera med kokt ris och en klick crème fraiche."
     ]
@@ -1489,7 +1540,12 @@
       "Skala och strimla lök och vitlök. Skär broccolin i bitar (spara några buketter till topping).",
       "Hetta upp olja i en kastrull och bryn lök, vitlök och broccoli några minuter.",
       "Tillsätt vatten och buljong och låt koka 10 minuter.",
-      "Blanda broccolibuketterna med citronsaft, olja, salt och peppar. Skär halloumin i kuber och stek gyllenbrun.",
+      {
+        "text": "Blanda broccolibuketterna med citronsaft, olja, salt och peppar. Skär halloumin i kuber och stek gyllenbrun.",
+        "amounts": {
+          "citron (saften)": 0.25
+        }
+      },
       "Mixa soppan slät med stavmixer. Smaka av med salt och peppar.",
       "Häll upp i skålar och toppa med broccoli och halloumi."
     ]
@@ -2040,10 +2096,20 @@
     ],
     "steps": [
       "Koka pastan enligt anvisning. Häll av och spola kall.",
-      "Blanda pesto och gräddfil. Smaka av med salt och peppar.",
+      {
+        "text": "Blanda pesto och gräddfil. Smaka av med salt och peppar.",
+        "amounts": {
+          "basilikapesto": 0.5
+        }
+      },
       "Låt paprikan rinna av. Dela körsbärstomaterna i halvor.",
       "Blanda pasta, tomater, paprika och spenat med pestodressingen.",
-      "Strö över parmesanosten. Servera med charkuterier."
+      {
+        "text": "Strö över parmesanosten. Servera med charkuterier.",
+        "amounts": {
+          "riven parmesan": 1
+        }
+      }
     ]
   },
   {
@@ -2197,8 +2263,18 @@
     "steps": [
       "Sätt ugnen på 225°. Skär laxen i portionsbitar, salta och peppra.",
       "Lägg på bakplåtspapper på en plåt och stek mitt i ugnen ca 10 minuter.",
-      "Gör tunna strimlor av citronskalet med zestjärn. Pressa saften.",
-      "Koka ihop crème fraiche, vatten och buljongtärning ca 5 minuter. Smaka av med citronsaft och citronzest.",
+      {
+        "text": "Gör tunna strimlor av citronskalet med zestjärn. Pressa saften.",
+        "amounts": {
+          "citron": 1
+        }
+      },
+      {
+        "text": "Koka ihop crème fraiche, vatten och buljongtärning ca 5 minuter. Smaka av med citronsaft och citronzest.",
+        "amounts": {
+          "fiskbuljongtärning": 1
+        }
+      },
       "Fräs bladspenaten. Servera laxen med citronsåsen, spenaten och kokt potatis."
     ]
   },
@@ -2283,10 +2359,27 @@
     "steps": [
       "Koka spaghettin i rikligt med saltat vatten (1 minut kortare än anvisning).",
       "Vispa ihop ägg med salt i en skål.",
-      "Strimla kycklingbaconet och fräs gyllenbrunt i olja och smör. Lägg i vitlöksklyftan hel i 5 min, ta bort den.",
+      {
+        "text": "Strimla kycklingbaconet och fräs gyllenbrunt i olja och smör. Lägg i vitlöksklyftan hel i 5 min, ta bort den.",
+        "amounts": {
+          "vitlök": 1
+        }
+      },
       "Häll den färdigkokta pastan direkt i stekpannan och blanda 30 sekunder.",
-      "Dra från värmen. Häll i äggsmeten med hälften av ostarna och svartpeppar. Rör tills äggsmeten är krämig men inte klumpig.",
-      "Rör ner resten av osten. Toppa med en äggula och hackad persilja."
+      {
+        "text": "Dra från värmen. Häll i äggsmeten med hälften av ostarna och svartpeppar. Rör tills äggsmeten är krämig men inte klumpig.",
+        "amounts": {
+          "riven parmesanost": 2.5,
+          "riven pecorinoost": 2.5
+        }
+      },
+      {
+        "text": "Rör ner resten av osten. Toppa med en äggula och hackad persilja.",
+        "amounts": {
+          "riven parmesanost": 2.5,
+          "riven pecorinoost": 2.5
+        }
+      }
     ]
   },
   {
@@ -2468,7 +2561,20 @@
       }
     ],
     "steps": [
-      "Blanda alla ingredienser utom kycklingen i grytan till en slät sås.",
+      {
+        "text": "Blanda alla ingredienser utom kycklingen i grytan till en slät sås.",
+        "amounts": {
+          "passerade tomater": 250,
+          "cidervinäger": 3,
+          "honung": 3,
+          "chipotle-pasta": 1,
+          "tomatpuré": 2,
+          "stor lök (tunt skivad)": 1,
+          "vitlök (finhackade)": 2,
+          "rökt paprikapulver": 2,
+          "salt": 1
+        }
+      },
       "Lägg i kycklinglåren och täck med såsen.",
       "Lägg på lock och tillaga på låg värme 6–7 timmar eller hög värme 4–5 timmar.",
       "Dra isär kycklingen med två gafflar direkt i grytan.",
@@ -2582,7 +2688,13 @@
       "Stek korven hel och lägg åt sidan. Koka pastan i saltat vatten, spara 2 dl pastavatten.",
       "Skala och riv moroten. Skölj och skiva paprikan. Skala vitlöken.",
       "Stek morot och paprika på hög värme ca 4 minuter. Pressa i vitlök, stek 1 minut till.",
-      "Häll i pastavatten, crème fraiche, tomatpuré, fond och kryddor. Koka upp.",
+      {
+        "text": "Häll i pastavatten, crème fraiche, tomatpuré, fond och kryddor. Koka upp.",
+        "amounts": {
+          "torkad oregano": 0.5,
+          "paprikapulver": 0.5
+        }
+      },
       "Skiva korven i slantar, tillsätt och låt puttra 5 minuter.",
       "Blanda i pastan och servera med riven parmesan och färsk basilika."
     ]
@@ -2715,7 +2827,13 @@
       "Rör om ägg och salt tills äggen blir luftiga.",
       "Sätt en teflonpanna på medelhög värme (ca 4 av 6).",
       "Häll i ägg och rör om tills äggen börjar stelna. Jämna ut och stäng av plattan.",
-      "Lägg på ost och skinka. Låt stå ca 4 minuter tills osten smält.",
+      {
+        "text": "Lägg på ost och skinka. Låt stå ca 4 minuter tills osten smält.",
+        "amounts": {
+          "riven mozzarella": 50,
+          "kycklingskinka": 2
+        }
+      },
       "Strö på oregano. Rulla sakta äggen till en omelett och rulla ned på tallriken."
     ]
   },
@@ -2808,7 +2926,12 @@
       "Koka haricots verts knappt mjuka, spola i kallt vatten.",
       "Skölj och torka salladen. Skiva rädisor och lök.",
       "Dressing: Gröp ur det löskokta ägget, vispa med vinäger, senap, olivolja och salt.",
-      "Fördela sallad, grönsaker och tonfisk på tallrikar. Halvera äggen och lägg på.",
+      {
+        "text": "Fördela sallad, grönsaker och tonfisk på tallrikar. Halvera äggen och lägg på.",
+        "amounts": {
+          "tomater": 3
+        }
+      },
       "Ringla dressingen över. Servera med bröd."
     ]
   },
@@ -2903,7 +3026,12 @@
     ],
     "steps": [
       "Skala och koka potatisen i saltat vatten.",
-      "Blanda keso, majonnäs, senap och purjolök. Tärna äpplet och rör ner med kapris, salt och peppar.",
+      {
+        "text": "Blanda keso, majonnäs, senap och purjolök. Tärna äpplet och rör ner med kapris, salt och peppar.",
+        "amounts": {
+          "lättmajonnäs": 4
+        }
+      },
       "Lägg salladsblad och rostbiff på tunnbröden.",
       "Lägg varm potatis på och mosa lätt med en gaffel.",
       "Fördela kesoröran över. Rulla ihop tunnbröden och servera."
@@ -3004,7 +3132,12 @@
       "Salta och peppra laxen. Lägg på bakplåtspapper.",
       "Rör ihop fetaost, yoghurt och timjan med en gaffel. Fördela över laxen.",
       "Stek laxen mitt i ugnen 12–15 minuter tills osten börjar få färg.",
-      "Finhacka och fräs löken i olja. Blanda ner quinoa, tomater och rucola. Smaka av.",
+      {
+        "text": "Finhacka och fräs löken i olja. Blanda ner quinoa, tomater och rucola. Smaka av.",
+        "amounts": {
+          "cocktailtomater": 250
+        }
+      },
       "Servera laxen varm med quinoasalladen."
     ]
   },
@@ -3161,9 +3294,19 @@
       }
     ],
     "steps": [
-      "Smula ner jästen i fingervarma vätskan och rör tills löst.",
+      {
+        "text": "Smula ner jästen i fingervarma vätskan och rör tills löst.",
+        "amounts": {
+          "jästkaka (50 g)": 1
+        }
+      },
       "Tillsätt salt och solrosfrön.",
-      "Blanda i mjölet – lämna ca 1 dl till utbakning. Rör ihop till en kletig deg.",
+      {
+        "text": "Blanda i mjölet – lämna ca 1 dl till utbakning. Rör ihop till en kletig deg.",
+        "amounts": {
+          "rågsikt": 5
+        }
+      },
       "Strö lite mjöl över, täck och låt jäsa 30–40 minuter.",
       "Stjälp ut på mjölat bord, skär i bitar och forma till portionsbröd.",
       "Lägg på plåt, jäs 30 min. Grädda i 225–250° högt upp i ugnen 10–12 minuter tills gyllenbruna."
@@ -3238,10 +3381,20 @@
     ],
     "steps": [
       "Sätt ugnen på 180°C.",
-      "Mixa keso, ägg, majsstärkelse och proteinpulver slätt i en mixer.",
+      {
+        "text": "Mixa keso, ägg, majsstärkelse och proteinpulver slätt i en mixer.",
+        "amounts": {
+          "vaniljproteinpulver": 30
+        }
+      },
       "Bred ut smeten i en rektangel på en plåt med bakplåtspapper.",
       "Grädda 20–25 minuter tills den är lätt gyllene och fast. Låt svalna något.",
-      "Blanda proteinyoghurt, mascarpone, sötningsmedel och hackade jordgubbar.",
+      {
+        "text": "Blanda proteinyoghurt, mascarpone, sötningsmedel och hackade jordgubbar.",
+        "amounts": {
+          "vaniljproteinyoghurt": 250
+        }
+      },
       "Bred fyllningen jämnt över den svalnade botten och lägg gärna på några extra skivade jordgubbar.",
       "Rulla försiktigt ihop till en rulle. Kyl tills den är genomkyld, skiva och servera."
     ]
@@ -3351,7 +3504,12 @@
       "Sätt ugnen på 180°C.",
       "Mikra eller baka sötpotatisen tills den är mjuk.",
       "Lägg sötpotatisen i en skål och mosa slät.",
-      "Tillsätt proteinpulver, kakao, ägg och honung.",
+      {
+        "text": "Tillsätt proteinpulver, kakao, ägg och honung.",
+        "amounts": {
+          "chokladproteinpulver": 30
+        }
+      },
       "Blanda tills en tjock browniesmet bildas.",
       "Häll i en liten ugnsform eller form med bakplåtspapper.",
       "Grädda 20–25 minuter tills den satt sig. Låt svalna innan du skär den i bitar."
@@ -3423,7 +3581,14 @@
       "Smörj eller klä en avlång form med bakplåtspapper.",
       "Koka blåbär och vatten i en kastrull på medelvärme.",
       "Koka upp och sänk sedan värmen. Låt sjuda 5–7 minuter, rör om och mosa bären lätt.",
-      "Blanda alla övriga ingredienser i en skål. Blandningen ska hålla ihop – tillsätt mer jordnötssmör om den är för torr, eller mer havremjöl om den är för blöt.",
+      {
+        "text": "Blanda alla övriga ingredienser i en skål. Blandningen ska hålla ihop – tillsätt mer jordnötssmör om den är för torr, eller mer havremjöl om den är för blöt.",
+        "amounts": {
+          "lönnsirap": 0.8,
+          "kokosolja": 2,
+          "havregryn": 2.4
+        }
+      },
       "Spara ca 0,6 dl av havreblandningen till topping.",
       "Tryck ut resten av blandningen i formen.",
       "Häll över blåbärsröran och bred ut jämnt. Smula över den sparade havreblandningen.",
@@ -3538,7 +3703,12 @@
       }
     ],
     "steps": [
-      "Blanda yoghurt och proteinpulver slätt.",
+      {
+        "text": "Blanda yoghurt och proteinpulver slätt.",
+        "amounts": {
+          "vaniljproteinpulver": 15
+        }
+      },
       "Blöt rispappret i vatten tills det mjuknar och lägg det plant.",
       "Lägg på fyllningen och bären och vik ihop till ett paket.",
       "Frys 60 minuter tills det är fast."
@@ -3667,7 +3837,13 @@
       "Sätt ugnen på 200°C (400°F).",
       "Separera äggvitorna från gulorna.",
       "Vispa äggvitorna till mjuka toppar.",
-      "Tillsätt vatten och kryddor och vispa lite till.",
+      {
+        "text": "Tillsätt vatten och kryddor och vispa lite till.",
+        "amounts": {
+          "salt": 1,
+          "svartpeppar": 1
+        }
+      },
       "Klicka ut ca 1 tsk äggvitskum per fördjupning i en muffinsplåt.",
       "Riv lite hårdost över varje chip.",
       "Grädda i 12 minuter. Låt svalna så de blir knapriga. Servera med valfri dipp."
@@ -3737,7 +3913,12 @@
     "steps": [
       "Sätt ugnen på 225°C.",
       "Skiva och stek kalkonbaconet (eller använd rökt, strimlad skinka).",
-      "Blanda baconet med riven potatis, keso, ägg, salt och peppar direkt i en pajform.",
+      {
+        "text": "Blanda baconet med riven potatis, keso, ägg, salt och peppar direkt i en pajform.",
+        "amounts": {
+          "benbuljongpulver (valfritt)": 1
+        }
+      },
       "Tillaga i ugnen ca 30 minuter."
     ]
   },
@@ -3820,7 +4001,12 @@
       "Doppa ett rispapper i taget och vik ihop till bageform.",
       "Strö över sesamfrön.",
       "Tillaga i ugn eller airfryer på 225°C ca 10 minuter, tills de svällt upp och fått gyllenbrun färg.",
-      "Toppa med protein-färskost, lax och grönsaker. Ät direkt."
+      {
+        "text": "Toppa med protein-färskost, lax och grönsaker. Ät direkt.",
+        "amounts": {
+          "tomat, rödlök och ruccola": 1
+        }
+      }
     ]
   },
   {
@@ -3903,7 +4089,12 @@
       }
     ],
     "steps": [
-      "Blanda fyllningen: rör ihop stekt nötfärs, mozzarella, hackad lök och pickles och krydda med paprika, vitlökspulver, salt och peppar.",
+      {
+        "text": "Blanda fyllningen: rör ihop stekt nötfärs, mozzarella, hackad lök och pickles och krydda med paprika, vitlökspulver, salt och peppar.",
+        "amounts": {
+          "paprikapulver": 0.5
+        }
+      },
       "Vispa ägg på en tallrik. Doppa varje rispapper i ägget några sekunder och lägg dem omlott på en lätt oljad yta.",
       "Lägg fyllningen i en rad över rispappret, rulla ihop till en tät rulle och böj den runt sig själv till en spiral.",
       "Pensla toppen med ägg och strö över sesamfrön.",
@@ -4018,7 +4209,14 @@
       "Krydda kycklinglåren med avokadoolja, risvinäger, sojasås, salt, peppar, vitlökspulver, lökpulver, torkad persilja/koriander och cayennepeppar. Blanda väl.",
       "Tillaga i ugn på 200°C (400°F) i 32 minuter, eller i airfryer på 200°C i 22 minuter. Strimla.",
       "Doppa rispappret snabbt i varmt vatten och lägg det plant.",
-      "Lägg på ruccola och grönsaker, lämna plats vid kanterna.",
+      {
+        "text": "Lägg på ruccola och grönsaker, lämna plats vid kanterna.",
+        "amounts": {
+          "röd paprika, tunt skivad": 1,
+          "gurka, tunt skivad": 2,
+          "stor rödlök, tunt skivad": 0.5
+        }
+      },
       "Vik upp underkanten, dra åt och vik in. Lägg på kyckling, avokado och koriander.",
       "Vik in sidorna och rulla ihop tätt som en liten burrito. Upprepa."
     ]
@@ -4392,8 +4590,18 @@
       }
     ],
     "steps": [
-      "Sätt ugnen på 425°F (220°C). Skär potatisen i tunna pommes, skölj i kallt vatten och torka torrt.",
-      "Vänd pommesen i olivolja, paprika, vitlökspulver, lökpulver, salt och peppar. Bred ut på en plåt med bakplåtspapper och baka 45–55 minuter, vänd halvvägs, tills djupt gyllene.",
+      {
+        "text": "Sätt ugnen på 425°F (220°C). Skär potatisen i tunna pommes, skölj i kallt vatten och torka torrt.",
+        "amounts": {
+          "stora bakpotatisar": 2
+        }
+      },
+      {
+        "text": "Vänd pommesen i olivolja, paprika, vitlökspulver, lökpulver, salt och peppar. Bred ut på en plåt med bakplåtspapper och baka 45–55 minuter, vänd halvvägs, tills djupt gyllene.",
+        "amounts": {
+          "paprikapulver": 1
+        }
+      },
       "Förbered burgersåsen medan pommesen bakar.",
       "Stek burgarbiffarna på hög värme tills de fått yta, krydda sedan med salt och peppar. Stek 2–3 minuter per sida. Låt svalna något.",
       "Sänk ugnen till 400°F (200°C).",
@@ -4449,7 +4657,12 @@
     ],
     "steps": [
       "Mixa vattenmelonen och sila bort eventuella kärnor.",
-      "Strö gelatinet i ett tunt lager över ytan och låt svälla 5–10 minuter.",
+      {
+        "text": "Strö gelatinet i ett tunt lager över ytan och låt svälla 5–10 minuter.",
+        "amounts": {
+          "gelatinpulver": 4
+        }
+      },
       "Vispa över låg till medelvärme tills blandningen går från tjock till tunn.",
       "Tillsätt sötningsmedel och proteinpulver och rör slätt.",
       "Häll i formar och låt stelna i kylen 1–2 timmar.",
@@ -4520,7 +4733,7 @@
     ],
     "steps": [
       "Vispa ihop ägg, proteindryck och flingsalt.",
-      "Doppa rispappren i blandningen och vik ihop (de blir mjuka och vikbara efter 1–2 minuter), 2 papper per bulle.",
+      "Doppa rispappren i blandningen och vik ihop (de blir mjuka och vikbara efter några sekunder), 2 papper per bulle.",
       "Gör vaniljkräm: vispa ihop 1 dl proteindryck vanilj med 2 msk marsanpulver. Toppa bullarna.",
       "Grädda i ugn eller airfryer på 225°C varmluft ca 8 minuter, tills de svällt upp och fått gyllenbrun färg.",
       "Vänd dem gärna upp och ner och grädda ett par minuter extra för krispig undersida.",
@@ -4584,7 +4797,7 @@
       }
     ],
     "steps": [
-      "Låt rispappret mjukna 1–2 minuter innan vikning.",
+      "Låt rispappret mjukna några sekunder i vatten innan vikning.",
       "Blanda ägg, mjölk och salt.",
       "Lägg 2 rispapper per bakelse, fyll med hallonsylt och vik ihop till form.",
       "Grädda i airfryer eller ugn på 200°C i ca 10 minuter tills de svällt upp och blivit gyllenbruna.",
@@ -4703,11 +4916,30 @@
     ],
     "steps": [
       "Sätt ugnen på 175°C (350°F).",
-      "Blanda de våta ingredienserna i en skål och de torra i en annan.",
+      {
+        "text": "Blanda de våta ingredienserna i en skål och de torra i en annan.",
+        "amounts": {
+          "grekisk yoghurt 0% (vanilj eller choklad)": 284,
+          "ägg": 1,
+          "havremjöl": 45,
+          "vetemjöl": 12,
+          "sötningsmedel (t.ex. Swerve)": 72,
+          "vaniljproteinpulver (2 scoops, helst kasein/vassle)": 60,
+          "mörk kakao": 25,
+          "bikarbonat": 4,
+          "bakpulver": 2
+        }
+      },
       "Blanda ihop vått och torrt till en slät smet utan klumpar (tillsätt mer mandelmjölk om smeten är för tjock).",
       "Häll smeten i en smord eller bakplåtsklädd limpform.",
       "Grädda 40–45 minuter, gärna något underbakat för mjukare konsistens.",
-      "Blanda frostingingredienserna och ställ i kylen 10 minuter medan limpan bakas.",
+      {
+        "text": "Blanda frostingingredienserna och ställ i kylen 10 minuter medan limpan bakas.",
+        "amounts": {
+          "grekisk yoghurt 0% (till frosting)": 68,
+          "florsötningsmedel (till frosting)": 24
+        }
+      },
       "Frosta brownien, toppa med krossad oreo och kyl ytterligare 10 minuter. Skär i bitar."
     ]
   },
@@ -4835,7 +5067,17 @@
       }
     ],
     "steps": [
-      "Lägg alla ingredienser i en matberedare eller kraftfull mixer.",
+      {
+        "text": "Lägg alla ingredienser i en matberedare eller kraftfull mixer.",
+        "amounts": {
+          "skummjölk": 50,
+          "fryst banan (1/2 medium)": 60,
+          "chokladproteinpulver": 30,
+          "kakao": 3,
+          "sockerfri lönnsirap": 20,
+          "is": 1.5
+        }
+      },
       "Mixa på hög hastighet i ca 5 minuter tills det är slätt, tjockt och fluffigt utan klumpar.",
       "Servera direkt och toppa gärna med krossade flingor eller chokladknappar."
     ]
@@ -4929,7 +5171,12 @@
       "Blanda nötfärs med riven lök, pressad vitlök, salt och kryddor.",
       "Bred ut färsen tunt på libabröden och stek (smash-metoden) tills genomstekt.",
       "Rör ihop vitlökssåsen: grekisk yoghurt, pressad vitlök, citronjuice, salt och peppar.",
-      "Toppa med sallad, rödlök, saltgurka och såsen. Rulla ihop till wraps."
+      {
+        "text": "Toppa med sallad, rödlök, saltgurka och såsen. Rulla ihop till wraps.",
+        "amounts": {
+          "paprika": 1
+        }
+      }
     ]
   },
   {
@@ -4995,7 +5242,12 @@
     ],
     "steps": [
       "Gör sylten: värm jordgubbarna i en kastrull, tillsätt chiafrön, mixa med stavmixer och låt koka ca 5 minuter.",
-      "Lägg keso, ägg, mjölk, mjöl, salt och kardemumma i en ugnsform och mixa till en slät smet.",
+      {
+        "text": "Lägg keso, ägg, mjölk, mjöl, salt och kardemumma i en ugnsform och mixa till en slät smet.",
+        "amounts": {
+          "vaniljkeso": 250
+        }
+      },
       "Ringla över sylten.",
       "Tillaga i ugnen ca 30 minuter på 225°C."
     ]
@@ -5081,7 +5333,12 @@
     ],
     "steps": [
       "Krydda nötfärsen med salt, peppar och vitlökspulver och blanda med hackad lök.",
-      "Bred färsen på tortillabröden, lägg på ostskivor och rulla/vik ihop. Trä upp på spett.",
+      {
+        "text": "Bred färsen på tortillabröden, lägg på ostskivor och rulla/vik ihop. Trä upp på spett.",
+        "amounts": {
+          "hamburgerost": 4
+        }
+      },
       "Tillaga i airfryer tills genomstekt och gyllene.",
       "Rör ihop hamburgerdressingen: grekisk yoghurt, majonnäs, chilisås, senap, hackad saltgurka och kryddor.",
       "Servera spetten med dressingen."
@@ -5173,7 +5430,12 @@
       }
     ],
     "steps": [
-      "Lägg paprika, vitlök, rödlök och tomater på en plåt, ringla över olivolja och salta.",
+      {
+        "text": "Lägg paprika, vitlök, rödlök och tomater på en plåt, ringla över olivolja och salta.",
+        "amounts": {
+          "körsbärstomater": 300
+        }
+      },
       "Rosta i ugnen på 200°C (400°F) i 35 minuter.",
       "Skala paprikan och lägg alla rostade grönsaker i en mixer.",
       "Tillsätt färskost, grädde, vatten, basilika och kryddor och mixa slätt.",
@@ -5278,9 +5540,19 @@
       }
     ],
     "steps": [
-      "Blanda nötfärs, ägg, ströbröd, kryddor och hackade örter och rulla köttbullar.",
+      {
+        "text": "Blanda nötfärs, ägg, ströbröd, kryddor och hackade örter och rulla köttbullar.",
+        "amounts": {
+          "hackad persilja och basilika": 3
+        }
+      },
       "Bryn köttbullarna med hackad lök i en stor gryta.",
-      "Tillsätt tomatpuré, krossade tomater, vatten och buljongtärning. Koka upp.",
+      {
+        "text": "Tillsätt tomatpuré, krossade tomater, vatten och buljongtärning. Koka upp.",
+        "amounts": {
+          "oxbuljongtärning": 1
+        }
+      },
       "Tillsätt pastan och låt koka tills den är al dente och såsen tjocknat.",
       "Rör ner färskost och parmesan tills krämigt. Smaka av."
     ]
@@ -5359,7 +5631,12 @@
       }
     ],
     "steps": [
-      "Stek lök, vitlök, nötfärs och buljongtärningar i en panna tills färsen fått färg.",
+      {
+        "text": "Stek lök, vitlök, nötfärs och buljongtärningar i en panna tills färsen fått färg.",
+        "amounts": {
+          "oxbuljongtärningar": 2
+        }
+      },
       "Tillsätt passata och låt sjuda tills såsen tjocknat.",
       "Mixa keson slät med salt, vitlökspulver och lökpulver.",
       "Varva färssås, lasagneplattor och kesoblandning i en form. Upprepa lagren.",
@@ -5821,11 +6098,21 @@
       }
     ],
     "steps": [
-      "Hacka grönsakerna och stek nötfärsen i rapsolja. Krydda med vegete, lökkrydda, salt och peppar. Lägg åt sidan.",
+      {
+        "text": "Hacka grönsakerna och stek nötfärsen i rapsolja. Krydda med vegete, lökkrydda, salt och peppar. Lägg åt sidan.",
+        "amounts": {
+          "jalapeños": 4
+        }
+      },
       "Stek lök och paprika mjuka.",
       "Häll tillbaka färsen, tillsätt tomatpuré och stek under omrörning några minuter.",
       "Tillsätt krossade tomater och Philadelphia och låt sjuda 5 minuter. Smaka av och låt svalna.",
-      "Rulla burritos och frys in.",
+      {
+        "text": "Rulla burritos och frys in.",
+        "amounts": {
+          "stora tortillabröd": 6
+        }
+      },
       "Värm: låt tina ordentligt och värm i mikro på låg effekt 2–3 minuter eller i airfryer."
     ]
   },
@@ -6025,11 +6312,38 @@
       }
     ],
     "steps": [
-      "Blanda ingredienserna till kycklingfyllningen väl.",
-      "Bred ett jämnt, tunt lager på varje tortilla, lämna 1 cm kant.",
-      "Pensla med ägg och strö på panko, skaka av överskottet.",
+      {
+        "text": "Blanda ingredienserna till kycklingfyllningen väl.",
+        "amounts": {
+          "kycklingfärs": 500,
+          "currypulver": 2,
+          "sojasås": 1,
+          "sriracha (valfritt)": 1,
+          "ingefära": 1,
+          "vitlök": 1
+        }
+      },
+      {
+        "text": "Bred ett jämnt, tunt lager på varje tortilla, lämna 1 cm kant.",
+        "amounts": {
+          "tortillabröd": 6
+        }
+      },
+      {
+        "text": "Pensla med ägg och strö på panko, skaka av överskottet.",
+        "amounts": {
+          "pankoströbröd": 2.4
+        }
+      },
       "Stek tortillan med kycklingsidan ner i rikligt med olja på medelvärme 3–4 minuter tills gyllene, vänd och stek 2–3 minuter till.",
-      "Blanda alla ingredienser till slawen i en skål.",
+      {
+        "text": "Blanda alla ingredienser till slawen i en skål.",
+        "amounts": {
+          "kewpie-majonnäs (till slaw)": 2,
+          "risvinäger (till slaw)": 2,
+          "honung (till slaw)": 1
+        }
+      },
       "Toppa tacosen med slaw, ringla över tonkatsusås och strö på salladslök och sesamfrön."
     ]
   },
@@ -6128,7 +6442,12 @@
       "Stek nötfärsen i en het panna tills den fått färg.",
       "Tillsätt sojasås, farinsocker, sesamolja, risvinäger, ingefära, vitlök och gochujang. Sjud 3–5 minuter tills blank och något klibbig.",
       "Sätt ugnen på 180°C och klä en plåt med bakplåtspapper.",
-      "Doppa tortillorna lätt i vatten om de är styva och skär dem i halvor.",
+      {
+        "text": "Doppa tortillorna lätt i vatten om de är styva och skär dem i halvor.",
+        "amounts": {
+          "stora tortillabröd": 3
+        }
+      },
       "Lägg färs i mitten av varje halva, toppa med mozzarella och vik till trianglar.",
       "Lägg på plåten, strö över lite extra mozzarella och baka 20–25 minuter tills gyllene och krispiga.",
       "Toppa med salladslök och lite chiliolja."
@@ -6235,7 +6554,12 @@
       "Krydda kycklingbröstet med vitlökssalt och peppar och tillaga tills genomstekt. Strimla.",
       "Blanda kycklingen med chipotlepeppar, limejuice och honung.",
       "Mixa ihop chipotlesåsen: keso, majonnäs, hackad chipotle, lime, vitlökssalt, peppar, honung och mjölk.",
-      "Fyll tortillorna med kyckling, mozzarella och gräslök och vik ihop till quesadillas.",
+      {
+        "text": "Fyll tortillorna med kyckling, mozzarella och gräslök och vik ihop till quesadillas.",
+        "amounts": {
+          "lågkalori-tortillabröd": 10
+        }
+      },
       "Stek i panna eller airfryer tills gyllene och osten smält.",
       "För frysning: slå in i folie eller fryspåse och frys upp till 3 månader. Värm i mikro 3–4 minuter."
     ]
@@ -6489,7 +6813,12 @@
     ],
     "steps": [
       "Blanda mjöl, yoghurt, vitlökssalt och italiensk krydda till en deg.",
-      "Krydda kycklingen, tillaga och strimla. Blanda med salsa, lök, buffalosås och mozzarella.",
+      {
+        "text": "Krydda kycklingen, tillaga och strimla. Blanda med salsa, lök, buffalosås och mozzarella.",
+        "amounts": {
+          "tomatsalsa": 60
+        }
+      },
       "Mixa ihop den proteinrika buffalosåsen: keso, färskost, kryddor, buffalosås och lite mjölk.",
       "Kavla ut degen, fyll med buffalokyckling och vik ihop till fickor.",
       "Baka i ugn på 200°C tills gyllene och genomgräddade.",
@@ -6546,7 +6875,12 @@
       }
     ],
     "steps": [
-      "Koka blomkålen tills den är mycket mjuk (viktigt för slät konsistens).",
+      {
+        "text": "Koka blomkålen tills den är mycket mjuk (viktigt för slät konsistens).",
+        "amounts": {
+          "stort blomkålshuvud": 1
+        }
+      },
       "Lägg den varma blomkålen i en mixer eller matberedare.",
       "Tillsätt parmesan, pecorino, vitlök och skummjölk.",
       "Mixa tills helt slät och krämig. Blanda med kokt pasta."
@@ -6715,7 +7049,12 @@
     ],
     "steps": [
       "Koka potatisen.",
-      "Skär och stek kycklingen. Salta och peppra.",
+      {
+        "text": "Skär och stek kycklingen. Salta och peppra.",
+        "amounts": {
+          "steksmör": 1
+        }
+      },
       "När den är genomstekt, krydda med vitlökspulver, paprikapulver och timjan.",
       "Rör ner båda sorters crème fraiche. Salta och peppra efter smak (späd med lite vatten för mer sås).",
       "Häll av potatisen och mosa den med lättmjölk, salt och peppar.",
@@ -6796,8 +7135,19 @@
       }
     ],
     "steps": [
-      "Lägg tortillan i en panna.",
-      "Blanda ägg, keso, fetaost, spenat och tomater.",
+      {
+        "text": "Lägg tortillan i en panna.",
+        "amounts": {
+          "tortillabröd (medium)": 1
+        }
+      },
+      {
+        "text": "Blanda ägg, keso, fetaost, spenat och tomater.",
+        "amounts": {
+          "körsbärstomater": 100,
+          "salt och peppar": 1
+        }
+      },
       "Häll över tortillan och toppa med cheddar och parmesan.",
       "Grädda på 180°C i 20 minuter."
     ]
@@ -6939,7 +7289,12 @@
       }
     ],
     "steps": [
-      "Koka pastan.",
+      {
+        "text": "Koka pastan.",
+        "amounts": {
+          "farfallepasta (rosetter)": 1
+        }
+      },
       "Stek nötfärsen med salt, peppar, vitlök och paprika. Tillsätt hackad lök, vitlök och tomatpuré och stek klart.",
       "Rör ihop yoghurtsåsen: yoghurt, pressad vitlök och vatten.",
       "Smält smör med paprika och chiliflakes till en smörsås.",
@@ -7182,7 +7537,12 @@
       }
     ],
     "steps": [
-      "Fördela pizzasås, salami, mozzarella och italiensk krydda på wrapen.",
+      {
+        "text": "Fördela pizzasås, salami, mozzarella och italiensk krydda på wrapen.",
+        "amounts": {
+          "lågkolhydrat-proteinwrap (vitlök & örter)": 1
+        }
+      },
       "Vik ihop till två fickor.",
       "Stek i airfryer eller ugn på 200°C i ca 10 minuter tills gyllene och knapriga."
     ]
@@ -7363,7 +7723,12 @@
       }
     ],
     "steps": [
-      "Skär potatisen i tunna pommes, krydda med salt och spraya med olja. Airfryer/ugn på 200°C tills krispiga.",
+      {
+        "text": "Skär potatisen i tunna pommes, krydda med salt och spraya med olja. Airfryer/ugn på 200°C tills krispiga.",
+        "amounts": {
+          "avokadooljespray": 1
+        }
+      },
       "Stek nötfärsen med salt, peppar och tacokrydda.",
       "Tillsätt mjölk, buljong och smältost och rör till en krämig sås.",
       "Häll nachofärsen över pommesen och servera."
@@ -7457,7 +7822,20 @@
     "steps": [
       "Sätt ugnen på 225°C.",
       "Koka nudlarna (eller använd kokta nudlar som blivit över).",
-      "Lägg nudlarna i botten på en ugnsform och fördela resten av ingredienserna jämnt över.",
+      {
+        "text": "Lägg nudlarna i botten på en ugnsform och fördela resten av ingredienserna jämnt över.",
+        "amounts": {
+          "kålmix (vitkål & morot)": 150,
+          "broccoli (färsk eller fryst)": 150,
+          "sesamolja": 1,
+          "pad thai-sås (1 flaska)": 150,
+          "ägg": 4,
+          "sojasås": 2,
+          "sötströ (valfritt)": 1,
+          "rostade jordnötter, grovhackade": 25,
+          "chiliflakes, salt och peppar": 1
+        }
+      },
       "Tillaga i ugnen ca 20 minuter tills kycklingen är genomstekt."
     ]
   },
@@ -7646,9 +8024,19 @@
       }
     ],
     "steps": [
-      "Blanda nötfärs, ägg, ströbröd, hackad gul lök, örter och kryddor och rulla köttbullar.",
+      {
+        "text": "Blanda nötfärs, ägg, ströbröd, hackad gul lök, örter och kryddor och rulla köttbullar.",
+        "amounts": {
+          "färsk persilja och basilika": 1
+        }
+      },
       "Bryn köttbullarna med hackad rödlök i en stor gryta.",
-      "Tillsätt tomatpuré, krossade tomater, vatten och buljongtärning. Koka upp.",
+      {
+        "text": "Tillsätt tomatpuré, krossade tomater, vatten och buljongtärning. Koka upp.",
+        "amounts": {
+          "oxbuljongtärning": 1
+        }
+      },
       "Bryt ner spaghettin och låt koka tills den är al dente och såsen tjocknat.",
       "Rör ner färskost och parmesan tills krämigt."
     ]
@@ -7841,7 +8229,7 @@
       "Hacka salladslöken fint.",
       "Blanda kycklingfärs, ostronsås, sojasås, vitlök, majsstärkelse, vitpeppar, svartpeppar, salt och salladslök till en fyllning.",
       "Stek fyllningen i en panna med lite oljespray tills genomstekt. Låt svalna.",
-      "Doppa ett rispapper snabbt i vatten (max 1 minut).",
+      "Doppa ett rispapper snabbt i vatten (några sekunder).",
       "Lägg en klick fyllning i mitten och vik ihop till en fyrkant.",
       "Stek fyrkanterna i en non-stick-panna på medellåg värme tills rispappret blir ljusbrunt och krispigt på båda sidor.",
       "Rör ihop såsen: sojasås, chiliolja, sesamolja, sesamfrön och vatten. Servera till."
@@ -7914,7 +8302,13 @@
       }
     ],
     "steps": [
-      "Fördela tomatsås, pålägg, salami, pepperoni och ost på halva degen (spara utrymme så det går att rulla).",
+      {
+        "text": "Fördela tomatsås, pålägg, salami, pepperoni och ost på halva degen (spara utrymme så det går att rulla).",
+        "amounts": {
+          "pizzadeg": 1,
+          "skinka eller kycklingpålägg": 100
+        }
+      },
       "Rulla ihop, nyp ihop degen och vänd på rullen. Vik kanterna under.",
       "Pensla med lite smör, toppa med oregano och gör små snitt i degen.",
       "Grädda i ugn på 200°C i ca 15–20 minuter."
@@ -8297,7 +8691,12 @@
     ],
     "steps": [
       "Blanda mjöl och grekisk yoghurt till en deg.",
-      "Stek nötfärsen med hackad lök och kryddor. Rör ner Philadelphia, ketchup, senap och pickles.",
+      {
+        "text": "Stek nötfärsen med hackad lök och kryddor. Rör ner Philadelphia, ketchup, senap och pickles.",
+        "amounts": {
+          "vitlökspulver, paprikapulver, rökt paprika, salt, peppar": 1
+        }
+      },
       "Kavla ut degen, fyll med färsröra och ost och vik ihop till fickor.",
       "Baka i ugn på 200°C tills gyllene och genomgräddade."
     ]
@@ -8607,9 +9006,26 @@
     ],
     "steps": [
       "Sätt ugnen på 200°C.",
-      "Fräs hackad lök och skinka i smör.",
-      "Häll i matlagningsgrädden och koka upp. Ta av värmen och rör i cheddarosten (spara lite till toppen).",
-      "Varva såsen med lasagneplattor i en ugnssäker form. Strö över resten av osten.",
+      {
+        "text": "Fräs hackad lök och skinka i smör.",
+        "amounts": {
+          "vitlöksklyftor": 2,
+          "vetemjöl": 1
+        }
+      },
+      {
+        "text": "Häll i matlagningsgrädden och koka upp. Ta av värmen och rör i cheddarosten (spara lite till toppen).",
+        "amounts": {
+          "salt och svartpeppar": 1,
+          "riven cheddarost": 120
+        }
+      },
+      {
+        "text": "Varva såsen med lasagneplattor i en ugnssäker form. Strö över resten av osten.",
+        "amounts": {
+          "riven cheddarost": 30
+        }
+      },
       "Grädda i mitten av ugnen ca 20 minuter tills fin färg. Servera med morötter och gröna ärtor."
     ]
   },
@@ -8704,7 +9120,12 @@
       }
     ],
     "steps": [
-      "Bryn nötfärsen i en stor panna med kryddor och hackad lök tills genomstekt. Häll av fettet.",
+      {
+        "text": "Bryn nötfärsen i en stor panna med kryddor och hackad lök tills genomstekt. Häll av fettet.",
+        "amounts": {
+          "chilipulver": 2
+        }
+      },
       "Tillsätt vitlök, Rotel, tomatsås, svarta bönor, majs, buljong och oskökt ris.",
       "Rör om, lägg på lock och låt koka på medellåg värme 15–20 minuter tills riset är klart.",
       "Toppa med riven ost och låt smälta. Servera med gräddfil, koriander och tacosås."
@@ -8775,8 +9196,22 @@
       "Stek baconet och hacka det smått.",
       "Koka pastan enligt förpackningen.",
       "Lägg pastan i en smord ugnsform. Tillsätt kyckling, alfredosås och ranchkrydda.",
-      "Rör i en del av osten och baconet och blanda väl.",
-      "Toppa med resten av osten och baconet.",
+      {
+        "text": "Rör i en del av osten och baconet och blanda väl.",
+        "amounts": {
+          "riven cheddar": 1.2,
+          "riven mozzarella": 1.8,
+          "bacon, stekt och smulat": 3
+        }
+      },
+      {
+        "text": "Toppa med resten av osten och baconet.",
+        "amounts": {
+          "riven cheddar": 1.2,
+          "riven mozzarella": 1.8,
+          "bacon, stekt och smulat": 3
+        }
+      },
       "Grädda på 190°C i 15–20 minuter."
     ]
   },
@@ -8872,7 +9307,12 @@
       }
     ],
     "steps": [
-      "Koka pastan enligt anvisning, vänd i olivolja och kryddor.",
+      {
+        "text": "Koka pastan enligt anvisning, vänd i olivolja och kryddor.",
+        "amounts": {
+          "oregano och basilika": 1
+        }
+      },
       "Tillaga pastan klart i ugnen på 200°C i ca 30–40 minuter tills krispig (öka värmen mot slutet vid behov).",
       "Hacka gurka, tomat och rödlök och blanda med majs och smulad fetaost.",
       "Rör ihop såsen: majonnäs, crème fraiche och italiensk salladskrydda.",
@@ -9030,7 +9470,13 @@
       "Knåda degen genom att sträcka och vika ca 8–10 gånger. Upprepa efter 15 minuter. Låt sedan jäsa ca 90 minuter till dubbel storlek.",
       "Olja en långpanna, lägg i degen och tryck ut den försiktigt. Täck och låt jäsa ytterligare 90 minuter.",
       "Gör spiralkorvar: trä en korv på ett spett och skär ett spiralsnitt medan du snurrar.",
-      "Sätt ugnen på 230°C. Ringla olivolja över degen och tryck till gropar med fingrarna. Fördela 5 korvar och strö över ost.",
+      {
+        "text": "Sätt ugnen på 230°C. Ringla olivolja över degen och tryck till gropar med fingrarna. Fördela 5 korvar och strö över ost.",
+        "amounts": {
+          "långa nötkorvar": 5,
+          "riven cheddar (valfritt)": 100
+        }
+      },
       "Grädda tills focaccian är gyllene och genomgräddad."
     ]
   },
@@ -9125,7 +9571,15 @@
       }
     ],
     "steps": [
-      "Rör ihop burgersåsen och ställ åt sidan.",
+      {
+        "text": "Rör ihop burgersåsen och ställ åt sidan.",
+        "amounts": {
+          "ketchup (till sås)": 1.2,
+          "majonnäs (till sås)": 0.6,
+          "senap (till sås)": 0.3,
+          "sweet relish (till sås)": 2
+        }
+      },
       "Skala och tärna potatisen, vänd i olivolja, salt, peppar, vitlökspulver och paprika. Airfryer på 200°C i 20–25 minuter, skaka emellanåt.",
       "Stek nötfärsen med hackad lök och kryddor i en panna tills genomstekt.",
       "Blanda i potatisen, toppa med ost och låt smälta.",
@@ -9299,7 +9753,12 @@
       "Marinera kycklingen med salt, rökt paprika, chilipulver, vitlökspulver, peppar, pressad vitlök och olja. Stek tills genomstekt.",
       "Gör pico de gallo: blanda hackad lök, tomat, koriander, limejuice, salt och peppar.",
       "Rör ihop den starka såsen: majonnäs, gräddfil, hot sauce, rökt paprika, vitlökspulver, lime och lite vatten.",
-      "Lägg kyckling och mozzarella på tortillorna, vik och stek krispiga i lite olja.",
+      {
+        "text": "Lägg kyckling och mozzarella på tortillorna, vik och stek krispiga i lite olja.",
+        "amounts": {
+          "minitortillas": 20
+        }
+      },
       "Servera med pico de gallo och den starka såsen."
     ]
   },
@@ -9465,8 +9924,19 @@
     "steps": [
       "Fräs hackad lök i olivolja. Tillsätt nötfärs och vitlök och stek tills genomstekt.",
       "Rör i tacokryddor, chipotlepasta och tomatpuré. Smaka av med salt och peppar.",
-      "Fyll tortillorna med färs och ost, vik och stek krispiga i lite olja.",
-      "Rör ihop chipotleyoghurten: grekisk yoghurt, gräddfil, chipotlepasta, limejuice och lite vatten.",
+      {
+        "text": "Fyll tortillorna med färs och ost, vik och stek krispiga i lite olja.",
+        "amounts": {
+          "minitortillas": 8,
+          "cheddar-mozzarellamix": 100
+        }
+      },
+      {
+        "text": "Rör ihop chipotleyoghurten: grekisk yoghurt, gräddfil, chipotlepasta, limejuice och lite vatten.",
+        "amounts": {
+          "lime (saft, till sås)": 1
+        }
+      },
       "Servera tacosen med chipotleyoghurt, picklad rödlök och färsk koriander."
     ]
   },
@@ -9734,7 +10204,12 @@
       }
     ],
     "steps": [
-      "Blanda proteinpulver, puddingpulver, kakao, salt och grekisk yoghurt slätt.",
+      {
+        "text": "Blanda proteinpulver, puddingpulver, kakao, salt och grekisk yoghurt slätt.",
+        "amounts": {
+          "chokladproteinpulver": 1
+        }
+      },
       "Smula ner oreokex och rör om eller toppa med.",
       "Ställ kallt en stund eller ät direkt."
     ]
@@ -9882,7 +10357,12 @@
     "steps": [
       "Sätt ugnen på 200°C och koka potatisen mjuk.",
       "Lägg potatisen i en form och smasha så den täcker botten. Ringla över olja och krydda med salt och peppar.",
-      "Lägg på spenat, paprika och tomater.",
+      {
+        "text": "Lägg på spenat, paprika och tomater.",
+        "amounts": {
+          "körsbärstomater, halverade": 1
+        }
+      },
       "Vispa ihop ägg och mjölk och häll över grönsakerna.",
       "Toppa med ost och grädda 25–30 minuter."
     ]
@@ -9975,7 +10455,12 @@
       "Koka potatisen i saltat vatten tills den är mjuk. Häll av.",
       "Smasha potatisen i botten på en form så den bildar en botten.",
       "Vispa ihop ägg, mjölk, grädde, salt och peppar.",
-      "Fördela skinka, tomat, spenat och jalapeño över potatisen.",
+      {
+        "text": "Fördela skinka, tomat, spenat och jalapeño över potatisen.",
+        "amounts": {
+          "körsbärstomater, skivade": 2.4
+        }
+      },
       "Häll över äggsmeten och toppa med mozzarella och gräslök.",
       "Grädda i ugn på 180°C tills äggstanningen satt sig och fått färg."
     ]
@@ -10040,7 +10525,13 @@
       "Baka 45–50 minuter tills mjuka (eller airfryer 25 minuter). Låt svalna.",
       "Vispa ihop ägg och mjölk.",
       "Skär sötpotatisarna på längden, mosa lätt och forma en grop. Krydda med salt och peppar.",
-      "Lägg i grönsakerna, häll på äggsmeten och toppa med feta.",
+      {
+        "text": "Lägg i grönsakerna, häll på äggsmeten och toppa med feta.",
+        "amounts": {
+          "salladslök, hackad": 1,
+          "röd paprika, finhackad": 0.5
+        }
+      },
       "Baka eller airfryer ytterligare 15–20 minuter."
     ]
   },
@@ -10088,7 +10579,12 @@
       }
     ],
     "steps": [
-      "Krydda kycklingbröstet och ringla över citronjuice och olivolja.",
+      {
+        "text": "Krydda kycklingbröstet och ringla över citronjuice och olivolja.",
+        "amounts": {
+          "salt, peppar, lök- och vitlökspulver, timjan, paprika, persilja": 1
+        }
+      },
       "Airfryer på 190°C (375°F) i 18–20 minuter tills genomstekt."
     ]
   },
@@ -10150,7 +10646,12 @@
     "steps": [
       "Stek kycklingen med currykrydda, salt, peppar och pressad vitlök.",
       "Rör ihop såsen: kvarg/grekisk yoghurt och majonnäs.",
-      "Lägg kyckling, sås och grönsaker på libabrödet och rulla ihop."
+      {
+        "text": "Lägg kyckling, sås och grönsaker på libabrödet och rulla ihop.",
+        "amounts": {
+          "salladslök, tomat och äpple": 1
+        }
+      }
     ]
   },
   {
@@ -10234,7 +10735,12 @@
       }
     ],
     "steps": [
-      "Mosa bananen och blanda med ägg, proteinpulver, havregryn, kvarg, mjölk, bakpulver, honung och kakao.",
+      {
+        "text": "Mosa bananen och blanda med ägg, proteinpulver, havregryn, kvarg, mjölk, bakpulver, honung och kakao.",
+        "amounts": {
+          "chokladproteinpulver": 1
+        }
+      },
       "Rör ner chokladknapparna.",
       "Häll i en form och grädda på 180°C i 30 minuter."
     ]
@@ -10491,7 +10997,12 @@
       }
     ],
     "steps": [
-      "Bred pizzasås på en tortilla och lägg den andra ovanpå (eller använd en).",
+      {
+        "text": "Bred pizzasås på en tortilla och lägg den andra ovanpå (eller använd en).",
+        "amounts": {
+          "tortillabröd": 2
+        }
+      },
       "Toppa med pepperoni och ost.",
       "Grädda på 180°C i 12 minuter."
     ]
@@ -10565,7 +11076,14 @@
       }
     ],
     "steps": [
-      "Blanda de torra ingredienserna i en skål.",
+      {
+        "text": "Blanda de torra ingredienserna i en skål.",
+        "amounts": {
+          "brun stevia/sötningsmedel": 25,
+          "salt": 1,
+          "vaniljproteinpulver": 45
+        }
+      },
       "Tillsätt smält smör, vaniljextrakt och lönnsirap och rör ihop till en deg.",
       "Tillsätt eventuellt lite vatten eller mjölk om degen är för torr.",
       "Ät direkt eller toppa med chokladknappar."
@@ -10652,9 +11170,21 @@
       }
     ],
     "steps": [
-      "Stek nötfärsen med hackad pepperoni och kryddor.",
+      {
+        "text": "Stek nötfärsen med hackad pepperoni och kryddor.",
+        "amounts": {
+          "lökpulver, vitlökspulver, rökt paprika, salt, peppar": 1
+        }
+      },
       "Tillsätt passata, tomatpuré och färskost och låt sjuda ihop.",
-      "Fyll tortillorna med färsröra och ost och rulla ihop.",
+      {
+        "text": "Fyll tortillorna med färsröra och ost och rulla ihop.",
+        "amounts": {
+          "riven mozzarella": 125,
+          "riven lätt cheddar": 125,
+          "proteintortillas": 8
+        }
+      },
       "Baka eller stek tills gyllene. Låt svalna innan de slås in i folie.",
       "Frys i upp till flera månader. Värm i mikro 5–6 minuter och stek/airfryer krispiga."
     ]
@@ -10734,7 +11264,16 @@
     ],
     "steps": [
       "Sätt ugnen på 175°C.",
-      "Blanda de torra ingredienserna i en bunke. Rör sedan ner honung, ägg, smält smör och vatten.",
+      {
+        "text": "Blanda de torra ingredienserna i en bunke. Rör sedan ner honung, ägg, smält smör och vatten.",
+        "amounts": {
+          "mandelmjöl": 1,
+          "vaniljkasein-proteinpulver": 1.5,
+          "kakao": 0.75,
+          "vetemjöl (eller glutenfri mjölmix)": 0.5,
+          "salt": 0.33
+        }
+      },
       "Smöra en bakform och häll i smeten.",
       "Grädda ca 8–12 minuter beroende på önskad kladdighet.",
       "Låt gärna stå i kylen några timmar innan servering."
@@ -10889,7 +11428,12 @@
     ],
     "steps": [
       "Mixa keso och ägg slätt.",
-      "Blanda i mjöl och kryddor till en deg (tillsätt mer mjöl om för lös).",
+      {
+        "text": "Blanda i mjöl och kryddor till en deg (tillsätt mer mjöl om för lös).",
+        "amounts": {
+          "riven parmesan": 10
+        }
+      },
       "Rör ner cheddar och hackad pepperoni.",
       "Forma bullar i en form, gör en grop i varje och fyll med pizzasås, mozzarella och pepperoni.",
       "Grädda i ugn på 200°C tills gyllene och genomgräddade."
@@ -10976,7 +11520,12 @@
       }
     ],
     "steps": [
-      "Vänd kycklingtendersen i havremjöl med kryddor, sedan vispat ägg och till sist krossade cornflakes.",
+      {
+        "text": "Vänd kycklingtendersen i havremjöl med kryddor, sedan vispat ägg och till sist krossade cornflakes.",
+        "amounts": {
+          "vitlökspulver, lökpulver, salt, peppar": 1
+        }
+      },
       "Airfryer tills gyllene och genomstekta.",
       "Rör ihop bang bang-såsen: grekisk yoghurt, majonnäs, sweet chilisås, sriracha och honung.",
       "Servera tendersen med såsen."
@@ -11064,7 +11613,15 @@
     "steps": [
       "Sätt ugnen på 200°C. Skär grönsaker och kyckling i bitar.",
       "Lägg kycklingen i en ugnsform och krydda med salt och vitlökspulver.",
-      "Lägg på grönsakerna och cashewnötterna.",
+      {
+        "text": "Lägg på grönsakerna och cashewnötterna.",
+        "amounts": {
+          "grön paprika": 1,
+          "röd paprika": 1,
+          "rödlök": 1,
+          "broccoli": 250
+        }
+      },
       "Blanda sweet chilisås, soja och ostronsås och häll över. Blanda runt.",
       "Tillaga i ugnen ca 25–30 minuter tills kycklingen är klar, rör runt några gånger."
     ]
@@ -11163,7 +11720,12 @@
     "steps": [
       "Häll av och torka kikärtorna, krydda med paprika, vitlökspulver och salt och rosta krispiga i ugn eller airfryer.",
       "Stek halloumin i olivolja tills gyllene, ringla över honung och chiliflakes.",
-      "Lägg spenat, gurka, avokado, rödlök, granatäpple och örter i en skål.",
+      {
+        "text": "Lägg spenat, gurka, avokado, rödlök, granatäpple och örter i en skål.",
+        "amounts": {
+          "granatäppelkärnor": 1.2
+        }
+      },
       "Toppa med kikärtor och halloumi.",
       "Ringla över dressing av olivolja, citronsaft, salt och peppar."
     ]
@@ -11253,10 +11815,20 @@
       }
     ],
     "steps": [
-      "Krydda kycklingen och stek den med hackad vitlök och citronsaft tills genomstekt.",
+      {
+        "text": "Krydda kycklingen och stek den med hackad vitlök och citronsaft tills genomstekt.",
+        "amounts": {
+          "citron (saft)": 0.5
+        }
+      },
       "Tillsätt kondenserad mjölk, parmesan, färskost, fondpulver och rökt paprika och låt sjuda till en krämig sås.",
       "Rör ner riven ost.",
-      "Fyll tortillorna med kycklingröra och mozzarella och rulla ihop.",
+      {
+        "text": "Fyll tortillorna med kycklingröra och mozzarella och rulla ihop.",
+        "amounts": {
+          "tortillabröd": 15
+        }
+      },
       "Baka i ugnen tills gyllene. Toppa med persilja och oregano."
     ]
   },
@@ -11335,7 +11907,12 @@
     ],
     "steps": [
       "Sätt ugnen på 200°C. Halvera paprikorna och kärna ur.",
-      "Stek nötfärsen med hackad lök och kryddor.",
+      {
+        "text": "Stek nötfärsen med hackad lök och kryddor.",
+        "amounts": {
+          "salt, peppar, paprikapulver, vitlökspulver": 1
+        }
+      },
       "Rör ner spenat, passata, parmesan och eventuellt ris.",
       "Fyll paprikorna med färsröran och toppa med cheddar.",
       "Baka i ugnen tills paprikorna mjuknat och osten fått färg."
@@ -11523,7 +12100,12 @@
       }
     ],
     "steps": [
-      "Lägg kyckling, cream of chicken och färskost i en crockpot och tillaga tills kycklingen är mör.",
+      {
+        "text": "Lägg kyckling, cream of chicken och färskost i en crockpot och tillaga tills kycklingen är mör.",
+        "amounts": {
+          "salt": 1
+        }
+      },
       "Strimla kycklingen och rör ihop till en krämig sås.",
       "Koka proteinpastan och mikra broccolin.",
       "Blanda pasta och broccoli med den krämiga kycklingsåsen. Portionera i lådor."
@@ -11604,8 +12186,20 @@
     ],
     "steps": [
       "Sätt ugnen på 200°C.",
-      "Lägg tortillabrödet i en ugnssäker form. Knäck i ägg och blanda med keso.",
-      "Lägg i spenat, tomat och broccoli och toppa med riven ost.",
+      {
+        "text": "Lägg tortillabrödet i en ugnssäker form. Knäck i ägg och blanda med keso.",
+        "amounts": {
+          "salt, peppar, vitlökskrydda": 1
+        }
+      },
+      {
+        "text": "Lägg i spenat, tomat och broccoli och toppa med riven ost.",
+        "amounts": {
+          "körsbärstomater": 5,
+          "parmesan": 2,
+          "riven cheddar": 1
+        }
+      },
       "Grädda i mitten av ugnen ca 30 minuter tills fyllningen är fast."
     ]
   },
@@ -11674,7 +12268,13 @@
       "Sätt ugnen på 230°C och tina kycklingkebaben.",
       "Lägg tortillabröden omlott i en smord pajform.",
       "Lägg i kycklingkebaben, skivad paprika och bred Philadelphia över.",
-      "Toppa med riven ost och skivade tomater.",
+      {
+        "text": "Toppa med riven ost och skivade tomater.",
+        "amounts": {
+          "riven mozzarella": 60,
+          "körsbärstomater": 4
+        }
+      },
       "Grädda ca 25 minuter tills osten smält och fått fin färg."
     ]
   },
@@ -11759,7 +12359,19 @@
       }
     ],
     "steps": [
-      "Lägg alla ingredienser i en mixer och mixa till en smet.",
+      {
+        "text": "Lägg alla ingredienser i en mixer och mixa till en smet.",
+        "amounts": {
+          "banan": 1,
+          "ägg": 1,
+          "havregryn": 1,
+          "chokladproteinpulver": 0.5,
+          "kakao": 3,
+          "osötad havremjölk": 1,
+          "salt": 1,
+          "bakpulver": 1
+        }
+      },
       "Häll upp i silikonformar och toppa med chokladknappar.",
       "Grädda på 180°C i 8–12 minuter – muffinsen ska vara lite ”oklara” i mitten så de blir saftiga.",
       "Låt svalna och stelna innan servering."
@@ -11822,7 +12434,12 @@
       }
     ],
     "steps": [
-      "Blanda proteinpulver, vetemjöl, bakpulver och salt.",
+      {
+        "text": "Blanda proteinpulver, vetemjöl, bakpulver och salt.",
+        "amounts": {
+          "vaniljproteinpulver (isolat)": 25
+        }
+      },
       "Rör ner äggvita och mjölk till en slät smet.",
       "Stek små pannkakor i en lätt smord panna tills gyllene på båda sidor."
     ]
@@ -11982,10 +12599,22 @@
     ],
     "steps": [
       "Koka pastan enligt förpackningen.",
-      "Kärna ur gurkan och skär den i bitar. Skär övriga grönsaker.",
+      {
+        "text": "Kärna ur gurkan och skär den i bitar. Skär övriga grönsaker.",
+        "amounts": {
+          "små tomater": 150,
+          "rödlök": 1,
+          "majs": 1
+        }
+      },
       "Blanda dippmixen med gräddfilen och ställ i kylen.",
       "Bena ur kycklingen.",
-      "Blanda ihop alla ingredienser och servera."
+      {
+        "text": "Blanda ihop alla ingredienser och servera.",
+        "amounts": {
+          "vitost": 150
+        }
+      }
     ]
   },
   {
@@ -12323,7 +12952,12 @@
       }
     ],
     "steps": [
-      "Mosa bananen och blanda med havregryn, bakpulver, mandelmjölk, proteinpulver och ägg.",
+      {
+        "text": "Mosa bananen och blanda med havregryn, bakpulver, mandelmjölk, proteinpulver och ägg.",
+        "amounts": {
+          "vaniljproteinpulver": 20
+        }
+      },
       "Rör ner Biscoff eller chokladknappar.",
       "Häll i en form och grädda på 180°C i 30–40 minuter."
     ]
@@ -12504,7 +13138,12 @@
       }
     ],
     "steps": [
-      "Mixa isvatten, proteinpulver och xantangummi i en kraftig mixer tills tjockt och glassigt.",
+      {
+        "text": "Mixa isvatten, proteinpulver och xantangummi i en kraftig mixer tills tjockt och glassigt.",
+        "amounts": {
+          "vassleproteinpulver": 1
+        }
+      },
       "Smula ner oreokexet och rör om.",
       "Servera direkt."
     ]
@@ -12579,7 +13218,15 @@
     "steps": [
       "Koka pastan och stek kycklingkebaben.",
       "Rör ihop grekisk yoghurt och pesto till en sås.",
-      "Fördela pasta, kebab och grönsaker i matlådor.",
+      {
+        "text": "Fördela pasta, kebab och grönsaker i matlådor.",
+        "amounts": {
+          "lök": 1,
+          "gurka": 1,
+          "tomat": 1,
+          "sallad": 1
+        }
+      },
       "Toppa med pestosåsen."
     ]
   },
@@ -12664,7 +13311,12 @@
       }
     ],
     "steps": [
-      "Tärna rödlök, skiva avokado och hyvla gurkan i långa strimlor med en potatisskalare.",
+      {
+        "text": "Tärna rödlök, skiva avokado och hyvla gurkan i långa strimlor med en potatisskalare.",
+        "amounts": {
+          "slanggurka": 1
+        }
+      },
       "Blanda tonfisk, rödlök, majonnäs, dillkrydda, dijonsenap, peppar och citronjuice.",
       "Lägg gurkstrimlorna omlott så de bildar en stor 'kvadrat'.",
       "Bred på färskost och lägg tonfiskröra och avokado i nederkanten.",
