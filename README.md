@@ -53,10 +53,30 @@ Varje recept i `recipes.json` följer:
   "ingredients": [
     { "amount": 200, "unit": "g", "name": "pasta", "category": "torrvaror" }
   ],
-  "steps": ["Koka pastan ...", "..."]
+  "steps": [
+    "Koka pastan ...",
+    { "text": "Vänd ner 50 g parmesan i såsen.", "amounts": { "parmesan": 50 } }
+  ]
 }
 ```
 
 `category` är receptets överkategori(er) och innehåller en eller flera av `mat`, `efterrätt`, `snacks`. Ett recept som passar i flera kategorier (t.ex. en söt frukostbowl) listas i alla som gäller.
 
 Tillåtna ingredienskategorier: `grönsaker`, `mejeri`, `kött & fisk`, `torrvaror`, `kryddor`, `övrigt`.
+
+### Steg
+
+Varje steg är antingen en **textsträng** eller ett **objekt** `{ "text": "...",
+"amounts": { "<ingrediensnamn>": <mängd> } }`. Under varje steg visas mängd-taggar
+för de ingredienser steget använder. Vilka ingredienser som taggas avgörs så här:
+
+- **Automatisk matchning** – appen matchar stegets text mot ingrediensernas namn
+  (även böjda och sammansatta ord, t.ex. "grädden" → `vispgrädde`, "löken" →
+  `rödlök`). Taggen visar då ingrediensens **totala** mängd.
+- **`amounts`-överstyrning** – när en ingrediens **delas mellan flera steg** anges
+  per-steg-mängden i `amounts` (nyckeln är exakt ingrediensens `name`). Mängden ska
+  vara per **basantal portioner** (`servings`), precis som ingredienslistan, så att
+  den skalas om med portionsväljaren. Summan av en ingrediens delar över alla steg
+  ska vara lika med ingrediensens totala mängd. En ingrediens som finns i `amounts`
+  får alltid en tagg, även om texten inte nämner den – använd det när ett steg säger
+  "alla kryddor" e.dyl. så att varje ingrediens ändå listas med sin mängd.

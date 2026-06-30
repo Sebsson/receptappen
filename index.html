@@ -1222,19 +1222,53 @@
       return i >= 3 && a.length - i <= 3 && b.length - i <= 3;
     }
 
+    // Swedish builds compounds, and a step usually names an ingredient by its bare
+    // head ("häll i grädden" for "vispgrädde", "krydda med peppar" for "svartpeppar")
+    // or its bare base ("stek laxen" for "laxfilé", "fräs löken" for "rödlök").
+    // stemEq can't bridge those, so we also match on a curated set of head words
+    // (compound suffix) and base words (compound prefix). The lists are conservative
+    // on purpose — like ING_STOP, they only hold words that read unambiguously.
+    const ING_HEADS = [
+      "peppar", "mjöl", "grädde", "olja", "mjölk", "buljong", "socker", "vinäger",
+      "senap", "yoghurt", "kvarg", "pulver", "gryn", "jäst", "fond", "lök", "ost",
+      "sås", "ris", "spenat", "fläsk", "korv", "färs", "kött", "sirap", "sylt",
+      "tomat", "krydda", "nudlar", "sallad", "filé", "bröd", "soja",
+    ];
+    const ING_BASES = [
+      "kyckling", "lax", "nöt", "kött", "fläsk", "korv", "biff", "skinka",
+      "bacon", "tonfisk", "räk", "torsk", "vitlök",
+    ];
+
+    // True if the ingredient term and the step word line up on a shared compound
+    // head (term ends with a head the step names) or base (term starts with a base
+    // the step names) — each tolerant of inflection via stemEq on the head/base.
+    function compoundEq(term, word) {
+      for (const h of ING_HEADS) {
+        if (term.endsWith(h) && term.length > h.length && stemEq(h, word)) return true;
+        if (word.endsWith(h) && word.length > h.length && stemEq(h, term)) return true;
+      }
+      for (const b of ING_BASES) {
+        if (term.startsWith(b) && term.length > b.length && stemEq(b, word)) return true;
+      }
+      return false;
+    }
+
     // Ingredients (in list order) whose name is referenced by this step's text.
     function stepIngredients(stepText, ingredients) {
       const tokens = stepTokens(stepText);
       return ingredients.filter((ing) => {
         const terms = ingredientMatchTerms(ing.name);
-        return terms.some((t) => tokens.some((w) => stemEq(t, w)));
+        return terms.some((t) => tokens.some((w) => stemEq(t, w) || compoundEq(t, w)));
       });
     }
 
     // Small inline amount tag shown under a step. Reuses the [data-base] hook so
-    // the portion adjuster rescales it together with the ingredient list.
-    function stepIngredientChip(ing, factor) {
-      const base = ing.amount;
+    // the portion adjuster rescales it together with the ingredient list. When a
+    // step uses only part of an ingredient (it is split across steps), the step can
+    // override the amount via `overrideBase` — the per-step amount at the recipe's
+    // base servings, so it still scales with the portion adjuster.
+    function stepIngredientChip(ing, factor, overrideBase) {
+      const base = overrideBase == null ? ing.amount : overrideBase;
       const scaled = base == null ? "" : fmtAmount(base * factor);
       // The chip is an inline-flex container, which trims the whitespace between
       // the amount span and the name text node — so the gap is set with a margin
@@ -1267,8 +1301,19 @@
 
       const steps = r.steps
         .map((s, i) => {
-          const used = stepIngredients(s, r.ingredients);
-          const chips = used.map((ing) => stepIngredientChip(ing, factor)).join("");
+          // A step is either plain text or { text, amounts } where `amounts` maps an
+          // ingredient name to the amount that step uses — for ingredients split
+          // across steps (50 g i basen, 50 g i såsen). An ingredient named in
+          // `amounts` always gets a chip, even if the text doesn't mention it.
+          const text = typeof s === "string" ? s : s.text;
+          const amounts = (typeof s === "object" && s.amounts) || {};
+          const matched = stepIngredients(text, r.ingredients);
+          const used = r.ingredients.filter(
+            (ing) => matched.includes(ing) || ing.name in amounts
+          );
+          const chips = used
+            .map((ing) => stepIngredientChip(ing, factor, amounts[ing.name]))
+            .join("");
           const chipRow = chips
             ? `<div class="mt-2 flex flex-wrap gap-1.5">${chips}</div>`
             : "";
@@ -1276,7 +1321,7 @@
           <li class="flex gap-3">
             <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-taupe text-xs font-semibold text-white">${i + 1}</span>
             <div class="min-w-0 flex-1">
-              <p class="text-sm leading-relaxed text-gray-700">${s}</p>
+              <p class="text-sm leading-relaxed text-gray-700">${text}</p>
               ${chipRow}
             </div>
           </li>`;
