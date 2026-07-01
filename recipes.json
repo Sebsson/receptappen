@@ -249,6 +249,7 @@
     "description": "Fyllig tomatsoppa tillagad från grunden med färska tomater och grädde, toppad med bacon och ädelost.",
     "image": "",
     "tags": [
+      "vegetariskt",
       "soppa",
       "klassiker"
     ],
@@ -741,6 +742,7 @@
     "description": "Rik köttfärssås med champinjoner och rökt fläsk som får sjuda länge.",
     "image": "",
     "tags": [
+      "kött",
       "pasta",
       "klassiker",
       "matlådevänligt"
@@ -926,6 +928,8 @@
     "description": "En gammal svensk husmanskostklassiker – ugnsgräddade makaroner med sidfläsk och ost.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "klassiker",
       "matlådevänligt"
     ],
@@ -1016,6 +1020,7 @@
     "description": "En god resträtt på kokt potatis och blandade charkvaror, serverad med stekt ägg och rödbetor.",
     "image": "",
     "tags": [
+      "kött",
       "klassiker",
       "snabbt"
     ],
@@ -1102,6 +1107,7 @@
     "description": "Gratinerad falukorv med senap, tomat och smält ost – snabb vardagsmat.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "klassiker"
     ],
@@ -1164,6 +1170,7 @@
     "description": "Snabb och smakrik gryta med falukorv i tomat- och gräddsås.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "klassiker"
     ],
@@ -1261,6 +1268,7 @@
     "description": "Grovrivna potatispannkakor stekta i smör och fläskflott, serverade med rårörda lingon.",
     "image": "",
     "tags": [
+      "kött",
       "klassiker"
     ],
     "category": [
@@ -1328,6 +1336,7 @@
     "description": "Ugnsgräddad pannkaka med tärnat fläsk – enkel och mättande klassiker.",
     "image": "",
     "tags": [
+      "kött",
       "klassiker"
     ],
     "category": [
@@ -1396,6 +1405,7 @@
     "description": "Snabb och proteinrik frukost eller lunch med bacon, ägg, tomat och gurka.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "lågkolhydrat"
     ],
@@ -1556,6 +1566,7 @@
     "description": "Smakrik gryta med kycklinglår, stark korv och grönsaker i tomatbas.",
     "image": "",
     "tags": [
+      "kött",
       "kyckling",
       "matlådevänligt"
     ],
@@ -1667,6 +1678,7 @@
     "description": "Kycklingfilé fylld med skinka och ost, panerad och stekt gyllenbrun, serverad med fräsch sallad.",
     "image": "",
     "tags": [
+      "kött",
       "kyckling",
       "festmat"
     ],
@@ -1940,6 +1952,7 @@
     "description": "Klassisk pajdeg med smörig fyllning av skinka, ost och äggstanning.",
     "image": "",
     "tags": [
+      "kött",
       "klassiker",
       "matlådevänligt"
     ],
@@ -2027,6 +2040,7 @@
     "description": "Kall pastasallad med pestodressing, grillad paprika, körsbärstomater och parmesan.",
     "image": "",
     "tags": [
+      "pasta",
       "vegetariskt",
       "snabbt",
       "sallad"
@@ -2284,6 +2298,7 @@
     "description": "Krämig äggbaserad carbonara med kycklingbacon och parmesanost – utan grädde.",
     "image": "",
     "tags": [
+      "kyckling",
       "pasta",
       "snabbt"
     ],
@@ -2588,6 +2603,7 @@
     "description": "Snabb pastasås med korv, morot, paprika och crème fraiche toppad med parmesan.",
     "image": "",
     "tags": [
+      "kött",
       "pasta",
       "snabbt"
     ],
@@ -2781,6 +2797,7 @@
     "description": "Snabb och enkel omelett med mozzarella och kycklingskinka.",
     "image": "",
     "tags": [
+      "kyckling",
       "snabbt",
       "lågkolhydrat"
     ],
@@ -2843,6 +2860,7 @@
     "description": "Klassisk Nicoise-inspirerad sallad med tonfisk, ägg, haricots verts och vinägerdressing.",
     "image": "",
     "tags": [
+      "fisk",
       "sallad",
       "nyttigt"
     ],
@@ -2941,6 +2959,7 @@
     "description": "Mjukt tunnbröd fyllt med rostbiff, kokt potatis och en fräsch kesoröra med äpple.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt"
     ],
     "category": [
@@ -3147,6 +3166,7 @@
     "description": "Krispig hemgjord coleslaw med majonnäsdressing serverad med stekt chorizo.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "lågkolhydrat"
     ],
@@ -3601,6 +3621,7 @@
     "description": "Snabb och matlådevänlig tikka masala på kycklingfärs med bara tre huvudingredienser.",
     "image": "",
     "tags": [
+      "kyckling",
       "matlådevänligt",
       "snabbt",
       "vardagsmiddag"
@@ -3720,6 +3741,7 @@
     "description": "Snabb och knaprig minipizza på rispapper med ägg, tomatsås, nötfärs och mozzarella.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "proteinrik"
     ],
@@ -3855,6 +3877,7 @@
     "description": "Matlådevänlig 'raggmunkspaj' i ugn med riven potatis, keso, ägg och kalkonbacon.",
     "image": "",
     "tags": [
+      "kött",
       "matlådevänligt",
       "proteinrik",
       "husmanskost"
@@ -3928,6 +3951,7 @@
     "description": "Supersnabba bagels på rispapper, klara på 15 minuter, toppade med valfri fyllning som lax och grönsaker.",
     "image": "",
     "tags": [
+      "fisk",
       "snabbt",
       "frukost",
       "kalorismart"
@@ -4015,6 +4039,7 @@
     "description": "Knaprig rispappersspiral fylld med nötfärs, ost, lök och pickles – som en Big Mac i rulle.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "proteinrik"
     ],
@@ -4107,6 +4132,7 @@
     "description": "Lätta och fräscha vietnamesiska sommarrullar med kryddad kyckling, grönsaker och avokado, serverade med jordnötssås.",
     "image": "",
     "tags": [
+      "kyckling",
       "lågkalori",
       "fräscht",
       "proteinrik"
@@ -4290,6 +4316,7 @@
     "description": "Sommarrullar fyllda med kryddad nötfärs, citrongräs och grönsaker, serverade med jordnötssås.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "fräscht"
@@ -4493,6 +4520,7 @@
     "description": "Knapriga rispappers-wellingtons fyllda med burgare, cheddar och pickles, serverade med krispig pommes.",
     "image": "",
     "tags": [
+      "kött",
       "middag",
       "proteinrik"
     ],
@@ -4949,6 +4977,7 @@
     "description": "Mättande och proteinrik nacho-sallad med tonfisk, rostat tunnbröd och fetaost – ca 360 kcal.",
     "image": "",
     "tags": [
+      "fisk",
       "lågkalori",
       "snabbt",
       "lunch"
@@ -5088,6 +5117,7 @@
     "description": "Proteinrik kebabwrap med kryddig nötfärs och proteinrik vitlökssås – ca 40 g protein per wrap.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "matlådevänligt"
@@ -5258,6 +5288,7 @@
     "description": "Proteinrika cheeseburgerspett i airfryer med tortilla, nötfärs och hamburgerost – ca 34 g protein per spett.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "airfryer"
@@ -5448,6 +5479,8 @@
     "description": "Allt-i-en-pasta med hemmagjorda köttbullar i krämig tomatsås – ca 35 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "proteinrik",
       "middag",
       "matlådevänligt"
@@ -5563,6 +5596,8 @@
     "description": "Proteinrik matlåde-lasagne där keso ersätter bechamel – ca 53 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -5696,6 +5731,7 @@
     "description": "Mexikansk-inspirerad bowl med kryddig chipotlefärs, krispig potatis, salsa och chipotlesås.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "viktnedgång"
@@ -5807,6 +5843,7 @@
     "description": "Proteinrik bowl med kryddig nötfärs, krispiga potatisklyftor, sallad och burgersås – ca 588 kcal och 61 g protein.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "lunch",
       "lågkalori"
@@ -5887,6 +5924,7 @@
     "description": "Snabb kebabrulle på libabröd med kycklingkebab och proteinrik sriracha-yoghurtsås – ca 47 g protein.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "snabbt",
       "lunch"
@@ -6024,6 +6062,7 @@
     "description": "Matlådevänliga frysburritos med kryddig nötfärs och Philadelphiaost – tina och mikra. Ca 455 kcal per portion.",
     "image": "",
     "tags": [
+      "kött",
       "matlådevänligt",
       "proteinrik",
       "frys"
@@ -6122,6 +6161,7 @@
     "description": "Snabba smashburger-tacos med mager nötfärs pressad mot tortilla, ost och burgersås.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "proteinrik"
     ],
@@ -6196,6 +6236,7 @@
     "description": "Krispiga smash-tacos med kryddig kycklingfärs panerad i panko, toppade med kålsallad och tonkatsusås.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "middag",
       "snabbt"
@@ -6353,6 +6394,7 @@
     "description": "Knapriga ugnsbakade tortillafickor fyllda med koreansk-kryddad nötfärs och mozzarella.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "snabbt",
       "middag"
@@ -6459,6 +6501,7 @@
     "description": "Matlådevänliga quesadillas med honung- och chipotlekryddad kyckling, mozzarella och proteinrik chipotlesås.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "frys"
@@ -6570,6 +6613,7 @@
     "description": "Matlådevänliga crunchwraps med kryddig nötfärs, ost, gräddfil och sallad – ca 380 kcal per wrap.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -6714,6 +6758,7 @@
     "description": "Matlådevänliga ugnsbakade fickor med proteinrik deg och kryddig buffalokyckling. Ca 425 kcal och 50 g protein per styck.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "frys"
@@ -6892,6 +6937,8 @@
     "description": "Matlåde-pasta med nötfärs, beef bacon och krämig kesosås – ca 600 kcal och 67 g protein, ger 10 portioner.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -6992,6 +7039,7 @@
     "description": "Snabb och proteinrik krämig timjankyckling serverad med potatismos – ca 530 kcal och 53 g protein per portion.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "middag",
       "matlådevänligt"
@@ -7210,6 +7258,8 @@
     "description": "Viral turkisk pasta med kryddig nötfärs, vitlöksyoghurt och smörig paprikasås.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "middag",
       "proteinrik"
     ],
@@ -7308,6 +7358,7 @@
     "description": "Snabba mini-tacos med smashad nötfärs, ost, sallad och burgersås – ca 250 kcal per taco.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "proteinrik",
       "lågkalori"
@@ -7394,6 +7445,7 @@
     "description": "Matlådevänlig krämig tacogryta med nötfärs, grönsaker och ris – ca 558 kcal och 38 g protein per låda.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -7493,6 +7545,7 @@
     "description": "Snabba, ostiga pizzafickor på proteinwrap med salami och mozzarella – ca 341 kcal för 2 fickor.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "proteinrik"
     ],
@@ -7553,8 +7606,8 @@
     "description": "Turkisk-inspirerad taco med en gratinerad bas av majs och ost, fylld med valfria pålägg.",
     "image": "",
     "tags": [
-      "snabbt",
-      "vegetariskt"
+      "kött",
+      "snabbt"
     ],
     "category": [
       "mat"
@@ -7660,6 +7713,7 @@
     "description": "Proteinrika pommes toppade med krämig nachofärs och ost – klart på 30 minuter. Ca 458 kcal per portion.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "snabbt"
@@ -7740,6 +7794,8 @@
     "description": "Budgetvänlig pad thai som tillagas i ugnsform med risnudlar, kyckling, grönsaker och ägg. Ca 478 kcal per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -7845,6 +7901,8 @@
     "description": "Matlådevänlig one pot-risoni med kyckling, ajvar och feta – ca 577 kcal och 50 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -7926,6 +7984,8 @@
     "description": "Allt-i-en spaghetti med hemmagjorda köttbullar i krämig tomatsås – ca 566 kcal och 40 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -8047,6 +8107,7 @@
     "description": "Proteinrik wrap med krämig marry me-kyckling, soltorkade tomater och spenat – ca 92 g protein för hela.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "lunch",
       "snabbt"
@@ -8139,6 +8200,7 @@
     "description": "Krispiga dumplings på rispapper fyllda med kryddig kycklingfärs, serverade med soja-chilisås.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "lågkalori",
       "lågkolhydrat"
@@ -8241,6 +8303,7 @@
     "description": "Matig pizzarulle på pizzadeg fylld med tomatsås, charkpålägg och ost, gräddad i ugn.",
     "image": "",
     "tags": [
+      "kött",
       "middag",
       "matig"
     ],
@@ -8320,6 +8383,7 @@
     "description": "Proteinrik paj med krispigt potatisskal, kycklingkebab och crème fraiche – ca 353 kcal per bit.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "middag",
       "matlådevänligt"
@@ -8382,6 +8446,7 @@
     "description": "Proteinrik tacotårta i lager med nötfärs, krämig tacosås, majs och tortilla – ca 568 kcal och 43 g protein per portion.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "matlådevänligt"
@@ -8480,6 +8545,7 @@
     "description": "Krispig kycklingburgare i airfryer panerad i cornflakes – ca 438 kcal och 30 g protein.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "airfryer",
       "snabbt"
@@ -8616,6 +8682,7 @@
     "description": "Proteinrika ugnsbakade hot pockets med deg av yoghurt och mjöl, fyllda med cheeseburgerfärs – ca 390 kcal och 29 g protein per styck.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -8707,6 +8774,7 @@
     "description": "Stekta fickor med potatisdeg fyllda med kryddig nötfärs och ost – ca 296 kcal och 24 g protein per styck.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt"
     ],
@@ -8780,6 +8848,7 @@
     "description": "Krämig gratäng med ris, kycklingkebab och kebabsås toppad med ost – som en kebabtallrik i ugnsform.",
     "image": "",
     "tags": [
+      "kyckling",
       "middag",
       "matlådevänligt",
       "proteinrik"
@@ -8938,6 +9007,8 @@
     "description": "Krämig lasagne med ost- och skinksås, serverad med ärtor och riven morot.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "middag",
       "matig"
     ],
@@ -9035,6 +9106,7 @@
     "description": "Enkel one pan-rätt med nötfärs, ris, bönor, majs och ost i mexikansk stil.",
     "image": "",
     "tags": [
+      "kött",
       "middag",
       "matig"
     ],
@@ -9137,6 +9209,9 @@
     "description": "Krämig pastagratäng med kyckling, bacon, ranch och alfredosås – en enkel familjemiddag.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
+      "kyckling",
       "middag",
       "matig",
       "proteinrik"
@@ -9221,6 +9296,7 @@
     "description": "Pastasallad med ugnskrispad pasta, grönsaker, fetaost och krämig dressing.",
     "image": "",
     "tags": [
+      "pasta",
       "sallad",
       "matlådevänligt",
       "vegetariskt"
@@ -9405,6 +9481,7 @@
     "description": "Hemmagjord focaccia med inbakade spiralskurna varmkorvar och ost – knaprig och luftig.",
     "image": "",
     "tags": [
+      "kött",
       "bakat",
       "middag"
     ],
@@ -9486,6 +9563,7 @@
     "description": "Enkel pannrätt med krispig potatis, cheeseburgerfärs, ost, bacon och burgersås – klar på ca 30 minuter.",
     "image": "",
     "tags": [
+      "kött",
       "middag",
       "matig"
     ],
@@ -9653,6 +9731,7 @@
     "description": "Krispiga kycklingtacos med ost, stark tacosås och pico de gallo.",
     "image": "",
     "tags": [
+      "kyckling",
       "middag",
       "proteinrik"
     ],
@@ -9768,6 +9847,7 @@
     "description": "Enkel ugnsbakad krämig laxpasta med Boursin, körsbärstomater, spenat och kapris.",
     "image": "",
     "tags": [
+      "pasta",
       "middag",
       "snabbt",
       "fisk"
@@ -9837,6 +9917,7 @@
     "description": "Krispiga tacos med kryddig nötfärs, ost och krämig chipotleyoghurt.",
     "image": "",
     "tags": [
+      "kött",
       "middag",
       "proteinrik"
     ],
@@ -9946,6 +10027,7 @@
     "description": "Ugnsbakad pasta med lax, körsbärstomater, fetaost och vitlök – allt på en plåt.",
     "image": "",
     "tags": [
+      "pasta",
       "middag",
       "snabbt",
       "fisk"
@@ -10373,6 +10455,7 @@
     "description": "Quiche med potatisbotten i stället för pajdeg, fylld med ägg, skinka, tomat och spenat.",
     "image": "",
     "tags": [
+      "kött",
       "matig",
       "lunch"
     ],
@@ -10541,6 +10624,7 @@
     "description": "Snabb och saftig kycklingfilé i airfryer med enkla kryddor.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "snabbt",
       "airfryer"
@@ -10594,6 +10678,7 @@
     "description": "Snabb proteinrik wrap med currykyckling, krämig sås och krispiga grönsaker – ca 45 g protein.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "snabbt",
       "lunch"
@@ -10816,6 +10901,8 @@
     "description": "Allt-i-en krämig pasta med nötfärs och spenat – ca 587 kcal och 45 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -10958,6 +11045,7 @@
     "description": "Snabb lågkaloripizza på tortilla med pepperoni och ost – ca 562 kcal och 26 g protein.",
     "image": "",
     "tags": [
+      "kött",
       "snabbt",
       "lågkalori",
       "proteinrik"
@@ -11095,6 +11183,7 @@
     "description": "Matlådevänliga pizzarullar med kryddig nötfärs, pepperoni och ost – ca 380 kcal och 38 g protein per styck.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "frys"
@@ -11285,6 +11374,7 @@
     "description": "Proteinrik chicken parmesan med marinara, keso och parmesan – ca 440 kcal och 74 g protein per bit.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "middag"
     ],
@@ -11352,6 +11442,7 @@
     "description": "Proteinrika pizzabullar med deg av keso och ägg, fyllda med pizzasås, ost och pepperoni – ca 297 kcal och 30 g protein per styck.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "bakat"
@@ -11445,6 +11536,7 @@
     "description": "Krispiga kycklingtenders panerade i cornflakes med krämig bang bang-sås – ca 299 kcal och 46 g protein per portion.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "airfryer",
       "middag"
@@ -11537,6 +11629,7 @@
     "description": "Matlådevänlig ugnsrätt med kyckling, grönsaker och cashewnötter i söt-salt asiatisk sås – minimal disk.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -11736,6 +11829,7 @@
     "description": "Matlådevänliga tortillarullar med krämig vitlökskyckling och ost – ca 351 kcal och 51 g protein per rulle.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "matlådevänligt"
     ],
@@ -11838,6 +11932,7 @@
     "description": "Ugnsbakade paprikor fyllda med kryddig nötfärs, spenat och ost.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "middag",
       "lågkolhydrat"
@@ -12050,6 +12145,8 @@
     "description": "Matlådevänlig krämig kycklingpasta i crockpot med broccoli – ca 445 kcal och 40 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -12209,6 +12306,7 @@
     "description": "Ostig paj med tortillabotten, kycklingkebab och Philadelphia sweet chili – ca 449 kcal och 38 g protein per portion.",
     "image": "",
     "tags": [
+      "kyckling",
       "proteinrik",
       "middag",
       "snabbt"
@@ -12450,6 +12548,7 @@
     "description": "Krispig ugnsrostad potatis med en krämig carbonarasås på äggulor, parmesan och pancetta.",
     "image": "",
     "tags": [
+      "kött",
       "tillbehör",
       "matig"
     ],
@@ -12531,6 +12630,8 @@
     "description": "Krämig pastasallad med grillad kyckling, grönsaker och en sås på gräddfil och dippmix.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "sallad",
       "matlådevänligt"
     ],
@@ -12623,6 +12724,9 @@
     "description": "Matlådevänlig krämig buffalo chicken-pasta med kesosås och bacon – ca 564 kcal och 62 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kött",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -12740,6 +12844,8 @@
     "description": "Matlådevänlig one pot-risoni med kyckling och mangocurry – ca 505 kcal och 42 g protein per portion.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "middag"
@@ -12826,6 +12932,7 @@
     "description": "Matlådevänliga frysburritos med kryddig nötfärs, färskost och chilipeppar – ca 272 kcal och 27 g protein per styck.",
     "image": "",
     "tags": [
+      "kött",
       "proteinrik",
       "matlådevänligt",
       "frys"
@@ -12968,6 +13075,7 @@
     "description": "Proteinrik bakad omelett med keso, skinka och grönsaker, serverad med sriracha-majonnäs – ca 355 kcal per portion.",
     "image": "",
     "tags": [
+      "kött",
       "frukost",
       "proteinrik",
       "matlådevänligt"
@@ -13154,6 +13262,8 @@
     "description": "Superenkla matlådor med kycklingkebab, pasta, grekisk yoghurt och pesto – ca 530 kcal och 37 g protein per låda.",
     "image": "",
     "tags": [
+      "pasta",
+      "kyckling",
       "proteinrik",
       "matlådevänligt",
       "snabbt"
