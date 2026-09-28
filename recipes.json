@@ -13432,5 +13432,135 @@
       "Bred på färskost och lägg tonfiskröra och avokado i nederkanten.",
       "Rulla ihop till en cylinder och skär i sushibitar."
     ]
+  },
+  {
+    "id": "pastel-de-nata",
+    "title": "Pastel de nata från grunden",
+    "description": "Portugisiska vaniljbakelser med krispig smördeg och krämig äggkräm, helt från grunden.",
+    "image": "",
+    "tags": [
+      "efterrätt",
+      "bakning",
+      "fika"
+    ],
+    "category": [
+      "efterrätt",
+      "snacks"
+    ],
+    "cuisine": "portugisiskt",
+    "difficulty": "medel",
+    "time_minutes": 90,
+    "servings": 12,
+    "ingredients": [
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "vetemjöl (till degen)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 0.25,
+        "unit": "tsk",
+        "name": "salt",
+        "category": "kryddor"
+      },
+      {
+        "amount": 125,
+        "unit": "g",
+        "name": "kallt smör",
+        "category": "mejeri"
+      },
+      {
+        "amount": 75,
+        "unit": "ml",
+        "name": "iskallt vatten",
+        "category": "övrigt"
+      },
+      {
+        "amount": 300,
+        "unit": "ml",
+        "name": "mjölk",
+        "category": "mejeri"
+      },
+      {
+        "amount": 100,
+        "unit": "ml",
+        "name": "vispgrädde",
+        "category": "mejeri"
+      },
+      {
+        "amount": 90,
+        "unit": "g",
+        "name": "strösocker",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 3,
+        "unit": "msk",
+        "name": "vetemjöl (till krämen)",
+        "category": "torrvaror"
+      },
+      {
+        "amount": 4,
+        "unit": "st",
+        "name": "äggulor",
+        "category": "mejeri"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "kanelstång",
+        "category": "kryddor"
+      },
+      {
+        "amount": 1,
+        "unit": "st",
+        "name": "citron",
+        "category": "grönsaker"
+      },
+      {
+        "amount": 1,
+        "unit": "msk",
+        "name": "smör till formen",
+        "category": "mejeri"
+      }
+    ],
+    "steps": [
+      {
+        "text": "Blanda vetemjölet till degen med saltet. Nyp eller skär in det kalla smöret snabbt, men låt smörbitar i ärtstorlek vara kvar. Tillsätt det iskalla vattnet lite i taget och tryck ihop till en grov deg utan att knåda.",
+        "amounts": {
+          "vetemjöl (till degen)": 150,
+          "salt": 0.25,
+          "kallt smör": 125,
+          "iskallt vatten": 75
+        }
+      },
+      "Kavla ut degen till en rektangel på mjölat bord. Vik i tre delar som ett brev, vrid ett kvarts varv och upprepa – gör totalt fyra vikningar. Blir smöret mjukt, lägg degen i kylen en stund emellan.",
+      "Slå in degen i plast och låt den vila i kylen, ca 30 minuter.",
+      {
+        "text": "Sätt ugnen på högsta värmen, gärna 250–275 °C. Smörj en muffinsplåt med smöret till formen.",
+        "amounts": {
+          "smör till formen": 1
+        }
+      },
+      "Kavla degen tunt till en rektangel, ca 30 × 20 cm. Rulla ihop den hårt från kortsidan till en stock och skär i 12 skivor.",
+      "Lägg en skiva med snittytan uppåt i varje hål. Doppa tummen i vatten och tryck ut degen tunt i botten och upp längs kanterna. Ställ i kylen ca 10 minuter medan du gör krämen.",
+      {
+        "text": "Vispa vetemjölet till krämen slätt med en skvätt av mjölken i en kastrull. Tillsätt resten av mjölken, vispgrädden, strösockret, kanelstången och citronskalet i en lång remsa. Vispa i äggulorna.",
+        "amounts": {
+          "vetemjöl (till krämen)": 3,
+          "mjölk": 300,
+          "vispgrädde": 100,
+          "strösocker": 90,
+          "kanelstång": 1,
+          "citron": 1,
+          "äggulor": 4
+        }
+      },
+      "Värm på medelvärme under konstant vispning tills krämen tjocknar som vaniljsås, ca 6 minuter – den får inte koka. Plocka bort kanelstången och citronskalet.",
+      "Låt krämen svalna någon minut och fyll formarna till ca 3/4.",
+      "Grädda högt upp i ugnen tills krämen fått mörka fläckar och degen är krispig, ca 15 minuter.",
+      "Låt bakelserna svalna i formen innan du lyfter ur dem."
+    ]
   }
 ]
