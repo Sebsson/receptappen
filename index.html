@@ -530,6 +530,11 @@
         .join("");
     }
 
+    function shareIcon() {
+      return `<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12M8 7l4-4 4 4M5 12v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>`;
+    }
+
     // ---------- Render ----------
     function recipeCard(r) {
       const isFav = appState.favorites.includes(r.id);
@@ -992,10 +997,7 @@
       render();
     }
 
-    function copyText(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        return navigator.clipboard.writeText(text);
-      }
+    function legacyCopy(text) {
       return new Promise((resolve, reject) => {
         const ta = document.createElement("textarea");
         ta.value = text;
@@ -1004,14 +1006,21 @@
         document.body.appendChild(ta);
         ta.select();
         try {
-          document.execCommand("copy");
-          resolve();
+          document.execCommand("copy") ? resolve() : reject(new Error("execCommand copy failed"));
         } catch (e) {
           reject(e);
         } finally {
           document.body.removeChild(ta);
         }
       });
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        // Fall back to execCommand if the Clipboard API is blocked (e.g. permission policy).
+        return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
+      }
+      return legacyCopy(text);
     }
 
     async function copyShoppingList() {
@@ -1388,6 +1397,11 @@
                 aria-label="Spara som favorit">
                 ${starIcon(isFav)}
               </button>
+              <button data-action="share" data-id="${r.id}"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gray-200 text-gray-400 hover:border-taupe hover:text-taupe"
+                aria-label="Dela receptet">
+                ${shareIcon()}
+              </button>
               <button data-action="detail-plan" data-id="${r.id}"
                 class="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-taupe text-sm font-semibold text-white hover:bg-taupe-dark active:scale-[.99]">
                 Lägg till i veckoplan
@@ -1467,6 +1481,62 @@
       }
     }
 
+    // ---------- Dela recept ----------
+    // Build a plain-text version of the recipe, scaled to the given servings.
+    function buildShareText(r, servings) {
+      const factor = servings / r.servings;
+      let text = `${r.title}\n`;
+      if (r.description) text += `${r.description}\n`;
+      text += `\n${r.time_minutes} min · ${capitalize(r.difficulty)} · ${servings} portioner\n`;
+
+      text += `\nIngredienser\n`;
+      groupedIngredients(r.ingredients).forEach(([, items]) => {
+        items.forEach((ing) => {
+          const amt = ing.amount == null ? "" : `${fmtAmount(ing.amount * factor)} ${ing.unit} `;
+          text += `- ${amt}${ing.name}\n`;
+        });
+      });
+
+      text += `\nGör så här\n`;
+      r.steps.forEach((s, i) => { text += `${i + 1}. ${s}\n`; });
+      return text.trim();
+    }
+
+    function recipeUrl(id) {
+      return location.origin + location.pathname + location.search + "#recept/" + encodeURIComponent(id);
+    }
+
+    async function shareRecipe(id) {
+      const r = recipeById(id);
+      if (!r) return;
+      const servings =
+        currentDetail && currentDetail.id === id ? detailServings : r.servings;
+      const text = buildShareText(r, servings);
+      const url = recipeUrl(id);
+
+      // Native share sheet (mobile, PWA, modern browsers over https/localhost).
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: r.title, text, url });
+        } catch (e) {
+          if (e && e.name === "AbortError") return; // user dismissed the sheet
+          await copyShareFallback(text, url);        // share failed → copy instead
+        }
+        return;
+      }
+      // No share support → copy the recipe to the clipboard.
+      await copyShareFallback(text, url);
+    }
+
+    async function copyShareFallback(text, url) {
+      try {
+        await copyText(`${text}\n\n${url}`);
+        showToast("Recept kopierat");
+      } catch {
+        showToast("Kunde inte dela");
+      }
+    }
+
     // ---------- Toast ----------
     let toastTimer;
     function showToast(msg) {
@@ -1506,6 +1576,7 @@
         else if (a === "dec") updateServings(-1);
         else if (a === "inc") updateServings(1);
         else if (a === "detail-fav") detailToggleFav(el.dataset.id);
+        else if (a === "share") shareRecipe(el.dataset.id);
         else if (a === "detail-plan") detailAddPlan(el.dataset.id);
       });
       document.addEventListener("keydown", (e) => {
